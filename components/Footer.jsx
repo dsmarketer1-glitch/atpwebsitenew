@@ -5,12 +5,11 @@ export default function Footer() {
     return (
         <footer className="site-footer">
             <div className="footer-grid">
-                {/* Brand Column */}
                 <div className="footer-brand">
                     <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={170} height={57} />
                     <p>
-                        Anytime Plumbing 365 delivers expert plumbing, leak detection, sewer repair,
-                        and property restoration services for homeowners in Garland, TX. Trust our team for fast, reliable help.
+                        Expert plumbing, leak detection, sewer repair, and property restoration services
+                        for homeowners across the Dallas–Fort Worth Metroplex. Fast, reliable, 24/7.
                     </p>
                     <div className="footer-social">
                         <a href="https://www.facebook.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -28,28 +27,26 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Contact Column */}
                 <div className="footer-col">
-                    <h4>Contact Information</h4>
+                    <h4>Contact</h4>
                     <div className="footer-location">
-                        <h5>Irving Location</h5>
+                        <h5>Irving Office</h5>
                         <p><a href="tel:214-307-4264">📞 214-307-4264</a></p>
                         <p><a href="https://www.google.com/maps/place/320+Decker+Dr+Ste+102-08,+Irving,+TX+75062" target="_blank" rel="noopener noreferrer">
-                            📍 320 Decker Dr, Suite 102-08, Irving, TX, 75062
+                            📍 320 Decker Dr, Suite 102-08, Irving, TX
                         </a></p>
                     </div>
                     <div className="footer-location">
-                        <h5>Garland Location</h5>
+                        <h5>Garland Office</h5>
                         <p><a href="tel:214-430-3461">📞 214-430-3461</a></p>
                         <p><a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Garland,+TX+75042" target="_blank" rel="noopener noreferrer">
-                            📍 102 N Shiloh Rd, Suite 104, Garland, TX, 75042
+                            📍 102 N Shiloh Rd, Suite 104, Garland, TX
                         </a></p>
                     </div>
                 </div>
 
-                {/* Quick Links */}
                 <div className="footer-col">
-                    <h4>Our Services</h4>
+                    <h4>Services</h4>
                     <ul>
                         <li><Link href="/service/drain-cleaning">Drain Cleaning</Link></li>
                         <li><Link href="/service/emergency-plumber">Emergency Plumber</Link></li>
@@ -61,31 +58,42 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* Useful Info */}
                 <div className="footer-col">
-                    <h4>Useful Information</h4>
+                    <h4>Company</h4>
                     <ul>
                         <li><Link href="/about-us">About Us</Link></li>
                         <li><Link href="/blog">Blog</Link></li>
                         <li><Link href="/financing">Financing</Link></li>
+                        <li><Link href="/specials">Specials</Link></li>
                         <li><Link href="/giving-back">Giving Back</Link></li>
                         <li><Link href="/area">Service Areas</Link></li>
                         <li><Link href="/contact-us">Contact Us</Link></li>
                     </ul>
-                    <div style={{ marginTop: '16px' }}>
-                        <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)' }}>
-                            <a href="tel:214-307-4264" style={{ color: 'rgba(255,255,255,0.65)' }}>🕐 We are available 24/7</a>
-                        </p>
-                        <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)' }}>
-                            🪪 License #: 37912
-                        </p>
-                    </div>
+                </div>
+            </div>
+
+            <div className="footer-trust">
+                <div className="footer-trust-badge">
+                    <span className="footer-trust-badge-icon">🛡️</span>
+                    Licensed & Insured
+                </div>
+                <div className="footer-trust-badge">
+                    <span className="footer-trust-badge-icon">⏰</span>
+                    24/7 Emergency Service
+                </div>
+                <div className="footer-trust-badge">
+                    <span className="footer-trust-badge-icon">✅</span>
+                    Satisfaction Guaranteed
+                </div>
+                <div className="footer-trust-badge">
+                    <span className="footer-trust-badge-icon">💰</span>
+                    Upfront Pricing
                 </div>
             </div>
 
             <div className="footer-bottom">
                 <div className="footer-bottom-inner">
-                    <p>© {new Date().getFullYear()} Anytime Plumbing 365. All Rights Reserved.</p>
+                    <p>© {new Date().getFullYear()} Anytime Plumbing 365. All Rights Reserved. License #37912</p>
                     <div className="footer-bottom-links">
                         <Link href="/privacy-policy">Privacy Policy</Link>
                         <Link href="/terms-of-service">Terms of Service</Link>

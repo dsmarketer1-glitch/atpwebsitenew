@@ -42,6 +42,7 @@ export default function ContactPage() {
                     <div className="contact-grid">
                         {/* Contact Form */}
                         <div className="fade-in-left">
+                            <span className="section-label">Get In Touch</span>
                             <h2 style={{ marginBottom: '24px' }}>Send Us a Message</h2>
                             {status === 'success' ? (
                                 <div className="form-success">
@@ -95,6 +96,7 @@ export default function ContactPage() {
 
                         {/* Contact Info */}
                         <div className="fade-in-right">
+                            <span className="section-label">Our Locations</span>
                             <h2 style={{ marginBottom: '24px' }}>Contact Information</h2>
 
                             <div className="contact-info-card">

@@ -35,11 +35,11 @@ export default async function ServicePage({ params }) {
                 </div>
             </section>
 
-            {/* CTA Row */}
-            <section style={{ background: '#f0f2f5', padding: '20px 0' }}>
-                <div className="container" style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-                    <Link href="/contact-us" className="btn btn-primary">📅 Book Now</Link>
-                    <a href="tel:214-307-4264" className="btn btn-red">📞 Call 214-307-4264</a>
+            {/* Quick CTA Row */}
+            <section style={{ background: 'var(--light-gray)', padding: '18px 0' }}>
+                <div className="container" style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                    <Link href="/contact-us" className="btn btn-primary btn-sm">📅 Book This Service</Link>
+                    <a href="tel:214-307-4264" className="btn btn-red btn-sm">📞 Call 214-307-4264</a>
                 </div>
             </section>
 
@@ -48,6 +48,7 @@ export default async function ServicePage({ params }) {
                 <div className="container">
                     <div className="content-two-col">
                         <div className="content-text fade-in-left">
+                            <span className="section-label">{service.title}</span>
                             <h2>{service.title} Services in Garland, TX</h2>
                             {service.content.map((para, i) => (
                                 <p key={i}>{para}</p>
@@ -75,7 +76,7 @@ export default async function ServicePage({ params }) {
                                 <Image src={service.image} alt={service.title} width={600} height={400} />
                             </div>
 
-                            <h3 style={{ marginBottom: '16px' }}>Our Services</h3>
+                            <h3 style={{ marginBottom: '14px' }}>Our Services</h3>
                             <div className="service-sidebar">
                                 {services.slice(0, 12).map((s) => (
                                     <Link
@@ -96,7 +97,8 @@ export default async function ServicePage({ params }) {
             <section className="section section-gray">
                 <div className="container">
                     <div className="section-header fade-in">
-                        <h2>What Your Neighbors Are Saying About Us</h2>
+                        <span className="section-label">Reviews</span>
+                        <h2>What Your Neighbors Say</h2>
                     </div>
                     <div className="testimonials-grid fade-in">
                         <div className="testimonial-card">
@@ -129,9 +131,7 @@ export default async function ServicePage({ params }) {
                 </div>
             </section>
 
-            {/* FAQ */}
             <FAQAccordion faqs={service.faqs} />
-
             <CTABanner />
         </>
     );

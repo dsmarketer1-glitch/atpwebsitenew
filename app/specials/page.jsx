@@ -20,6 +20,7 @@ export default function SpecialsPage() {
             <section className="section">
                 <div className="container">
                     <div className="section-header fade-in">
+                        <span className="section-label">Limited Time</span>
                         <h2>Current Specials &amp; Discounts</h2>
                         <p>Take advantage of our limited-time offers. Call now to claim your discount!</p>
                     </div>
@@ -37,7 +38,7 @@ export default function SpecialsPage() {
                     </div>
 
                     <div style={{ textAlign: 'center', marginTop: '40px' }} className="fade-in">
-                        <p style={{ fontSize: '18px', color: '#666', marginBottom: '20px' }}>
+                        <p style={{ fontSize: '18px', color: 'var(--text-light)', marginBottom: '20px' }}>
                             Call now to redeem any of these special offers!
                         </p>
                         <a href="tel:214-307-4264" className="btn btn-red btn-lg">📞 Call 214-307-4264</a>

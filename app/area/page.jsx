@@ -3,7 +3,7 @@ import CTABanner from '@/components/CTABanner';
 
 export const metadata = {
     title: 'Service Areas - Anytime Plumbing 365',
-    description: 'Anytime Plumbing 365 proudly serves homeowners across the Dallas-Fort Worth Metroplex including Garland, Irving, Dallas, Richardson, and surrounding areas.',
+    description: 'Anytime Plumbing 365 proudly serves homeowners across the Dallas-Fort Worth Metroplex.',
 };
 
 const areas = [
@@ -42,22 +42,31 @@ export default function ServiceAreasPage() {
             <section className="section">
                 <div className="container">
                     <div className="section-header fade-in">
+                        <span className="section-label">Coverage</span>
                         <h2>Areas We Serve</h2>
                         <p>We proudly serve homeowners across the Dallas-Fort Worth Metroplex with expert plumbing and restoration services.</p>
                     </div>
 
-                    <div className="areas-grid fade-in">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }} className="fade-in">
                         {areas.map((area) => (
-                            <div key={area.name} className="area-tag" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
-                                <strong>📍 {area.name}</strong>
-                                <span style={{ fontSize: '13px', color: '#666', fontWeight: '400' }}>{area.description}</span>
+                            <div key={area.name} style={{
+                                padding: '20px 24px',
+                                background: 'var(--white)',
+                                borderRadius: 'var(--radius-lg)',
+                                boxShadow: 'var(--shadow-3d)',
+                                border: '1px solid rgba(0,0,0,0.04)',
+                                transition: 'all 0.3s ease',
+                                cursor: 'default',
+                            }}>
+                                <strong style={{ fontSize: '15px', color: 'var(--text-dark)' }}>📍 {area.name}</strong>
+                                <p style={{ fontSize: '13px', color: 'var(--text-light)', marginTop: '4px', lineHeight: '1.5' }}>{area.description}</p>
                             </div>
                         ))}
                     </div>
 
-                    <div style={{ textAlign: 'center', marginTop: '40px' }} className="fade-in">
-                        <p style={{ fontSize: '18px', color: '#666', marginBottom: '20px' }}>
-                            Don&apos;t see your area listed? Give us a call — we may still be able to help!
+                    <div style={{ textAlign: 'center', marginTop: '44px' }} className="fade-in">
+                        <p style={{ fontSize: '17px', color: 'var(--text-light)', marginBottom: '20px' }}>
+                            Don&apos;t see your area? Give us a call — we may still be able to help!
                         </p>
                         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link href="/contact-us" className="btn btn-primary btn-lg">Contact Us</Link>
