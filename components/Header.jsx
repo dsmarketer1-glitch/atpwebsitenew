@@ -59,8 +59,6 @@ export default function Header({ onBookNow }) {
           </div>
           <div className="top-bar-right">
             <a href="tel:214-307-4264">📞 214-307-4264</a>
-            <span className="top-bar-divider" />
-            <a href="tel:214-430-3461">📞 214-430-3461</a>
           </div>
         </div>
       </div>
