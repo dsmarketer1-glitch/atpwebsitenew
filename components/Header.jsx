@@ -79,7 +79,18 @@ export default function Header({ onBookNow }) {
               <span></span><span></span><span></span>
             </button>
 
+            {/* Mobile Menu Backdrop */}
+            <div 
+              className={`mobile-backdrop ${mobileOpen ? 'active' : ''}`} 
+              onClick={() => setMobileOpen(false)}
+            />
+
             <ul className={mobileOpen ? 'mobile-open' : ''}>
+              <li className="mobile-menu-header">
+                <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={140} height={47} />
+                <button className="close-menu" onClick={() => setMobileOpen(false)}>✕</button>
+              </li>
+
               <li className="nav-item">
                 <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
               </li>

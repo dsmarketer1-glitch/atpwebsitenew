@@ -199,7 +199,7 @@ export default function HomePageClient() {
                     <div className="services-grid reveal-stagger">
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="/images/plumbing-repair.jpg" alt="Drain Pipe Repair" width={400} height={220} />
+                                <Image src="/images/drain-cleaning.webp" alt="Drain cleaning and repair" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/drain-pipe-repair">Drain Pipe Repair</Link></h3>
@@ -209,7 +209,7 @@ export default function HomePageClient() {
                         </div>
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="/images/leaky-faucet.jpg" alt="Emergency Plumber" width={400} height={220} />
+                                <Image src="/images/emergency-service.webp" alt="Emergency Plumbing Response" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/emergency-plumber">Emergency Plumber</Link></h3>
@@ -219,7 +219,7 @@ export default function HomePageClient() {
                         </div>
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="/images/water-damage-restoration.jpg" alt="Water Damage Restoration" width={400} height={220} />
+                                <Image src="/images/water-damage.webp" alt="Water Damage Restoration" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/water-damage-restoration">Water Damage Restoration</Link></h3>
@@ -351,7 +351,7 @@ export default function HomePageClient() {
                     <div className="blog-grid fade-in">
                         <Link href="/blog/why-your-drain-pipes-keep-clogging-and-how-to-fix-the-problem" className="blog-card">
                             <div className="blog-card-image">
-                                <Image src="/images/service-3.jpg" alt="Drain Pipes Clogging" width={400} height={200} />
+                                <Image src="/images/drain-cleaning.webp" alt="Drain Pipes Clogging" width={400} height={200} />
                             </div>
                             <div className="blog-card-body">
                                 <p className="blog-card-date">February 10, 2026</p>
@@ -361,7 +361,7 @@ export default function HomePageClient() {
                         </Link>
                         <Link href="/blog/what-to-do-in-the-first-hour-after-water-damage" className="blog-card">
                             <div className="blog-card-image">
-                                <Image src="/images/water-damage-restoration.jpg" alt="Water Damage" width={400} height={200} />
+                                <Image src="/images/water-damage.webp" alt="Water Damage" width={400} height={200} />
                             </div>
                             <div className="blog-card-body">
                                 <p className="blog-card-date">February 5, 2026</p>
@@ -371,7 +371,7 @@ export default function HomePageClient() {
                         </Link>
                         <Link href="/blog/10-signs-you-need-an-emergency-plumber-right-now" className="blog-card">
                             <div className="blog-card-image">
-                                <Image src="/images/leaky-faucet.jpg" alt="Emergency Plumber" width={400} height={200} />
+                                <Image src="/images/emergency-service.webp" alt="Emergency Plumber" width={400} height={200} />
                             </div>
                             <div className="blog-card-body">
                                 <p className="blog-card-date">January 28, 2026</p>
