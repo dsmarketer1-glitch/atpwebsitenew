@@ -72,7 +72,7 @@ export default function Header({ onBookNow }) {
 
           <nav className="header-nav">
             <button
-              className={`mobile-toggle ${mobileOpen ? 'active' : ''}`}
+              className={`mobile-toggle ${mobileOpen ? 'active hidden' : ''}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
