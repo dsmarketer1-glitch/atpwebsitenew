@@ -5,7 +5,8 @@ export const services = [
         heroTitle: 'Drain Cleaning in Garland, TX',
         metaTitle: 'Drain Cleaning Services in Garland, TX',
         metaDescription: 'Need dependable drain cleaning in Garland, TX? We deliver reliable service that clears clogs and restores smooth drainage with careful, professional work.',
-        image: '/images/service-3.jpg',
+        image: '/images/service/drain-cleaning.webp',
+        imageAlt: 'Professional plumber using motorized drain snake to clear a clogged drain in a residential home in Garland TX',
         shortDescription: 'Professional drain cleaning to clear stubborn clogs and keep your plumbing flowing smoothly.',
         content: [
             'Our drain cleaning services in Garland, TX are designed to remove tough clogs and restore proper water flow throughout your home. We use advanced equipment like motorized drain snakes and hydro jetting tools to clear buildup that traditional methods cannot reach.',
@@ -86,7 +87,8 @@ export const services = [
         heroTitle: 'Drain Pipe Repair in Garland, TX',
         metaTitle: 'Drain Pipe Repair Services in Garland, TX',
         metaDescription: 'Fast, reliable drain pipe repair in Garland, TX. We fix leaks, cracks, and damaged pipes with lasting results.',
-        image: '/images/plumbing-repair.jpg',
+        image: '/images/service/drain-pipe-repair.webp',
+        imageAlt: 'Licensed plumber repairing a cracked drain pipe under a kitchen sink using professional tools in a home in Garland TX',
         shortDescription: 'Fast and reliable drain pipe repair from experienced plumbing professionals.',
         content: [
             'Damaged drain pipes can lead to water damage, mold growth, and structural issues if not addressed quickly. Our repair services cover everything from minor leaks to major pipe damage, including cracks, joint failures, and root intrusion.',
@@ -112,7 +114,8 @@ export const services = [
         heroTitle: 'Emergency Plumber in Garland, TX',
         metaTitle: 'Emergency Plumber in Garland, TX | 24/7 Service',
         metaDescription: 'Need an emergency plumber in Garland, TX? We provide fast 24/7 emergency plumbing services. Call now for immediate help.',
-        image: '/images/leaky-faucet.jpg',
+        image: '/images/service/emergency-plumber.webp',
+        imageAlt: 'Emergency plumber arriving urgently at a residential home at night with tools ready to fix a burst pipe in Garland TX',
         shortDescription: '24/7 emergency plumbing services with fast response times and expert solutions.',
         content: [
             'Plumbing emergencies do not wait for business hours, and neither do we. Our emergency plumbing service is available 24 hours a day, 7 days a week to handle urgent situations like burst pipes, sewage backups, major leaks, and overflowing toilets.',
@@ -139,7 +142,8 @@ export const services = [
         heroTitle: 'Home Repiping in Garland, TX',
         metaTitle: 'Home Repiping Services in Garland, TX',
         metaDescription: 'Complete home repiping services in Garland, TX. Replace old pipes with modern materials for better water quality and pressure.',
-        image: '/images/plumbing-repair.jpg',
+        image: '/images/service/home-repiping.webp',
+        imageAlt: 'Plumber installing new copper and PEX pipes during a full home repiping project inside a residential property in Garland TX',
         shortDescription: 'Complete whole-home repiping to replace aging pipes and restore water quality.',
         content: [
             'Home repiping replaces your entire plumbing system with modern, reliable piping materials. This service is ideal for homes with galvanized steel, polybutylene, or other outdated pipe materials that are prone to corrosion, leaks, and reduced water quality.',
@@ -165,7 +169,8 @@ export const services = [
         heroTitle: 'Hydro Jetting in Garland, TX',
         metaTitle: 'Hydro Jetting Services in Garland, TX',
         metaDescription: 'Professional hydro jetting in Garland, TX to clear tough clogs and clean pipes thoroughly.',
-        image: '/images/service-3.jpg',
+        image: '/images/service/hydro-jetting.webp',
+        imageAlt: 'Hydro jetting technician operating high pressure water jetting equipment to clear a blocked sewer line in Garland TX',
         shortDescription: 'High-pressure water jetting to clear stubborn clogs and clean pipes thoroughly.',
         content: [
             'Hydro jetting uses high-pressure water to blast away grease, mineral buildup, tree roots, and other tough obstructions inside your pipes. This method is one of the most effective ways to restore full flow to clogged or slow-running drain and sewer lines.',
@@ -293,7 +298,8 @@ export const services = [
         heroTitle: 'Plumbing Repair in Garland, TX',
         metaTitle: 'Plumbing Repair Services in Garland, TX',
         metaDescription: 'Fast, reliable plumbing repair in Garland, TX. We fix leaks, clogs, and all types of plumbing problems.',
-        image: '/images/plumbing-repair.jpg',
+        image: '/images/service/plumbing-repair.webp',
+        imageAlt: 'Licensed plumber performing a residential plumbing repair using a pipe wrench on a leaking pipe under a kitchen sink in Garland TX',
         shortDescription: 'Expert plumbing repair for leaks, clogs, and all residential plumbing issues.',
         content: [
             'From a dripping faucet to a broken sewer line, our plumbing repair team handles every type of residential plumbing problem with skill and efficiency. We diagnose the issue accurately, explain your options, and get to work quickly.',
@@ -319,7 +325,8 @@ export const services = [
         heroTitle: 'Rooter Services in Garland, TX',
         metaTitle: 'Rooter Services in Garland, TX',
         metaDescription: 'Professional rooter services in Garland, TX to clear tree roots and tough blockages from your sewer line.',
-        image: '/images/service-3.jpg',
+        image: '/images/service/rooter-services.webp',
+        imageAlt: 'Plumber operating motorized rooter machine to clear tree roots from a blocked sewer line in a residential yard in Garland TX',
         shortDescription: 'Professional rooter services to clear tough blockages and tree root intrusions.',
         content: [
             'Rooter services are designed to clear tough blockages deep in your sewer and drain lines, including tree root intrusions that traditional drain cleaning cannot handle. Our motorized rooter equipment cuts through roots and debris to restore full flow.',
@@ -369,7 +376,8 @@ export const services = [
         heroTitle: 'Sewer Line Repair in Garland, TX',
         metaTitle: 'Sewer Line Repair in Garland, TX',
         metaDescription: 'Expert sewer line repair in Garland, TX. Traditional and trenchless methods available.',
-        image: '/images/service-3.jpg',
+        image: '/images/service/sewer-line-repair.webp',
+        imageAlt: 'Plumbing crew performing trenchless sewer line repair using pipe relining equipment outside a residential home in Garland TX',
         shortDescription: 'Expert sewer line repair using the latest traditional and trenchless techniques.',
         content: [
             'Sewer line problems can cause serious damage to your property if not addressed quickly. Our sewer line repair services cover cracked pipes, root damage, collapsed lines, and joint failures using both traditional and trenchless repair methods.',
@@ -419,7 +427,8 @@ export const services = [
         heroTitle: 'Slab Leak Detection & Repair in Garland, TX',
         metaTitle: 'Slab Leak Detection & Repair in Garland, TX',
         metaDescription: 'Expert slab leak detection and repair in Garland, TX. Protect your foundation and home.',
-        image: '/images/leaky-faucet.jpg',
+        image: '/images/service/slab-leak-detection.webp',
+        imageAlt: 'Plumber using electronic leak detection equipment and thermal imaging camera to locate a slab leak under a concrete floor in Garland TX',
         shortDescription: 'Advanced slab leak detection and professional repair to protect your foundation.',
         content: [
             'Slab leaks occur when water pipes beneath your home\'s concrete foundation develop leaks. Left undetected, they can cause significant structural damage, mold growth, and costly water damage.',
@@ -445,7 +454,8 @@ export const services = [
         heroTitle: 'Toilet Repair & Installation in Garland, TX',
         metaTitle: 'Toilet Repair & Installation in Garland, TX',
         metaDescription: 'Fast toilet repair and professional installation in Garland, TX. Fix leaks, clogs, and upgrade your bathroom.',
-        image: '/images/hvac-installation.jpg',
+        image: '/images/service/toilet-repair-installation.webp',
+        imageAlt: 'Plumber replacing a toilet wax ring and installing a new toilet in a residential bathroom in Garland TX',
         shortDescription: 'Expert toilet repair and new installation services for every bathroom.',
         content: [
             'Whether your toilet is running constantly, leaking, or needs to be replaced entirely, our team provides fast, reliable toilet repair and installation services.',
@@ -470,7 +480,8 @@ export const services = [
         heroTitle: 'Water Heater Repair in Garland, TX',
         metaTitle: 'Water Heater Repair in Garland, TX',
         metaDescription: 'Fast water heater repair in Garland, TX. Restore hot water quickly with expert service.',
-        image: '/images/hvac-installation.jpg',
+        image: '/images/service/water-heater-repair.webp',
+        imageAlt: 'Licensed plumber repairing and inspecting a residential tank water heater in a utility room in Garland TX',
         shortDescription: 'Fast water heater repair to restore hot water and keep your home comfortable.',
         content: [
             'When your water heater stops working, our team responds quickly to diagnose and repair the problem. We service both traditional tank water heaters and tankless systems from all major brands.',
@@ -522,7 +533,8 @@ export const services = [
         heroTitle: 'Water Leak Detection & Repair in Garland, TX',
         metaTitle: 'Water Leak Detection & Repair in Garland, TX',
         metaDescription: 'Expert water leak detection and repair in Garland, TX. Find and fix hidden leaks quickly.',
-        image: '/images/leaky-faucet.jpg',
+        image: '/images/service/water-leak-detection.webp',
+        imageAlt: 'Plumber using a thermal imaging camera to detect a hidden water leak inside a wall of a home in Garland TX',
         shortDescription: 'Advanced leak detection technology to find and fix hidden water leaks.',
         content: [
             'Hidden water leaks can cause thousands of dollars in damage before they are even noticed. Our water leak detection service uses electronic listening devices, thermal imaging, and moisture meters to locate leaks quickly and accurately.',
@@ -548,7 +560,8 @@ export const services = [
         heroTitle: 'Sewage Cleanup in Garland, TX',
         metaTitle: 'Sewage Cleanup Services in Garland, TX',
         metaDescription: 'Professional sewage cleanup in Garland, TX. Fast response to protect your health and property.',
-        image: '/images/water-damage-restoration.jpg',
+        image: '/images/service/sewage-cleanup.webp',
+        imageAlt: 'Professional restoration crew in full protective gear performing emergency sewage cleanup in a flooded home in Garland TX',
         shortDescription: 'Fast, thorough sewage cleanup to protect your health and restore your property.',
         content: [
             'Sewage backups create serious health hazards and require immediate professional attention. Our sewage cleanup team responds quickly to contain the damage, remove contaminated water and materials, and thoroughly disinfect affected areas.',
@@ -573,7 +586,8 @@ export const services = [
         heroTitle: 'Water Damage Restoration in Garland, TX',
         metaTitle: 'Water Damage Restoration in Garland, TX',
         metaDescription: 'Expert water damage restoration in Garland, TX. Fast response to minimize damage and restore your home.',
-        image: '/images/water-damage-restoration.jpg',
+        image: '/images/service/water-damage-restoration.webp',
+        imageAlt: 'Water damage restoration technicians using industrial dehumidifiers and air mover fans to restore a flood damaged room in Garland TX',
         shortDescription: 'Complete water damage restoration to minimize damage and restore your home quickly.',
         content: [
             'Water damage can strike without warning from burst pipes, appliance failures, flooding, or storm damage. Our water damage restoration team responds quickly to extract standing water, begin structural drying, and prevent secondary damage like mold growth.',

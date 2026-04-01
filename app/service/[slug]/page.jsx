@@ -73,7 +73,7 @@ export default async function ServicePage({ params }) {
 
                         <div className="fade-in-right">
                             <div className="content-image" style={{ marginBottom: '30px' }}>
-                                <Image src={service.image} alt={service.title} width={600} height={400} />
+                                <Image src={service.image} alt={service.imageAlt || service.title} width={600} height={400} />
                             </div>
 
                             <h3 style={{ marginBottom: '14px' }}>Our Services</h3>
