@@ -107,7 +107,7 @@ export default async function ServicePage({ params }) {
                                 &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed it at a very fair price. Highly recommend!&rdquo;
                             </p>
                             <div className="testimonial-author">
-                                <Image src="/images/testimonial-1.jpg" alt="Akia Jackson" width={50} height={50} className="testimonial-avatar" />
+                                <Image src="https://placehold.co/800x600/png" alt="Akia Jackson" width={50} height={50} className="testimonial-avatar" />
                                 <div>
                                     <p className="testimonial-name">Akia Jackson</p>
                                     <p className="testimonial-source">Google Review</p>
@@ -120,7 +120,7 @@ export default async function ServicePage({ params }) {
                                 &ldquo;We had a terrible sewage backup on a Sunday night and these guys came right away. Professional, clean, and honest pricing. Will definitely use again!&rdquo;
                             </p>
                             <div className="testimonial-author">
-                                <Image src="/images/testimonial-2.jpg" alt="Gina Rigney" width={50} height={50} className="testimonial-avatar" />
+                                <Image src="https://placehold.co/800x600/png" alt="Gina Rigney" width={50} height={50} className="testimonial-avatar" />
                                 <div>
                                     <p className="testimonial-name">Gina Rigney</p>
                                     <p className="testimonial-source">Facebook Review</p>

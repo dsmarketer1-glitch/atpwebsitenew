@@ -4,7 +4,7 @@ export const blogPosts = [
         title: 'Why Your Drain Pipes Keep Clogging (And How To Fix the Problem)',
         date: 'February 10, 2026',
         excerpt: 'You\'re probably frustrated by your drain pipes clogging frequently, hindering daily activities. Clogs often stem from accumulated hair, soap scum, and food particles narrowing the passageway.',
-        image: '/images/service-3.jpg',
+        image: 'https://placehold.co/800x600/png',
         metaDescription: 'Learn why your drain pipes keep clogging and discover practical solutions to fix and prevent stubborn clogs.',
         content: `
       <p>You're probably frustrated by your drain pipes clogging frequently, hindering daily activities. Clogs often stem from accumulated hair, soap scum, and food particles narrowing the passageway. The situation worsens when non-flushable items are flushed, causing stubborn blockages. To tackle this, understanding the common culprits and employing regular maintenance is essential.</p>
@@ -40,7 +40,7 @@ export const blogPosts = [
         title: 'What To Do in the First Hour After Water Damage',
         date: 'February 5, 2026',
         excerpt: 'Water damage can escalate quickly. Knowing what to do in the first hour can make the difference between a minor inconvenience and a major restoration project.',
-        image: '/images/water-damage-restoration.jpg',
+        image: 'https://placehold.co/800x600/png',
         metaDescription: 'Learn the critical steps to take in the first hour after water damage to minimize loss and protect your home.',
         content: `
       <p>Water damage can escalate quickly. Knowing what to do in the first hour can make the difference between a minor inconvenience and a major restoration project. Whether it's a burst pipe, an appliance leak, or flooding, taking the right steps immediately can save thousands of dollars and protect your family's health.</p>
@@ -68,7 +68,7 @@ export const blogPosts = [
         title: '10 Signs You Need an Emergency Plumber Right Now',
         date: 'January 28, 2026',
         excerpt: 'Not every plumbing issue is an emergency, but some situations demand immediate professional attention. Here are 10 signs you need an emergency plumber.',
-        image: '/images/leaky-faucet.jpg',
+        image: 'https://placehold.co/800x600/png',
         metaDescription: 'Discover the 10 critical signs that you need an emergency plumber immediately to protect your home from serious damage.',
         content: `
       <p>Not every plumbing issue is an emergency, but some situations demand immediate professional attention. Recognizing the signs of a true plumbing emergency can help you act quickly to prevent serious damage to your home and belongings.</p>

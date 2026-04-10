@@ -32,7 +32,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="content-image fade-in-right">
-                            <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service" width={600} height={400} />
+                            <Image src="https://placehold.co/800x600/png" alt="Anytime Plumbing 365 Service" width={600} height={400} />
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="content-two-col reverse">
                         <div className="content-image fade-in-left">
-                            <Image src="/images/plumbing-repair.jpg" alt="Plumbing Repair" width={600} height={400} />
+                            <Image src="https://placehold.co/800x600/png" alt="Plumbing Repair" width={600} height={400} />
                         </div>
                         <div className="content-text fade-in-right">
                             <span className="section-label">What We Stand For</span>

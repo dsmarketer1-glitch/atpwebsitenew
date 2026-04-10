@@ -36,13 +36,13 @@ export default function GivingBackPage() {
                             <p>Giving back is woven into who we are. It&apos;s not an add-on or an afterthought—it&apos;s a natural extension of the care and commitment we bring to every service call.</p>
                         </div>
                         <div className="content-image fade-in-right">
-                            <Image src="/images/community-event.jpg" alt="Community Event" width={600} height={400} />
+                            <Image src="https://placehold.co/800x600/png" alt="Community Event" width={600} height={400} />
                         </div>
                     </div>
 
                     <div className="content-two-col reverse" style={{ marginBottom: '60px' }}>
                         <div className="content-image fade-in-left">
-                            <Image src="/images/van-new.webp" alt="Anytime Plumbing 365" width={600} height={400} />
+                            <Image src="https://placehold.co/800x600/png" alt="Anytime Plumbing 365" width={600} height={400} />
                         </div>
                         <div className="content-text fade-in-right">
                             <span className="section-label">Partnership</span>
