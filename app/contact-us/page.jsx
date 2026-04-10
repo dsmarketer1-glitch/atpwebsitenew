@@ -120,21 +120,21 @@ export default function ContactPage() {
                             </div>
 
                             <div className="contact-info-card">
-                                <h3>📍 Garland Location</h3>
+                                <h3>📍 Dallas Location</h3>
                                 <div className="contact-info-item">
                                     <span className="contact-info-icon">📞</span>
                                     <a href="tel:214-430-3461">214-430-3461</a>
                                 </div>
                                 <div className="contact-info-item">
                                     <span className="contact-info-icon">📍</span>
-                                    <a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Garland,+TX+75042" target="_blank" rel="noopener noreferrer">
-                                        102 N Shiloh Rd, Suite 104, Garland, TX, 75042
+                                    <a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Dallas,+TX+75042" target="_blank" rel="noopener noreferrer">
+                                        102 N Shiloh Rd, Suite 104, Dallas, TX, 75042
                                     </a>
                                 </div>
                                 <div className="map-embed">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.0!2d-96.667598!3d32.9132471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1e080d0fffff%3A0xf2d0d53c42cecc08!2s102%20N%20Shiloh%20Rd%20Suite%20%23104%2C%20Garland%2C%20TX%2075042!5e0!3m2!1sen!2sus!4v1"
-                                        allowFullScreen loading="lazy" title="Garland Location Map"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.0!2d-96.667598!3d32.9132471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1e080d0fffff%3A0xf2d0d53c42cecc08!2s102%20N%20Shiloh%20Rd%20Suite%20%23104%2C%20Dallas%2C%20TX%2075042!5e0!3m2!1sen!2sus!4v1"
+                                        allowFullScreen loading="lazy" title="Dallas Location Map"
                                     ></iframe>
                                 </div>
                             </div>

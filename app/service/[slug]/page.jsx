@@ -49,7 +49,7 @@ export default async function ServicePage({ params }) {
                     <div className="content-two-col">
                         <div className="content-text fade-in-left">
                             <span className="section-label">{service.title}</span>
-                            <h2>{service.title} Services in Garland, TX</h2>
+                            <h2>{service.title} Services in Dallas, TX</h2>
                             {service.content.map((para, i) => (
                                 <p key={i}>{para}</p>
                             ))}

@@ -55,7 +55,7 @@ export default function HomePageClient() {
                         <span className="section-label" style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)', marginBottom: '16px' }}>
                             Trusted Plumbing Experts Since Day One
                         </span>
-                        <h1 style={{ transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 5}px)` }}>Professional Plumbing &amp; Restoration in <span>Garland, TX</span></h1>
+                        <h1 style={{ transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 5}px)` }}>Professional Plumbing &amp; Restoration in <span>Dallas, TX</span></h1>
                         <p className="hero-subtitle">
                             Licensed experts delivering fast, honest plumbing solutions — 24 hours a day, 7 days a week. No hidden fees, no surprises.
                         </p>
@@ -298,7 +298,7 @@ export default function HomePageClient() {
                         <div className="testimonial-card">
                             <div className="testimonial-stars">★★★★★</div>
                             <p className="testimonial-text">
-                                &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed our broken water heater at a very fair price. The technician was courteous, professional, and explained everything clearly. I highly recommend them to anyone in the Garland area.&rdquo;
+                                &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed our broken water heater at a very fair price. The technician was courteous, professional, and explained everything clearly. I highly recommend them to anyone in the Dallas area.&rdquo;
                             </p>
                             <div className="testimonial-author">
                                 <Image src="https://placehold.co/800x600/png" alt="Akia Jackson" width={50} height={50} className="testimonial-avatar" />
@@ -334,7 +334,7 @@ export default function HomePageClient() {
                         <p>We proudly serve homeowners across the Dallas-Fort Worth Metroplex.</p>
                     </div>
                     <div className="areas-grid fade-in">
-                        {['Garland', 'Irving', 'Dallas', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy'].map((area) => (
+                        {['Dallas', 'Irving', 'Dallas', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy'].map((area) => (
                             <Link href="/area" key={area} className="area-tag">📍 {area}, TX</Link>
                         ))}
                     </div>

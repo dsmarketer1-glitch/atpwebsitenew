@@ -37,10 +37,10 @@ export default function Footer() {
                         </a></p>
                     </div>
                     <div className="footer-location">
-                        <h5>Garland Office</h5>
+                        <h5>Dallas Office</h5>
                         <p><a href="tel:214-430-3461">📞 214-430-3461</a></p>
-                        <p><a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Garland,+TX+75042" target="_blank" rel="noopener noreferrer">
-                            📍 102 N Shiloh Rd, Suite 104, Garland, TX
+                        <p><a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Dallas,+TX+75042" target="_blank" rel="noopener noreferrer">
+                            📍 102 N Shiloh Rd, Suite 104, Dallas, TX
                         </a></p>
                     </div>
                 </div>

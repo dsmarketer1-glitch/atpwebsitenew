@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const areas = [
-    { name: 'Garland, TX', description: 'Our home base. Full plumbing and restoration services.' },
+    { name: 'Dallas, TX', description: 'Our home base. Full plumbing and restoration services.' },
     { name: 'Irving, TX', description: 'Our second office location with full service coverage.' },
     { name: 'Dallas, TX', description: 'Serving Dallas homeowners with expert plumbing.' },
     { name: 'Richardson, TX', description: 'Complete plumbing solutions for Richardson residents.' },
