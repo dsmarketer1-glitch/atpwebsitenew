@@ -21,7 +21,7 @@ export default function Footer() {
                         <a href="https://www.youtube.com/@AnyTimePlumbingDrainCleaning" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
                         </a>
-                        <a href="https://www.yelp.com/biz/anytime-plumbing-365-the-woodlands" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
+                        <a href="https://www.yelp.com/biz/anytime-plumbing-365-irving-6?override_cta=Get+pricing+%26+availability" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206l2.67 2.122c.683.542.307 1.59-.502 1.59h-.498zm-7.227 5.238l1.376-5.116c.264-.98 1.726-.98 1.99 0l1.376 5.116c.18.674-.506 1.256-1.137.964l-1.934-.893a.536.536 0 00-.5 0l-1.934.893c-.631.292-1.317-.29-1.137-.964zM5.99 3.345l4.213 8.736c.468.97-.632 1.934-1.51 1.324L1.35 8.347a1.072 1.072 0 01-.28-1.584l2.357-3.062C4.003 2.944 5.567 2.47 5.99 3.345z" /></svg>
                         </a>
                     </div>
