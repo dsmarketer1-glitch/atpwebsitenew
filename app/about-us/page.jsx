@@ -32,7 +32,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="content-image fade-in-right">
-                            <Image src="https://placehold.co/800x600/png" alt="Anytime Plumbing 365 Service" width={600} height={400} />
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=1&controls=0&loop=1&playlist=3kgYEMIWdig" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="content-two-col reverse">
                         <div className="content-image fade-in-left">
-                            <Image src="https://placehold.co/800x600/png" alt="Plumbing Repair" width={600} height={400} />
+                            <Image src="/images/service/actual/drain-pipe-repair.png" alt="Plumbing Repair" width={600} height={400} />
                         </div>
                         <div className="content-text fade-in-right">
                             <span className="section-label">What We Stand For</span>

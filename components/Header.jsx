@@ -27,7 +27,7 @@ const aboutLinks = [
   { name: 'About Us', href: '/about-us' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact-us' },
-  { name: 'Giving Back', href: '/giving-back' },
+
 ];
 
 export default function Header({ onBookNow }) {

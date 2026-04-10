@@ -29,7 +29,7 @@ export default function FinancingPage() {
                             <p>At Anytime Plumbing 365, we understand that plumbing emergencies and home upgrades can place a financial strain on families. That&apos;s why we have partnered with Synchrony to offer flexible financing options that help you get the service you need now.</p>
                             <p>Our financing plans feature competitive interest rates, flexible payment terms, and a simple application process that can be completed in minutes.</p>
                             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '20px' }}>
-                                <Link href="/contact-us" className="btn btn-primary btn-lg">Apply Now</Link>
+                                <a href="https://www.synchrony.com/mmc/M9238140100" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Apply Now</a>
                                 <a href="tel:214-307-4264" className="btn btn-outline btn-lg">Call 214-307-4264</a>
                             </div>
                         </div>
