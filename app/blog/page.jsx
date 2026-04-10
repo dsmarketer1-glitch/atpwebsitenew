@@ -22,9 +22,7 @@ export default function BlogPage() {
                     <div className="blog-grid fade-in">
                         {blogPosts.map((post) => (
                             <Link href={`/blog/${post.slug}`} key={post.slug} className="blog-card">
-                                <div className="blog-card-image">
-                                    <Image src={post.image} alt={post.title} width={400} height={200} />
-                                </div>
+
                                 <div className="blog-card-body">
                                     <p className="blog-card-date">{post.date}</p>
                                     <h3>{post.title}</h3>

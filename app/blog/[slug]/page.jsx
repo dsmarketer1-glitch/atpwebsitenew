@@ -39,13 +39,7 @@ export default async function BlogPostPage({ params }) {
                     Published on {post.date} by Anytime Plumbing 365
                 </div>
 
-                <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={800}
-                    height={400}
-                    className="blog-post-featured-image"
-                />
+
 
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
 

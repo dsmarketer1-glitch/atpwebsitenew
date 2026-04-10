@@ -5,7 +5,7 @@ export const services = [
         heroTitle: 'Drain Cleaning in Garland, TX',
         metaTitle: 'Drain Cleaning Services in Garland, TX',
         metaDescription: 'Need dependable drain cleaning in Garland, TX? We deliver reliable service that clears clogs and restores smooth drainage with careful, professional work.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/drain-cleaning.png',
         imageAlt: 'Professional drain cleaning being performed on an outdoor sewer line by a specialist technician',
         shortDescription: 'Professional drain cleaning to clear stubborn clogs and keep your plumbing flowing smoothly.',
         content: [
@@ -89,7 +89,7 @@ export const services = [
         heroTitle: 'Drain Pipe Repair in Garland, TX',
         metaTitle: 'Drain Pipe Repair Services in Garland, TX',
         metaDescription: 'Fast, reliable drain pipe repair in Garland, TX. We fix leaks, cracks, and damaged pipes with lasting results.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/drain-pipe-repair.png',
         imageAlt: 'Skilled plumber performing a repair on a section of damaged residential drain pipe',
         shortDescription: 'Fast and reliable drain pipe repair from experienced plumbing professionals.',
         content: [
@@ -116,7 +116,7 @@ export const services = [
         heroTitle: 'Emergency Plumber in Garland, TX',
         metaTitle: 'Emergency Plumber in Garland, TX | 24/7 Service',
         metaDescription: 'Need an emergency plumber in Garland, TX? We provide fast 24/7 emergency plumbing services. Call now for immediate help.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/emergency-plumbing.png',
         imageAlt: 'Emergency plumbing team working on a critical mainline issue to restore service quickly',
         shortDescription: '24/7 emergency plumbing services with fast response times and expert solutions.',
         content: [
@@ -144,7 +144,7 @@ export const services = [
         heroTitle: 'Home Repiping in Garland, TX',
         metaTitle: 'Home Repiping Services in Garland, TX',
         metaDescription: 'Complete home repiping services in Garland, TX. Replace old pipes with modern materials for better water quality and pressure.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/home-repiping.png',
         imageAlt: 'Complete home repiping project showing professional installation of updated water lines',
         shortDescription: 'Complete whole-home repiping to replace aging pipes and restore water quality.',
         content: [
@@ -171,7 +171,7 @@ export const services = [
         heroTitle: 'Hydro Jetting in Garland, TX',
         metaTitle: 'Hydro Jetting Services in Garland, TX',
         metaDescription: 'Professional hydro jetting in Garland, TX to clear tough clogs and clean pipes thoroughly.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/hydrojetting.png',
         imageAlt: 'Hydro jetting equipment being used to clear a heavily obstructed sewer line',
         shortDescription: 'High-pressure water jetting to clear stubborn clogs and clean pipes thoroughly.',
         content: [
@@ -304,7 +304,7 @@ export const services = [
         heroTitle: 'Plumbing Repair in Garland, TX',
         metaTitle: 'Plumbing Repair Services in Garland, TX',
         metaDescription: 'Fast, reliable plumbing repair in Garland, TX. We fix leaks, clogs, and all types of plumbing problems.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/plumbing-repair.png',
         imageAlt: 'Licensed technician performing a quality residential plumbing repair',
         shortDescription: 'Expert plumbing repair for leaks, clogs, and all residential plumbing issues.',
         content: [
@@ -331,7 +331,7 @@ export const services = [
         heroTitle: 'Rooter Services in Garland, TX',
         metaTitle: 'Rooter Services in Garland, TX',
         metaDescription: 'Professional rooter services in Garland, TX to clear tree roots and tough blockages from your sewer line.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/rooter-services.png',
         imageAlt: 'Heavy-duty rooter machine being used to clear tree roots and stubborn clogs',
         shortDescription: 'Professional rooter services to clear tough blockages and tree root intrusions.',
         content: [
@@ -383,7 +383,7 @@ export const services = [
         heroTitle: 'Sewer Line Repair in Garland, TX',
         metaTitle: 'Sewer Line Repair in Garland, TX',
         metaDescription: 'Expert sewer line repair in Garland, TX. Traditional and trenchless methods available.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/sewer-line-repair.png',
         imageAlt: 'Sewer line repair project showing modern trenchless techniques in action',
         shortDescription: 'Expert sewer line repair using the latest traditional and trenchless techniques.',
         content: [
@@ -435,7 +435,7 @@ export const services = [
         heroTitle: 'Slab Leak Detection & Repair in Garland, TX',
         metaTitle: 'Slab Leak Detection & Repair in Garland, TX',
         metaDescription: 'Expert slab leak detection and repair in Garland, TX. Protect your foundation and home.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/slab-leak-detection.png',
         imageAlt: 'Professional slab leak detection using advanced thermal and acoustic sensors',
         shortDescription: 'Advanced slab leak detection and professional repair to protect your foundation.',
         content: [
@@ -462,7 +462,7 @@ export const services = [
         heroTitle: 'Toilet Repair & Installation in Garland, TX',
         metaTitle: 'Toilet Repair & Installation in Garland, TX',
         metaDescription: 'Fast toilet repair and professional installation in Garland, TX. Fix leaks, clogs, and upgrade your bathroom.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/toilet-repair.png',
         imageAlt: 'Quality plumbing work performed on a residential water utility connection',
         shortDescription: 'Expert toilet repair and new installation services for every bathroom.',
         content: [
@@ -488,7 +488,7 @@ export const services = [
         heroTitle: 'Water Heater Repair in Garland, TX',
         metaTitle: 'Water Heater Repair in Garland, TX',
         metaDescription: 'Fast water heater repair in Garland, TX. Restore hot water quickly with expert service.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/water-heater-repair.png',
         imageAlt: 'Professional repair work on a high-capacity residential plumbing system',
         shortDescription: 'Fast water heater repair to restore hot water and keep your home comfortable.',
         content: [
@@ -542,7 +542,7 @@ export const services = [
         heroTitle: 'Water Leak Detection & Repair in Garland, TX',
         metaTitle: 'Water Leak Detection & Repair in Garland, TX',
         metaDescription: 'Expert water leak detection and repair in Garland, TX. Find and fix hidden leaks quickly.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/water-leak-detection.png',
         imageAlt: 'Technician successfully locating a hidden water leak using professional detection tools',
         shortDescription: 'Advanced leak detection technology to find and fix hidden water leaks.',
         content: [
@@ -569,7 +569,7 @@ export const services = [
         heroTitle: 'Sewage Cleanup in Garland, TX',
         metaTitle: 'Sewage Cleanup Services in Garland, TX',
         metaDescription: 'Professional sewage cleanup in Garland, TX. Fast response to protect your health and property.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/sewage-cleanup.jpg',
         imageAlt: 'Professional sewage cleanup and hazardous water removal from a residential basement',
         shortDescription: 'Fast, thorough sewage cleanup to protect your health and restore your property.',
         content: [
@@ -595,7 +595,7 @@ export const services = [
         heroTitle: 'Water Damage Restoration in Garland, TX',
         metaTitle: 'Water Damage Restoration in Garland, TX',
         metaDescription: 'Expert water damage restoration in Garland, TX. Fast response to minimize damage and restore your home.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/water-damage-restoration.jpg',
         imageAlt: 'Comprehensive water damage restoration and structural drying in progress',
         shortDescription: 'Complete water damage restoration to minimize damage and restore your home quickly.',
         content: [

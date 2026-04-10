@@ -70,7 +70,7 @@ export default function HomePageClient() {
                         </div>
                     </div>
                     <div className="hero-image" style={{ transform: `translate(${-mousePos.x * 15}px, ${-mousePos.y * 10}px)` }}>
-                        <Image src="https://placehold.co/800x600/png" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority />
+                        <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority />
                     </div>
                 </div>
                 {/* Wave Divider */}
@@ -199,7 +199,7 @@ export default function HomePageClient() {
                     <div className="services-grid reveal-stagger">
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="https://placehold.co/800x600/png" alt="Drain cleaning and repair" width={400} height={250} />
+                                <Image src="/images/service/actual/drain-pipe-repair.png" alt="Drain cleaning and repair" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/drain-pipe-repair">Drain Pipe Repair</Link></h3>
@@ -209,7 +209,7 @@ export default function HomePageClient() {
                         </div>
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="https://placehold.co/800x600/png" alt="Emergency Plumbing Response" width={400} height={250} />
+                                <Image src="/images/service/actual/emergency-plumbing.png" alt="Emergency Plumbing Response" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/emergency-plumber">Emergency Plumber</Link></h3>
@@ -219,7 +219,7 @@ export default function HomePageClient() {
                         </div>
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="https://placehold.co/800x600/png" alt="Water Damage Restoration" width={400} height={250} />
+                                <Image src="/images/service/actual/water-damage-restoration.jpg" alt="Water Damage Restoration" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/water-damage-restoration">Water Damage Restoration</Link></h3>
@@ -272,13 +272,13 @@ export default function HomePageClient() {
                     </div>
                     <div className="specials-grid fade-in">
                         <a href="tel:214-307-4264" className="special-card">
-                            <Image src="https://placehold.co/800x600/png" alt="Drain Cleaning Discount" width={800} height={550} />
+                            <Image src="/images/coupon-1.webp" alt="Drain Cleaning Discount" width={800} height={550} />
                         </a>
                         <a href="tel:214-307-4264" className="special-card">
-                            <Image src="https://placehold.co/800x600/png" alt="New Customer Discount" width={800} height={550} />
+                            <Image src="/images/coupon-2.webp" alt="New Customer Discount" width={800} height={550} />
                         </a>
                         <a href="tel:214-307-4264" className="special-card">
-                            <Image src="https://placehold.co/800x600/png" alt="Water Heater Discount" width={800} height={550} />
+                            <Image src="/images/coupon-3.webp" alt="Water Heater Discount" width={800} height={550} />
                         </a>
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '32px' }}>
@@ -350,9 +350,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="blog-grid fade-in">
                         <Link href="/blog/why-your-drain-pipes-keep-clogging-and-how-to-fix-the-problem" className="blog-card">
-                            <div className="blog-card-image">
-                                <Image src="https://placehold.co/800x600/png" alt="Drain Pipes Clogging" width={400} height={200} />
-                            </div>
+
                             <div className="blog-card-body">
                                 <p className="blog-card-date">February 10, 2026</p>
                                 <h3>Why Your Drain Pipes Keep Clogging (And How To Fix the Problem)</h3>
@@ -360,9 +358,7 @@ export default function HomePageClient() {
                             </div>
                         </Link>
                         <Link href="/blog/what-to-do-in-the-first-hour-after-water-damage" className="blog-card">
-                            <div className="blog-card-image">
-                                <Image src="https://placehold.co/800x600/png" alt="Water Damage" width={400} height={200} />
-                            </div>
+
                             <div className="blog-card-body">
                                 <p className="blog-card-date">February 5, 2026</p>
                                 <h3>What To Do in the First Hour After Water Damage</h3>
@@ -370,9 +366,7 @@ export default function HomePageClient() {
                             </div>
                         </Link>
                         <Link href="/blog/10-signs-you-need-an-emergency-plumber-right-now" className="blog-card">
-                            <div className="blog-card-image">
-                                <Image src="https://placehold.co/800x600/png" alt="Emergency Plumber" width={400} height={200} />
-                            </div>
+
                             <div className="blog-card-body">
                                 <p className="blog-card-date">January 28, 2026</p>
                                 <h3>10 Signs You Need an Emergency Plumber Right Now</h3>
