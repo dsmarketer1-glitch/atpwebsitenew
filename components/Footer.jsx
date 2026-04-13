@@ -24,11 +24,27 @@ export default function Footer() {
                         <a href="https://www.yelp.com/biz/anytime-plumbing-365-irving-6?override_cta=Get+pricing+%26+availability" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206l2.67 2.122c.683.542.307 1.59-.502 1.59h-.498zm-7.227 5.238l1.376-5.116c.264-.98 1.726-.98 1.99 0l1.376 5.116c.18.674-.506 1.256-1.137.964l-1.934-.893a.536.536 0 00-.5 0l-1.934.893c-.631.292-1.317-.29-1.137-.964zM5.99 3.345l4.213 8.736c.468.97-.632 1.934-1.51 1.324L1.35 8.347a1.072 1.072 0 01-.28-1.584l2.357-3.062C4.003 2.944 5.567 2.47 5.99 3.345z" /></svg>
                         </a>
+                        <a href="https://maps.app.goo.gl/N694T2f19bEcpHEVA" target="_blank" rel="noopener noreferrer" aria-label="Google My Business - Woodlands">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h4.74c-.2 1.06-.9 1.95-1.82 2.56l2.84 2.2c1.66-1.53 2.62-3.79 2.62-6.48 0-.6-.05-1.18-.15-1.72h-5.43zM4.33 13.5c-.11-.32-.17-.66-.17-1.01s.06-.69.17-1.01l-2.68-2.1c-.55 1.09-.86 2.32-.86 3.61s.31 2.52.86 3.61l2.68-2.1zM10.8 4.8c1.33 0 2.53.46 3.47 1.35l2.6-2.6C15.3 2.13 13.18 1 10.8 1c-3.9 0-7.23 2.25-8.82 5.5l2.68 2.1c.36-2.4 2.45-4.3 4.94-4.3zM10.8 19.2c-2.49 0-4.58-1.9-4.94-4.3l-2.68 2.1c1.59 3.25 4.92 5.5 8.82 5.5 2.38 0 4.5-1.13 6.07-2.95l-2.84-2.2c-.89.65-2.03 1.05-3.23 1.05z" /></svg>
+                        </a>
+                        <a href="https://maps.app.goo.gl/uKXDcWogZcB1Gdc27" target="_blank" rel="noopener noreferrer" aria-label="Google My Business - Garland">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h4.74c-.2 1.06-.9 1.95-1.82 2.56l2.84 2.2c1.66-1.53 2.62-3.79 2.62-6.48 0-.6-.05-1.18-.15-1.72h-5.43zM4.33 13.5c-.11-.32-.17-.66-.17-1.01s.06-.69.17-1.01l-2.68-2.1c-.55 1.09-.86 2.32-.86 3.61s.31 2.52.86 3.61l2.68-2.1zM10.8 4.8c1.33 0 2.53.46 3.47 1.35l2.6-2.6C15.3 2.13 13.18 1 10.8 1c-3.9 0-7.23 2.25-8.82 5.5l2.68 2.1c.36-2.4 2.45-4.3 4.94-4.3zM10.8 19.2c-2.49 0-4.58-1.9-4.94-4.3l-2.68 2.1c1.59 3.25 4.92 5.5 8.82 5.5 2.38 0 4.5-1.13 6.07-2.95l-2.84-2.2c-.89.65-2.03 1.05-3.23 1.05z" /></svg>
+                        </a>
+                        <a href="https://maps.app.goo.gl/XRxiS2yr7gf7kqo59" target="_blank" rel="noopener noreferrer" aria-label="Google My Business - Irving">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h4.74c-.2 1.06-.9 1.95-1.82 2.56l2.84 2.2c1.66-1.53 2.62-3.79 2.62-6.48 0-.6-.05-1.18-.15-1.72h-5.43zM4.33 13.5c-.11-.32-.17-.66-.17-1.01s.06-.69.17-1.01l-2.68-2.1c-.55 1.09-.86 2.32-.86 3.61s.31 2.52.86 3.61l2.68-2.1zM10.8 4.8c1.33 0 2.53.46 3.47 1.35l2.6-2.6C15.3 2.13 13.18 1 10.8 1c-3.9 0-7.23 2.25-8.82 5.5l2.68 2.1c.36-2.4 2.45-4.3 4.94-4.3zM10.8 19.2c-2.49 0-4.58-1.9-4.94-4.3l-2.68 2.1c1.59 3.25 4.92 5.5 8.82 5.5 2.38 0 4.5-1.13 6.07-2.95l-2.84-2.2c-.89.65-2.03 1.05-3.23 1.05z" /></svg>
+                        </a>
                     </div>
                 </div>
 
                 <div className="footer-col">
                     <h4>Contact</h4>
+                    <div className="footer-location">
+                        <h5>Woodlands Office</h5>
+                        <p><a href="tel:713-561-3276">📞 713-561-3276</a></p>
+                        <p><a href="https://www.google.com/maps/place/25420+Kuykendahl+Rd+Suite+B200-236,+The+Woodlands,+TX+77375" target="_blank" rel="noopener noreferrer">
+                            📍 25420 Kuykendahl Rd, Suite B200-236, The Woodlands, TX
+                        </a></p>
+                    </div>
                     <div className="footer-location">
                         <h5>Irving Office</h5>
                         <p><a href="tel:214-307-4264">📞 214-307-4264</a></p>

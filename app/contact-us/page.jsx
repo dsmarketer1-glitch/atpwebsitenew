@@ -100,6 +100,26 @@ export default function ContactPage() {
                             <h2 style={{ marginBottom: '24px' }}>Contact Information</h2>
 
                             <div className="contact-info-card">
+                                <h3>📍 Woodlands Location</h3>
+                                <div className="contact-info-item">
+                                    <span className="contact-info-icon">📞</span>
+                                    <a href="tel:713-561-3276">713-561-3276</a>
+                                </div>
+                                <div className="contact-info-item">
+                                    <span className="contact-info-icon">📍</span>
+                                    <a href="https://www.google.com/maps/place/25420+Kuykendahl+Rd+Suite+B200-236,+The+Woodlands,+TX+77375" target="_blank" rel="noopener noreferrer">
+                                        25420 Kuykendahl Rd, Suite B200-236, The Woodlands, TX, 77375
+                                    </a>
+                                </div>
+                                <div className="map-embed">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.5181744169996!2d-95.53488472445838!3d30.007661574944888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864736f5629c425f%3A0x1d5f2c4186595e1d!2s25420%20Kuykendahl%20Rd%20ste%20b200-236%2C%20The%20Woodlands%2C%20TX%2077375!5e0!3m2!1sen!2sus!4v1713000000000!5m2!1sen!2sus"
+                                        allowFullScreen loading="lazy" title="Woodlands Location Map"
+                                    ></iframe>
+                                </div>
+                            </div>
+
+                            <div className="contact-info-card">
                                 <h3>📍 Irving Location</h3>
                                 <div className="contact-info-item">
                                     <span className="contact-info-icon">📞</span>
@@ -148,10 +168,13 @@ export default function ContactPage() {
 
                             <div className="contact-info-card">
                                 <h3>Follow Us</h3>
-                                <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+                                <div style={{ display: 'flex', gap: '12px', marginTop: '8px', flexWrap: 'wrap' }}>
                                     <a href="https://www.facebook.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Facebook</a>
                                     <a href="https://www.instagram.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Instagram</a>
                                     <a href="https://www.youtube.com/@AnyTimePlumbingDrainCleaning" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">YouTube</a>
+                                    <a href="https://maps.app.goo.gl/N694T2f19bEcpHEVA" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">GMB - Woodlands</a>
+                                    <a href="https://maps.app.goo.gl/uKXDcWogZcB1Gdc27" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">GMB - Garland</a>
+                                    <a href="https://maps.app.goo.gl/XRxiS2yr7gf7kqo59" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">GMB - Irving</a>
                                 </div>
                             </div>
                         </div>
