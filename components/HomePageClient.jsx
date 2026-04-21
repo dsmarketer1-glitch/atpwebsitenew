@@ -43,7 +43,17 @@ export default function HomePageClient() {
         <>
             {/* ===== HERO ===== */}
             <section className="hero" ref={heroRef}>
+                <div className="hero-video-bg">
+                    <iframe 
+                        src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=1&loop=1&playlist=3kgYEMIWdig&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3" 
+                        frameBorder="0" 
+                        allow="autoplay; encrypted-media" 
+                        allowFullScreen
+                    ></iframe>
+                    <div className="hero-video-overlay"></div>
+                </div>
                 <div className="hero-shape hero-shape-1" style={{ transform: `translate(${mousePos.x * 50}px, ${mousePos.y * 30}px) scale(1.1)` }} />
+
                 <div className="hero-shape hero-shape-2" style={{ transform: `translate(${-mousePos.x * 40}px, ${-mousePos.y * 25}px) scale(0.9)` }} />
                 <div className="hero-particles">
                     {[...Array(8)].map((_, i) => (
@@ -70,7 +80,7 @@ export default function HomePageClient() {
                         </div>
                     </div>
                     <div className="hero-image" style={{ transform: `translate(${-mousePos.x * 15}px, ${-mousePos.y * 10}px)` }}>
-                        <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority />
+                        <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority style={{ height: 'auto' }} />
                     </div>
                 </div>
                 {/* Wave Divider */}
@@ -334,7 +344,7 @@ export default function HomePageClient() {
                         <p>We proudly serve homeowners across the Dallas-Fort Worth Metroplex.</p>
                     </div>
                     <div className="areas-grid fade-in">
-                        {['Dallas', 'Irving', 'Dallas', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy'].map((area) => (
+                        {['Dallas', 'Irving', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy'].map((area) => (
                             <Link href="/area" key={area} className="area-tag">📍 {area}, TX</Link>
                         ))}
                     </div>
