@@ -14,13 +14,16 @@ export function DeployTool() {
     setPublishStatus('loading')
     try {
       const res = await fetch('/api/sanity/publish-all', { method: 'POST' })
+      const data = await res.json()
       if (res.ok) {
         setPublishStatus('success')
         setTimeout(() => setPublishStatus('idle'), 5000)
       } else {
+        alert('Error: ' + (data.error || 'Failed to publish'))
         setPublishStatus('error')
       }
     } catch (err) {
+      alert('Connection error: ' + err.message)
       setPublishStatus('error')
     }
   }

@@ -17,7 +17,7 @@ export async function POST() {
 
   try {
     // 1. Fetch all draft documents
-    const drafts = await client.fetch(`*[_id in drafts.**]`)
+    const drafts = await client.fetch(`*[_id in path("drafts.**")]`)
     
     if (drafts.length === 0) {
       return NextResponse.json({ message: 'No drafts found to publish' })
