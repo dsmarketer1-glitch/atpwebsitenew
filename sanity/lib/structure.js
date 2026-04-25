@@ -1,7 +1,11 @@
 import { Iframe } from 'sanity-plugin-iframe-pane'
 
-export const structure = (S, context) =>
-  S.list()
+export const structure = (S, context) => {
+  const baseUrl = typeof window !== 'undefined' && window.location.hostname !== 'localhost'
+    ? window.location.origin
+    : 'http://localhost:3000';
+
+  return S.list()
     .title('Content')
     .items([
       // Service documents
@@ -21,8 +25,8 @@ export const structure = (S, context) =>
                     .options({
                       url: (doc) => {
                         const slug = doc?.slug?.current
-                        if (!slug) return 'http://localhost:3000'
-                        return `http://localhost:3000/service/${slug}`
+                        if (!slug) return baseUrl
+                        return `${baseUrl}/service/${slug}`
                       },
                       reload: {
                         button: true,
@@ -44,7 +48,7 @@ export const structure = (S, context) =>
               S.view
                 .component(Iframe)
                 .options({
-                  url: 'http://localhost:3000',
+                  url: baseUrl,
                   reload: {
                     button: true,
                   },

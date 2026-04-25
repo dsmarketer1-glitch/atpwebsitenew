@@ -47,7 +47,9 @@ export default defineConfig({
         },
       },
       previewUrl: {
-        origin: 'http://localhost:3000',
+        origin: typeof window !== 'undefined' && window.location.hostname !== 'localhost' 
+          ? window.location.origin 
+          : 'http://localhost:3000',
         previewMode: {
           enable: '/api/draft-mode/enable',
         },
