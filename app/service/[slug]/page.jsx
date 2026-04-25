@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
-import FAQAccordion from '@/components/FAQAccordion';
-import CTABanner from '@/components/CTABanner';
+import { services, getServiceBySlug as getLocalServiceBySlug, getAllServiceSlugs } from '@/data/services';
+import { sanityFetch } from '@/sanity/lib/fetch';
+import { serviceBySlugQuery } from '@/sanity/lib/queries';
+import { urlForImage } from '@/sanity/lib/image';
 
 export async function generateStaticParams() {
     return getAllServiceSlugs().map((slug) => ({ slug }));
@@ -11,8 +12,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const service = getServiceBySlug(slug);
+    const sanityService = await sanityFetch({ 
+        query: serviceBySlugQuery, 
+        params: { slug } 
+    });
+    
+    const service = sanityService || getLocalServiceBySlug(slug);
     if (!service) return {};
+    
     return {
         title: service.metaTitle,
         description: service.metaDescription,
@@ -21,7 +28,13 @@ export async function generateMetadata({ params }) {
 
 export default async function ServicePage({ params }) {
     const { slug } = await params;
-    const service = getServiceBySlug(slug);
+    
+    const sanityService = await sanityFetch({ 
+        query: serviceBySlugQuery, 
+        params: { slug } 
+    });
+    
+    const service = sanityService || getLocalServiceBySlug(slug);
     if (!service) notFound();
 
     return (
@@ -73,7 +86,12 @@ export default async function ServicePage({ params }) {
 
                         <div className="fade-in-right">
                             <div className="content-image" style={{ marginBottom: '30px' }}>
-                                <Image src={service.image} alt={service.imageAlt || service.title} width={600} height={400} />
+                                <Image 
+                                    src={service.image?.asset ? urlForImage(service.image).url() : service.image} 
+                                    alt={service.imageAlt || service.title} 
+                                    width={600} 
+                                    height={400} 
+                                />
                             </div>
 
                             <h3 style={{ marginBottom: '14px' }}>Our Services</h3>

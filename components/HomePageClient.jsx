@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import { urlForImage } from '@/sanity/lib/image';
 
-export default function HomePageClient() {
+export default function HomePageClient({ initialData }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const heroRef = useRef(null);
 
@@ -63,11 +64,13 @@ export default function HomePageClient() {
                 <div className="hero-inner">
                     <div className="hero-content">
                         <span className="section-label" style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)', marginBottom: '16px' }}>
-                            Trusted Plumbing Experts Since Day One
+                            {initialData?.heroLabel || 'Trusted Plumbing Experts Since Day One'}
                         </span>
-                        <h1 style={{ transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 5}px)` }}>Professional Plumbing &amp; Restoration in <span>Dallas, TX</span></h1>
+                        <h1 style={{ transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 5}px)` }}>
+                            {initialData?.heroTitle || 'Professional Plumbing & Restoration in Dallas, TX'}
+                        </h1>
                         <p className="hero-subtitle">
-                            Licensed experts delivering fast, honest plumbing solutions — 24 hours a day, 7 days a week. No hidden fees, no surprises.
+                            {initialData?.heroSubtitle || 'Licensed experts delivering fast, honest plumbing solutions — 24 hours a day, 7 days a week. No hidden fees, no surprises.'}
                         </p>
                         <div className="hero-badges">
                             <span className="hero-badge"><span className="hero-badge-icon">⏰</span> 24/7 Availability</span>
@@ -80,7 +83,11 @@ export default function HomePageClient() {
                         </div>
                     </div>
                     <div className="hero-image" style={{ transform: `translate(${-mousePos.x * 15}px, ${-mousePos.y * 10}px)` }}>
-                        <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority style={{ height: 'auto' }} />
+                        {initialData?.heroImage ? (
+                            <Image src={urlForImage(initialData.heroImage).url()} alt="Anytime Plumbing 365" width={550} height={400} priority style={{ height: 'auto' }} />
+                        ) : (
+                            <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority style={{ height: 'auto' }} />
+                        )}
                     </div>
                 </div>
                 {/* Wave Divider */}
@@ -251,18 +258,18 @@ export default function HomePageClient() {
                         <p style={{ color: 'rgba(255,255,255,0.7)' }}>Our team at Anytime Plumbing 365 delivers complete plumbing solutions for homeowners who want service that is fast, dependable, and done right the first time.</p>
                     </div>
                     <div className="why-choose-grid-v2 reveal-stagger">
-                        {[
+                        {(initialData?.whyChooseUs || [
                             { icon: '⚡', title: 'Fast Emergency Response', desc: 'Available 24/7 — even on holidays and weekends. We arrive fast when you need us most.' },
                             { icon: '✅', title: 'Honest Recommendations', desc: 'No upselling, no unnecessary work. We recommend only what your home truly needs.' },
                             { icon: '🏆', title: 'Skilled Licensed Techs', desc: 'Fully licensed, insured, and background-checked professionals you can trust.' },
                             { icon: '💰', title: 'Upfront Fair Pricing', desc: 'No hidden fees, no surprises. You know the price before any work begins.' },
                             { icon: '🤝', title: 'Neighborly Approach', desc: 'We treat every home like our own — with care, respect, and a clean workspace.' },
                             { icon: '🛡️', title: 'Satisfaction Guaranteed', desc: 'We stand behind our work. If you are not happy, we will make it right.' },
-                        ].map((item, i) => (
+                        ]).map((item, i) => (
                             <div key={i} className="why-card-v2 interactive">
                                 <div className="why-card-icon">{item.icon}</div>
                                 <h3>{item.title}</h3>
-                                <p>{item.desc}</p>
+                                <p>{item.description || item.desc}</p>
                             </div>
                         ))}
                     </div>

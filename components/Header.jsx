@@ -30,7 +30,7 @@ const aboutLinks = [
 
 ];
 
-export default function Header({ onBookNow }) {
+export default function Header({ onBookNow, settings }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -53,12 +53,12 @@ export default function Header({ onBookNow }) {
           <div className="top-bar-left">
             <span>🕐 Available 24/7</span>
             <span className="top-bar-divider" />
-            <span>🪪 License #37912</span>
+            <span>🪪 License #{settings?.licenseNumber || '37912'}</span>
             <span className="top-bar-divider" />
             <span>📍 Serving Dallas–Fort Worth Metroplex</span>
           </div>
           <div className="top-bar-right">
-            <a href="tel:214-307-4264">📞 214-307-4264</a>
+            <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`}>📞 {settings?.phoneNumber || '214-307-4264'}</a>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ export default function Header({ onBookNow }) {
               <button className="btn btn-primary btn-sm" onClick={onBookNow}>
                 Book Now
               </button>
-              <a href="tel:214-307-4264" className="btn btn-red btn-sm">
+              <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm">
                 Call Now
               </a>
             </div>
