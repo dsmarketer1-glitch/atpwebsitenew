@@ -18,11 +18,6 @@ export default defineConfig({
     structureTool({
       structure,
     }),
-    {
-      name: 'deploy-tool',
-      title: 'Push to Live',
-      component: DeployTool,
-    },
     presentationTool({
       resolve: {
         locations: {
@@ -63,5 +58,12 @@ export default defineConfig({
       navigator: {},
     }),
     visionTool({ defaultApiVersion: '2024-04-24' }),
+  ],
+  tools: [
+    {
+      name: 'deploy-tool',
+      title: 'Push to Live',
+      component: DeployTool,
+    },
   ],
 })
