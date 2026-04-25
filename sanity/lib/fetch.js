@@ -11,7 +11,7 @@ export async function sanityFetch({ query, params = {}, tags = [] }) {
       perspective: 'previewDrafts',
     }),
     next: {
-      revalidate: isDraftMode ? 0 : (process.env.NODE_ENV === 'development' ? 30 : 3600),
+      revalidate: isDraftMode ? 0 : 0, // Set to 0 to ensure fresh data on every rebuild/request
       tags,
     },
   })
