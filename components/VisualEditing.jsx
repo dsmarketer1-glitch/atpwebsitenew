@@ -11,6 +11,10 @@ export default function VisualEditingComponent() {
     }
   }, [])
 
+  const isStudio = typeof window !== 'undefined' && window.location.pathname.startsWith('/studio')
+
+  if (isStudio) return <VisualEditing />
+
   return (
     <>
       <VisualEditing />

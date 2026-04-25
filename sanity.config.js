@@ -58,8 +58,6 @@ export default defineConfig({
       navigator: {},
     }),
     visionTool({ defaultApiVersion: '2024-04-24' }),
-  ],
-  tools: [
     {
       name: 'deploy-tool',
       title: 'Push to Live',
