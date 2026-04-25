@@ -89,7 +89,7 @@ export default async function ServicePage({ params }) {
                         <div className="fade-in-right">
                             <div className="content-image" style={{ marginBottom: '30px' }}>
                                 <Image 
-                                    src={service.image?.asset ? urlForImage(service.image).url() : service.image} 
+                                    src={service.image?.asset ? urlForImage(service.image).url() : (service.image || getLocalServiceBySlug(slug)?.image)} 
                                     alt={service.imageAlt || service.title} 
                                     width={600} 
                                     height={400} 

@@ -7,6 +7,7 @@ import { projectId, dataset } from './sanity/env'
 import { structure } from './sanity/lib/structure'
 
 import { presentationTool } from 'sanity/presentation'
+import { DeployTool } from './sanity/components/DeployTool'
 
 export default defineConfig({
   basePath: '/studio',
@@ -17,6 +18,11 @@ export default defineConfig({
     structureTool({
       structure,
     }),
+    {
+      name: 'deploy-tool',
+      title: 'Push to Live',
+      component: DeployTool,
+    },
     presentationTool({
       resolve: {
         locations: {

@@ -2,6 +2,8 @@
 // You need a Sanity write token to run this.
 // Usage: SANITY_AUTH_TOKEN=your_token node seed-sanity.js
 
+const fs = require('fs');
+const path = require('path');
 const { createClient } = require('@sanity/client');
 const { services } = require('./data/services');
 
@@ -13,9 +15,39 @@ const client = createClient({
   apiVersion: '2024-04-24',
 });
 
+async function uploadImage(imagePath) {
+  if (!imagePath || imagePath.startsWith('http')) return null;
+  
+  // Convert web path to local path
+  const localPath = path.join(__dirname, 'public', imagePath);
+  if (!fs.existsSync(localPath)) {
+    console.warn(`⚠️ Image not found locally: ${localPath}`);
+    return null;
+  }
+
+  try {
+    const buffer = fs.readFileSync(localPath);
+    const asset = await client.assets.upload('image', buffer, {
+      filename: path.basename(localPath)
+    });
+    return {
+      _type: 'image',
+      asset: {
+        _type: "reference",
+        _ref: asset._id
+      }
+    };
+  } catch (err) {
+    console.error(`❌ Failed to upload image ${imagePath}:`, err.message);
+    return null;
+  }
+}
+
 async function seedServices() {
   console.log('Seeding services...');
   for (const service of services) {
+    const imageAsset = await uploadImage(service.image);
+    
     const doc = {
       _type: 'service',
       _id: `service-${service.slug}`,
@@ -32,7 +64,7 @@ async function seedServices() {
         question: faq.question,
         answer: faq.answer,
       })),
-      // Images need to be uploaded separately, we'll skip for now or provide placeholders
+      image: imageAsset,
       imageAlt: service.imageAlt,
     };
 
