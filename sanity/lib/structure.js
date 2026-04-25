@@ -65,3 +65,4 @@ export const structure = (S, context) => {
             .documentId('settings')
         ),
     ])
+}
