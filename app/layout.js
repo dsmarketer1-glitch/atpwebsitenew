@@ -4,6 +4,7 @@ import CustomCursor from '@/components/CustomCursor';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { settingsQuery } from '@/sanity/lib/queries';
 import { draftMode } from 'next/headers';
+import VisualEditing from '@/components/VisualEditing';
 
 export async function generateMetadata() {
   const settings = await sanityFetch({ query: settingsQuery });
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }) {
       <body>
         <CustomCursor />
         <ClientLayout settings={settings} preview={isEnabled}>{children}</ClientLayout>
+        {isEnabled && <VisualEditing />}
       </body>
     </html>
   );

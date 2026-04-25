@@ -5,6 +5,8 @@ import { services, getServiceBySlug as getLocalServiceBySlug, getAllServiceSlugs
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { serviceBySlugQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
+import FAQAccordion from '@/components/FAQAccordion';
+import CTABanner from '@/components/CTABanner';
 
 export async function generateStaticParams() {
     return getAllServiceSlugs().map((slug) => ({ slug }));
