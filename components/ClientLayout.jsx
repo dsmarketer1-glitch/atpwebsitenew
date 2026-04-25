@@ -4,8 +4,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingPopup from '@/components/BookingPopup';
 import ScrollAnimations from '@/components/ScrollAnimations';
+import VisualEditingComponent from '@/components/VisualEditing';
 
-export default function ClientLayout({ children, settings }) {
+export default function ClientLayout({ children, settings, preview }) {
     const [bookingOpen, setBookingOpen] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -24,6 +25,7 @@ export default function ClientLayout({ children, settings }) {
             <Footer settings={settings} />
             <BookingPopup isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
             <ScrollAnimations />
+            {preview && <VisualEditingComponent />}
 
             {/* Scroll to Top */}
             <button

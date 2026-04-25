@@ -3,6 +3,7 @@ import ClientLayout from '@/components/ClientLayout';
 import CustomCursor from '@/components/CustomCursor';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { settingsQuery } from '@/sanity/lib/queries';
+import { draftMode } from 'next/headers';
 
 export async function generateMetadata() {
   const settings = await sanityFetch({ query: settingsQuery });
@@ -22,6 +23,7 @@ export async function generateMetadata() {
 
 export default async function RootLayout({ children }) {
   const settings = await sanityFetch({ query: settingsQuery });
+  const { isEnabled } = await draftMode();
 
   return (
     <html lang="en">
@@ -32,7 +34,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body>
         <CustomCursor />
-        <ClientLayout settings={settings}>{children}</ClientLayout>
+        <ClientLayout settings={settings} preview={isEnabled}>{children}</ClientLayout>
       </body>
     </html>
   );

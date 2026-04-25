@@ -1,0 +1,63 @@
+import { Iframe } from 'sanity-plugin-iframe-pane'
+
+export const structure = (S, context) =>
+  S.list()
+    .title('Content')
+    .items([
+      // Service documents
+      S.listItem()
+        .title('Services')
+        .child(
+          S.documentTypeList('service')
+            .title('Services')
+            .child((documentId) =>
+              S.document()
+                .documentId(documentId)
+                .schemaType('service')
+                .views([
+                  S.view.form(),
+                  S.view
+                    .component(Iframe)
+                    .options({
+                      url: (doc) => {
+                        const slug = doc?.slug?.current
+                        if (!slug) return 'http://localhost:3000'
+                        return `http://localhost:3000/service/${slug}`
+                      },
+                      reload: {
+                        button: true,
+                      },
+                    })
+                    .title('Preview'),
+                ])
+            )
+        ),
+      // Home page singleton
+      S.listItem()
+        .title('Home Page')
+        .child(
+          S.document()
+            .schemaType('homepage')
+            .documentId('homepage')
+            .views([
+              S.view.form(),
+              S.view
+                .component(Iframe)
+                .options({
+                  url: 'http://localhost:3000',
+                  reload: {
+                    button: true,
+                  },
+                })
+                .title('Preview'),
+            ])
+        ),
+      // Settings singleton
+      S.listItem()
+        .title('Site Settings')
+        .child(
+          S.document()
+            .schemaType('settings')
+            .documentId('settings')
+        ),
+    ])
