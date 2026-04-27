@@ -46,7 +46,7 @@ export default function HomePageClient({ initialData }) {
             <section className="hero" ref={heroRef}>
                 <div className="hero-video-bg">
                     <iframe 
-                        src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=1&loop=1&playlist=3kgYEMIWdig&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3" 
+                        src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=0&loop=1&playlist=3kgYEMIWdig&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3" 
                         frameBorder="0" 
                         allow="autoplay; encrypted-media" 
                         allowFullScreen

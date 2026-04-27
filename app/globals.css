@@ -3125,4 +3125,12 @@ ul {
   .wave-divider svg {
     height: 50px;
   }
+
+  .hero-video-bg, .hero-video-overlay {
+    display: none !important;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #060e1e 0%, #0a2e6e 100%) !important;
+  }
 }
