@@ -44,15 +44,7 @@ export default function HomePageClient({ initialData }) {
         <>
             {/* ===== HERO ===== */}
             <section className="hero" ref={heroRef}>
-                <div className="hero-video-bg">
-                    <iframe 
-                        src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=0&loop=1&playlist=3kgYEMIWdig&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3" 
-                        frameBorder="0" 
-                        allow="autoplay; encrypted-media" 
-                        allowFullScreen
-                    ></iframe>
-                    <div className="hero-video-overlay"></div>
-                </div>
+                {/* Video removed from background */}
                 <div className="hero-shape hero-shape-1" style={{ transform: `translate(${mousePos.x * 50}px, ${mousePos.y * 30}px) scale(1.1)` }} />
 
                 <div className="hero-shape hero-shape-2" style={{ transform: `translate(${-mousePos.x * 40}px, ${-mousePos.y * 25}px) scale(0.9)` }} />
@@ -82,12 +74,20 @@ export default function HomePageClient({ initialData }) {
                             <a href="tel:214-307-4264" className="btn btn-red btn-lg btn-magnetic interactive">📞 Call 214-307-4264</a>
                         </div>
                     </div>
-                    <div className="hero-image" style={{ transform: `translate(${-mousePos.x * 15}px, ${-mousePos.y * 10}px)` }}>
-                        {initialData?.heroImage ? (
-                            <Image src={urlForImage(initialData.heroImage).url()} alt="Anytime Plumbing 365" width={550} height={400} priority style={{ height: 'auto' }} />
-                        ) : (
-                            <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 Service Van" width={550} height={400} priority style={{ height: 'auto' }} />
-                        )}
+                    <div className="hero-image" style={{ 
+                        transform: `translate(${-mousePos.x * 15}px, ${-mousePos.y * 10}px)`,
+                        borderRadius: 'var(--radius-lg)',
+                        overflow: 'hidden',
+                        boxShadow: 'var(--shadow-xl)',
+                        aspectRatio: '16/9',
+                        background: '#000'
+                    }}>
+                        <iframe 
+                            src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=0&loop=1&playlist=3kgYEMIWdig&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3" 
+                            style={{ width: '100%', height: '100%', border: 'none' }}
+                            allow="autoplay; encrypted-media" 
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 </div>
                 {/* Wave Divider */}
