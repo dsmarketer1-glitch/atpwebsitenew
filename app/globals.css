@@ -787,8 +787,8 @@ ul {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 1.7fr;
+  gap: 80px;
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
