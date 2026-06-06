@@ -148,9 +148,6 @@ export default function Header({ onBookNow, settings }) {
             </ul>
 
             <div className="header-actions">
-              <button className="btn btn-primary btn-sm" onClick={onBookNow}>
-                Book Now
-              </button>
               <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm">
                 Call Now
               </a>
