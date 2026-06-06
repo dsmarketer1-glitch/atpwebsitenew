@@ -41,9 +41,6 @@ export default function ClientLayout({ children, settings, preview }) {
                 <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm" style={{ flex: 1, textAlign: 'center' }}>
                     📞 Call Now
                 </a>
-                <button className="btn btn-primary btn-sm" onClick={() => setBookingOpen(true)} style={{ flex: 1 }}>
-                    📅 Book Now
-                </button>
             </div>
         </>
     );
