@@ -70,7 +70,6 @@ export default function HomePageClient({ initialData }) {
                             <span className="hero-badge"><span className="hero-badge-icon">💰</span> Upfront Pricing</span>
                         </div>
                         <div className="hero-actions">
-                            <Link href="/contact-us" className="btn btn-white btn-lg btn-magnetic interactive">📅 Book a Service</Link>
                             <a href="tel:214-307-4264" className="btn btn-red btn-lg btn-magnetic interactive">📞 Call 214-307-4264</a>
                         </div>
                     </div>
@@ -274,8 +273,7 @@ export default function HomePageClient({ initialData }) {
                         ))}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                        <Link href="/contact-us" className="btn btn-white btn-lg btn-magnetic interactive">📅 Book a Service</Link>
-                        <a href="tel:214-307-4264" className="btn btn-ghost btn-lg btn-magnetic interactive" style={{ marginLeft: '14px' }}>📞 Call Now</a>
+                        <a href="tel:214-307-4264" className="btn btn-ghost btn-lg btn-magnetic interactive">📞 Call Now</a>
                     </div>
                 </div>
             </section>
