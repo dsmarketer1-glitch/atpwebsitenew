@@ -39,7 +39,7 @@ export default function ClientLayout({ children, settings, preview }) {
             {/* Mobile Floating CTA */}
             <div className="floating-cta">
                 <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm" style={{ flex: 1, textAlign: 'center' }}>
-                    📞 Call Now
+                    📞 {settings?.phoneNumber || '214-307-4264'}
                 </a>
             </div>
         </>
