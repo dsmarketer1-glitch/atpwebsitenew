@@ -10,9 +10,6 @@ export default function CTABanner({ onBookNow }) {
                     Our expert team is available around the clock. No overtime charges, no hidden fees — just honest, reliable plumbing service.
                 </p>
                 <div className="cta-actions">
-                    <button className="btn btn-white btn-lg" onClick={onBookNow}>
-                        📅 Book a Service
-                    </button>
                     <a href="tel:214-307-4264" className="btn btn-ghost btn-lg">
                         📞 Call 214-307-4264
                     </a>
