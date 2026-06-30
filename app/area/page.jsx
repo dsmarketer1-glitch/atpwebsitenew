@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
+import { IconMapPin } from '@/components/Icons';
 
 export const metadata = {
-    title: 'Service Areas - Anytime Plumbing 365',
-    description: 'Anytime Plumbing 365 proudly serves homeowners across the Dallas-Fort Worth Metroplex.',
+    title: 'Plumbing in Dallas–Fort Worth, TX | Anytime Plumbing 365',
+    description: 'We show up across the Dallas–Fort Worth Metroplex, 365 days a year. Find your city and call 214-307-4264 — honest help that makes your day brighter.',
 };
 
 const areas = [
@@ -41,9 +42,9 @@ export default function ServiceAreasPage() {
             <section className="section">
                 <div className="container">
                     <div className="section-header fade-in">
-                        <span className="section-label">Coverage</span>
-                        <h2>Areas We Serve</h2>
-                        <p>We proudly serve homeowners across the Dallas-Fort Worth Metroplex with expert plumbing and restoration services.</p>
+                        <span className="section-label">Good Neighbors. Great Service.</span>
+                        <h2>Your Neighborhood, Our Home</h2>
+                        <p>From Dallas to Wylie, we treat every street like our own. Honest, friendly plumbing and restoration — wherever you are in the Metroplex.</p>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }} className="fade-in">
@@ -57,7 +58,7 @@ export default function ServiceAreasPage() {
                                 transition: 'all 0.3s ease',
                                 cursor: 'default',
                             }}>
-                                <strong style={{ fontSize: '15px', color: 'var(--text-dark)' }}>📍 {area.name}</strong>
+                                <strong style={{ fontSize: '15px', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '8px' }}><IconMapPin size={16} /> {area.name}</strong>
                                 <p style={{ fontSize: '13px', color: 'var(--text-light)', marginTop: '4px', lineHeight: '1.5' }}>{area.description}</p>
                             </div>
                         ))}

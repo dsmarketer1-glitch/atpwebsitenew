@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { blogPosts } from '@/data/blog-posts';
 
 export const metadata = {
-    title: 'Blog - Anytime Plumbing 365',
-    description: 'Read our latest plumbing tips, advice, and industry insights from the Anytime Plumbing 365 team.',
+    title: 'Plumbing Tips & Advice | Anytime Plumbing 365',
+    description: 'Friendly, plain-English plumbing tips from your Dallas neighbors at Anytime Plumbing 365 — practical advice to help you care for your home.',
 };
 
 export default function BlogPage() {

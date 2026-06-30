@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
     const post = getBlogBySlug(slug);
     if (!post) return {};
     return {
-        title: `${post.title} - Anytime Plumbing 365`,
+        title: `${post.title} | Anytime Plumbing 365`,
         description: post.metaDescription,
     };
 }
@@ -44,11 +44,11 @@ export default async function BlogPostPage({ params }) {
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
                 <div style={{ marginTop: '40px', padding: '30px', background: '#f7f8fa', borderRadius: '12px', textAlign: 'center' }}>
-                    <h3>Need Help With Your Plumbing?</h3>
-                    <p style={{ color: '#666', marginBottom: '16px' }}>Our expert team is available 24/7. Contact us today!</p>
+                    <h3>Got a Plumbing Question? We&apos;re Here.</h3>
+                    <p style={{ color: '#666', marginBottom: '16px' }}>No pressure — just honest, friendly help whenever you need it, 365 days a year.</p>
                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Link href="/contact-us" className="btn btn-primary">Contact Us</Link>
                         <a href="tel:214-307-4264" className="btn btn-red">Call 214-307-4264</a>
+                        <Link href="/contact-us" className="btn btn-outline">Book a Visit</Link>
                     </div>
                 </div>
             </article>

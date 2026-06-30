@@ -1,42 +1,37 @@
 import './globals.css';
 import ClientLayout from '@/components/ClientLayout';
 import CustomCursor from '@/components/CustomCursor';
-import { sanityFetch } from '@/sanity/lib/fetch';
-import { settingsQuery } from '@/sanity/lib/queries';
-import { draftMode } from 'next/headers';
-import VisualEditing from '@/components/VisualEditing';
+import { siteSettings } from '@/data/settings';
 
-export async function generateMetadata() {
-  const settings = await sanityFetch({ query: settingsQuery });
-  
-  return {
-    title: 'Anytime Plumbing 365 | Local Plumbing & Restoration Services in Dallas, TX',
-    description: 'Anytime Plumbing 365 delivers expert plumbing, leak detection, sewer repair, and property restoration services for homeowners in Dallas, TX. Trust our team for fast, reliable help.',
-    keywords: 'plumbing, Dallas TX, drain cleaning, emergency plumber, water heater repair, sewer line repair, water damage restoration',
-    openGraph: {
-      title: 'Anytime Plumbing 365 | 24/7 Plumbing Services',
-      description: 'Expert plumbing, leak detection, sewer repair, and property restoration services in Dallas, TX.',
-      type: 'website',
-      locale: 'en_US',
-    },
-  };
-}
+export const metadata = {
+  title: 'Plumbing in Dallas, TX | Anytime Plumbing 365',
+  description: 'Making your day brighter. We show up, tell the truth, and fix it right — honest plumbing & restoration across Dallas, TX. Call 214-307-4264.',
+  keywords: 'plumbing, Dallas TX, drain cleaning, emergency plumber, water heater repair, sewer line repair, water damage restoration',
+  icons: {
+    icon: '/images/logo.png',
+  },
+  openGraph: {
+    title: 'Anytime Plumbing 365 | The People Who Show Up™',
+    description: 'Honest, friendly plumbing & restoration in Dallas, TX — available 365 days a year. Making your day brighter.',
+    type: 'website',
+    locale: 'en_US',
+  },
+};
 
-export default async function RootLayout({ children }) {
-  const settings = await sanityFetch({ query: settingsQuery });
-  const { isEnabled } = await draftMode();
-
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <CustomCursor />
-        <ClientLayout settings={settings} preview={isEnabled}>{children}</ClientLayout>
-        {isEnabled && <VisualEditing />}
+        <ClientLayout settings={siteSettings}>{children}</ClientLayout>
       </body>
     </html>
   );

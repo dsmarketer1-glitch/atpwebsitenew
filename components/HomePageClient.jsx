@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import { urlForImage } from '@/sanity/lib/image';
+import { IconCheck, IconPhone, IconClock, IconUsers, IconSparkle, IconAward, IconShield, IconMapPin, IconStar, IconArrowRight } from '@/components/Icons';
 
-export default function HomePageClient({ initialData }) {
+export default function HomePageClient() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const heroRef = useRef(null);
 
@@ -44,49 +44,30 @@ export default function HomePageClient({ initialData }) {
         <>
             {/* ===== HERO ===== */}
             <section className="hero" ref={heroRef}>
-                {/* Video removed from background */}
-                <div className="hero-shape hero-shape-1" style={{ transform: `translate(${mousePos.x * 50}px, ${mousePos.y * 30}px) scale(1.1)` }} />
-
-                <div className="hero-shape hero-shape-2" style={{ transform: `translate(${-mousePos.x * 40}px, ${-mousePos.y * 25}px) scale(0.9)` }} />
-                <div className="hero-particles">
-                    {[...Array(8)].map((_, i) => (
-                        <div key={i} className="hero-particle" style={{ animationDelay: `${i * 0.8}s`, left: `${10 + i * 12}%`, top: `${15 + (i % 4) * 20}%` }} />
-                    ))}
-                </div>
                 <div className="hero-inner">
                     <div className="hero-content">
-                        <span className="section-label" style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)', marginBottom: '16px' }}>
-                            {initialData?.heroLabel || 'Trusted Plumbing Experts Since Day One'}
-                        </span>
-                        <h1 style={{ transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 5}px)` }}>
-                            {initialData?.heroTitle || 'Professional Plumbing & Restoration in Dallas, TX'}
-                        </h1>
+                        <span className="hero-eyebrow">24/7 Emergency Plumbing</span>
+                        <h1>The People<br />Who Show Up<span className="tm">™</span></h1>
                         <p className="hero-subtitle">
-                            {initialData?.heroSubtitle || 'Licensed experts delivering fast, honest plumbing solutions — 24 hours a day, 7 days a week. No hidden fees, no surprises.'}
+                            Fast, reliable plumbing services for homes in Dallas–Fort Worth and The Woodlands.
                         </p>
-                        <div className="hero-badges">
-                            <span className="hero-badge"><span className="hero-badge-icon">⏰</span> 24/7 Availability</span>
-                            <span className="hero-badge"><span className="hero-badge-icon">🔧</span> Licensed &amp; Insured</span>
-                            <span className="hero-badge"><span className="hero-badge-icon">💰</span> Upfront Pricing</span>
-                        </div>
+                        <ul className="hero-checklist">
+                            {['Drain Cleaning', 'Drain Repair', 'Leak Detection', 'Emergency Plumbing', 'Water Damage Restoration'].map((item) => (
+                                <li key={item}>
+                                    <span className="hero-check"><IconCheck size={15} /></span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
                         <div className="hero-actions">
-                            <a href="tel:214-307-4264" className="btn btn-red btn-lg btn-magnetic interactive">📞 Call 214-307-4264</a>
+                            <Link href="/contact-us" className="btn btn-red btn-lg">Schedule Service</Link>
+                            <a href="tel:214-307-4264" className="btn btn-hero-ghost btn-lg">
+                                <IconPhone size={18} /> Call 214-307-4264
+                            </a>
                         </div>
                     </div>
-                    <div className="hero-image" style={{ 
-                        transform: `translate(${-mousePos.x * 15}px, ${-mousePos.y * 10}px)`,
-                        borderRadius: 'var(--radius-lg)',
-                        overflow: 'hidden',
-                        boxShadow: 'var(--shadow-xl)',
-                        aspectRatio: '16/9',
-                        background: '#000'
-                    }}>
-                        <iframe 
-                            src="https://www.youtube.com/embed/3kgYEMIWdig?autoplay=1&mute=0&loop=1&playlist=3kgYEMIWdig&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3" 
-                            style={{ width: '100%', height: '100%', border: 'none' }}
-                            allow="autoplay; encrypted-media" 
-                            allowFullScreen
-                        ></iframe>
+                    <div className="hero-media">
+                        <Image src="/images/van-new.webp" alt="Anytime Plumbing 365 service van" width={760} height={420} priority />
                     </div>
                 </div>
                 {/* Wave Divider */}
@@ -108,21 +89,21 @@ export default function HomePageClient({ initialData }) {
                         <div className="trust-stat-label">Always Available</div>
                     </div>
                     <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap gold">
+                        <div className="trust-stat-icon-wrap blue">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                         </div>
                         <div className="trust-stat-number"><AnimatedCounter end={5} suffix=".0" decimals={1} /></div>
                         <div className="trust-stat-label">Star Rating</div>
                     </div>
                     <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap green">
+                        <div className="trust-stat-icon-wrap blue">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
                         </div>
                         <div className="trust-stat-number"><AnimatedCounter end={100} suffix="%" /></div>
                         <div className="trust-stat-label">Satisfaction</div>
                     </div>
                     <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap red">
+                        <div className="trust-stat-icon-wrap blue">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
                         </div>
                         <div className="trust-stat-number"><AnimatedCounter end={23} suffix="+" /></div>
@@ -160,7 +141,7 @@ export default function HomePageClient({ initialData }) {
             </section>
 
             {/* ===== FEATURED SERVICES ===== */}
-            <section className="section" style={{ background: 'linear-gradient(180deg, var(--off-white) 0%, #e8edf5 100%)', position: 'relative' }}>
+            <section className="section" style={{ background: 'var(--off-white)', position: 'relative' }}>
                 <div className="bg-dots" />
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <div className="section-header fade-in">
@@ -175,7 +156,7 @@ export default function HomePageClient({ initialData }) {
                             </div>
                             <h3>Plumbing Services</h3>
                             <p>Full residential plumbing — drain cleaning, pipe repair, fixture installation, and more.</p>
-                            <span className="card-arrow">→</span>
+                            <span className="card-arrow"><IconArrowRight size={16} /></span>
                         </Link>
                         <Link href="/service/emergency-plumber" className="featured-service-card interactive">
                             <div className="featured-icon-wrap red">
@@ -183,23 +164,23 @@ export default function HomePageClient({ initialData }) {
                             </div>
                             <h3>Emergency Service</h3>
                             <p>24/7 emergency response for burst pipes, severe leaks, and urgent plumbing issues.</p>
-                            <span className="card-arrow">→</span>
+                            <span className="card-arrow"><IconArrowRight size={16} /></span>
                         </Link>
                         <Link href="/service/water-damage-restoration" className="featured-service-card interactive">
-                            <div className="featured-icon-wrap green">
+                            <div className="featured-icon-wrap blue">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
                             </div>
                             <h3>Restoration</h3>
                             <p>Water damage restoration and sewage cleanup to protect and restore your property.</p>
-                            <span className="card-arrow">→</span>
+                            <span className="card-arrow"><IconArrowRight size={16} /></span>
                         </Link>
                         <Link href="/contact-us" className="featured-service-card interactive">
-                            <div className="featured-icon-wrap navy">
+                            <div className="featured-icon-wrap blue">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                             </div>
                             <h3>Get a Free Estimate</h3>
                             <p>Call us or book online for a transparent quote — no pressure, no obligation.</p>
-                            <span className="card-arrow">→</span>
+                            <span className="card-arrow"><IconArrowRight size={16} /></span>
                         </Link>
                     </div>
                 </div>
@@ -220,7 +201,7 @@ export default function HomePageClient({ initialData }) {
                             <div className="service-card-body">
                                 <h3><Link href="/service/drain-pipe-repair">Drain Pipe Repair</Link></h3>
                                 <p>Fast and reliable drain pipe repair from experienced plumbing professionals.</p>
-                                <Link href="/service/drain-pipe-repair" className="service-card-link">Learn More <span>→</span></Link>
+                                <Link href="/service/drain-pipe-repair" className="service-card-link">Learn More <IconArrowRight size={15} /></Link>
                             </div>
                         </div>
                         <div className="service-card interactive">
@@ -230,7 +211,7 @@ export default function HomePageClient({ initialData }) {
                             <div className="service-card-body">
                                 <h3><Link href="/service/emergency-plumber">Emergency Plumber</Link></h3>
                                 <p>24/7 emergency plumbing with fast response times and expert solutions.</p>
-                                <Link href="/service/emergency-plumber" className="service-card-link">Learn More <span>→</span></Link>
+                                <Link href="/service/emergency-plumber" className="service-card-link">Learn More <IconArrowRight size={15} /></Link>
                             </div>
                         </div>
                         <div className="service-card interactive">
@@ -240,7 +221,7 @@ export default function HomePageClient({ initialData }) {
                             <div className="service-card-body">
                                 <h3><Link href="/service/water-damage-restoration">Water Damage Restoration</Link></h3>
                                 <p>Complete restoration to minimize damage and get your home back to normal.</p>
-                                <Link href="/service/water-damage-restoration" className="service-card-link">Learn More <span>→</span></Link>
+                                <Link href="/service/water-damage-restoration" className="service-card-link">Learn More <IconArrowRight size={15} /></Link>
                             </div>
                         </div>
                     </div>
@@ -248,7 +229,7 @@ export default function HomePageClient({ initialData }) {
             </section>
 
             {/* ===== WHY CHOOSE US ===== */}
-            <section className="section" style={{ background: 'linear-gradient(135deg, #060e1e 0%, var(--primary-blue-dark) 50%, #0a2e6e 100%)', position: 'relative', overflow: 'hidden' }}>
+            <section className="section" style={{ background: 'var(--primary-blue)', position: 'relative', overflow: 'hidden' }}>
                 <div className="bg-grid" />
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <div className="section-header fade-in">
@@ -257,23 +238,23 @@ export default function HomePageClient({ initialData }) {
                         <p style={{ color: 'rgba(255,255,255,0.7)' }}>Our team at Anytime Plumbing 365 delivers complete plumbing solutions for homeowners who want service that is fast, dependable, and done right the first time.</p>
                     </div>
                     <div className="why-choose-grid-v2 reveal-stagger">
-                        {(initialData?.whyChooseUs || [
-                            { icon: '⚡', title: 'Fast Emergency Response', desc: 'Available 24/7 — even on holidays and weekends. We arrive fast when you need us most.' },
-                            { icon: '✅', title: 'Honest Recommendations', desc: 'No upselling, no unnecessary work. We recommend only what your home truly needs.' },
-                            { icon: '🏆', title: 'Skilled Licensed Techs', desc: 'Fully licensed, insured, and background-checked professionals you can trust.' },
-                            { icon: '💰', title: 'Upfront Fair Pricing', desc: 'No hidden fees, no surprises. You know the price before any work begins.' },
-                            { icon: '🤝', title: 'Neighborly Approach', desc: 'We treat every home like our own — with care, respect, and a clean workspace.' },
-                            { icon: '🛡️', title: 'Satisfaction Guaranteed', desc: 'We stand behind our work. If you are not happy, we will make it right.' },
-                        ]).map((item, i) => (
+                        {[
+                            { Icon: IconClock, title: 'We Show Up — On Time', desc: 'Here for you 365 days a year, even nights, weekends, and holidays. When you need us, the light is on.' },
+                            { Icon: IconCheck, title: 'We Tell You the Truth', desc: 'We recommend what your home really needs — not what is most profitable. Here is what it is, and here is what it costs.' },
+                            { Icon: IconUsers, title: 'We Treat You Like a Neighbor', desc: 'You are a neighbor, never a transaction. Every home and every visit matters to us.' },
+                            { Icon: IconSparkle, title: 'We Leave It Better', desc: 'Upfront, fair pricing and a tidy workspace. We leave your home better than we found it.' },
+                            { Icon: IconAward, title: 'Skilled, Licensed Pros', desc: 'Fully licensed, insured, and background-checked plumbers who get it right the first time. You are in good hands.' },
+                            { Icon: IconShield, title: 'Satisfaction, Guaranteed', desc: 'We stand behind our work. If something is not right, we will make it right — with a smile.' },
+                        ].map((item, i) => (
                             <div key={i} className="why-card-v2 interactive">
-                                <div className="why-card-icon">{item.icon}</div>
+                                <div className="why-card-icon"><item.Icon size={30} /></div>
                                 <h3>{item.title}</h3>
-                                <p>{item.description || item.desc}</p>
+                                <p>{item.desc}</p>
                             </div>
                         ))}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                        <a href="tel:214-307-4264" className="btn btn-ghost btn-lg btn-magnetic interactive">📞 Call Now</a>
+                        <a href="tel:214-307-4264" className="btn btn-ghost btn-lg btn-magnetic interactive"><IconPhone size={18} /> Call Now</a>
                     </div>
                 </div>
             </section>
@@ -303,7 +284,7 @@ export default function HomePageClient({ initialData }) {
             </section>
 
             {/* ===== TESTIMONIALS ===== */}
-            <section className="section" style={{ background: 'linear-gradient(180deg, var(--off-white) 0%, #e8edf5 100%)' }}>
+            <section className="section" style={{ background: 'var(--off-white)' }}>
                 <div className="container">
                     <div className="section-header fade-in">
                         <span className="section-label">Reviews</span>
@@ -311,7 +292,7 @@ export default function HomePageClient({ initialData }) {
                     </div>
                     <div className="testimonials-grid fade-in">
                         <div className="testimonial-card">
-                            <div className="testimonial-stars">★★★★★</div>
+                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
                             <p className="testimonial-text">
                                 &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed our broken water heater at a very fair price. The technician was courteous, professional, and explained everything clearly. I highly recommend them to anyone in the Dallas area.&rdquo;
                             </p>
@@ -324,7 +305,7 @@ export default function HomePageClient({ initialData }) {
                             </div>
                         </div>
                         <div className="testimonial-card">
-                            <div className="testimonial-stars">★★★★★</div>
+                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
                             <p className="testimonial-text">
                                 &ldquo;We had a terrible sewage backup on a Sunday night and these guys came right away. They were professional, clean, and got everything taken care of fast. The pricing was honest and there were no surprises. We will definitely use Anytime Plumbing 365 again!&rdquo;
                             </p>
@@ -350,7 +331,7 @@ export default function HomePageClient({ initialData }) {
                     </div>
                     <div className="areas-grid fade-in">
                         {['Dallas', 'Irving', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy'].map((area) => (
-                            <Link href="/area" key={area} className="area-tag">📍 {area}, TX</Link>
+                            <Link href="/area" key={area} className="area-tag"><IconMapPin size={15} /> {area}, TX</Link>
                         ))}
                     </div>
                 </div>

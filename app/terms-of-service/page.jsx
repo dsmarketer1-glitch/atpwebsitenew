@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Terms of Service - Anytime Plumbing 365',
+    title: 'Terms of Service | Anytime Plumbing 365',
     description: 'Read the terms of service for Anytime Plumbing 365.',
 };
 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Privacy Policy - Anytime Plumbing 365',
+    title: 'Privacy Policy | Anytime Plumbing 365',
     description: 'Read the privacy policy for Anytime Plumbing 365.',
 };
 

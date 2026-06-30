@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { IconClock, IconBadge, IconMapPin, IconPhone, IconChevronDown, IconX, IconCalendar } from '@/components/Icons';
 
 const plumbingServices = [
   { name: 'Drain Cleaning', slug: 'drain-cleaning' },
@@ -51,14 +52,14 @@ export default function Header({ onBookNow, settings }) {
       <div className="top-bar">
         <div className="top-bar-inner">
           <div className="top-bar-left">
-            <span>🕐 Available 24/7</span>
+            <span><IconClock size={14} /> Available 24/7</span>
             <span className="top-bar-divider" />
-            <span>🪪 License #{settings?.licenseNumber || '37912'}</span>
+            <span><IconBadge size={14} /> License #{settings?.licenseNumber || '37912'}</span>
             <span className="top-bar-divider" />
-            <span>📍 Serving Dallas–Fort Worth Metroplex</span>
+            <span><IconMapPin size={14} /> Serving Dallas–Fort Worth Metroplex</span>
           </div>
           <div className="top-bar-right">
-            <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`}>📞 {settings?.phoneNumber || '214-307-4264'}</a>
+            <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`}><IconPhone size={14} /> {settings?.phoneNumber || '214-307-4264'}</a>
           </div>
         </div>
       </div>
@@ -88,7 +89,7 @@ export default function Header({ onBookNow, settings }) {
             <ul className={mobileOpen ? 'mobile-open' : ''}>
               <li className="mobile-menu-header">
                 <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={140} height={47} />
-                <button className="close-menu" onClick={() => setMobileOpen(false)}>✕</button>
+                <button className="close-menu" onClick={() => setMobileOpen(false)} aria-label="Close menu"><IconX size={20} /></button>
               </li>
 
               <li className="nav-item">
@@ -97,7 +98,7 @@ export default function Header({ onBookNow, settings }) {
 
               <li className={`nav-item ${openDropdown === 'plumbing' ? 'open' : ''}`}>
                 <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('plumbing'); }}>
-                  Plumbing <span className="nav-arrow">▼</span>
+                  Plumbing <span className="nav-arrow"><IconChevronDown size={13} /></span>
                 </a>
                 <div className="dropdown-menu">
                   {plumbingServices.map((s) => (
@@ -110,7 +111,7 @@ export default function Header({ onBookNow, settings }) {
 
               <li className={`nav-item ${openDropdown === 'restoration' ? 'open' : ''}`}>
                 <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('restoration'); }}>
-                  Restoration <span className="nav-arrow">▼</span>
+                  Restoration <span className="nav-arrow"><IconChevronDown size={13} /></span>
                 </a>
                 <div className="dropdown-menu">
                   {restorationServices.map((s) => (
@@ -123,7 +124,7 @@ export default function Header({ onBookNow, settings }) {
 
               <li className={`nav-item ${openDropdown === 'about' ? 'open' : ''}`}>
                 <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('about'); }}>
-                  About <span className="nav-arrow">▼</span>
+                  About <span className="nav-arrow"><IconChevronDown size={13} /></span>
                 </a>
                 <div className="dropdown-menu">
                   {aboutLinks.map((l) => (
@@ -153,6 +154,16 @@ export default function Header({ onBookNow, settings }) {
               </a>
             </div>
           </nav>
+        </div>
+
+        {/* Mobile sticky action row (Book Online + Call Now) */}
+        <div className="mobile-action-bar">
+          <button type="button" className="btn btn-primary" onClick={onBookNow}>
+            <IconCalendar size={18} /> Book Online
+          </button>
+          <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red">
+            <IconPhone size={18} /> Call Now
+          </a>
         </div>
       </header>
     </>

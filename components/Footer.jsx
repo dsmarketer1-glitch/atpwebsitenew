@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { IconShield, IconClock, IconCheck, IconDollar, IconPhone, IconMapPin } from '@/components/Icons';
 
 export default function Footer({ settings }) {
     return (
@@ -75,23 +76,23 @@ export default function Footer({ settings }) {
                         <h4>Contact</h4>
                         <div className="footer-location">
                             <h5>Woodlands Office</h5>
-                            <p><a href="tel:713-561-3276">📞 713-561-3276</a></p>
+                            <p><a href="tel:713-561-3276"><IconPhone size={14} /> 713-561-3276</a></p>
                             <p><a href="https://www.google.com/maps/place/25420+Kuykendahl+Rd+Suite+B200-236,+The+Woodlands,+TX+77375" target="_blank" rel="noopener noreferrer">
-                                📍 25420 Kuykendahl Rd, Suite B200-236, The Woodlands, TX
+                                <IconMapPin size={14} /> 25420 Kuykendahl Rd, Suite B200-236, The Woodlands, TX
                             </a></p>
                         </div>
                         <div className="footer-location">
                             <h5>Irving Office</h5>
-                            <p><a href="tel:214-307-4264">📞 214-307-4264</a></p>
+                            <p><a href="tel:214-307-4264"><IconPhone size={14} /> 214-307-4264</a></p>
                             <p><a href="https://www.google.com/maps/place/320+Decker+Dr+Ste+102-08,+Irving,+TX+75062" target="_blank" rel="noopener noreferrer">
-                                📍 320 Decker Dr, Suite 102-08, Irving, TX
+                                <IconMapPin size={14} /> 320 Decker Dr, Suite 102-08, Irving, TX
                             </a></p>
                         </div>
                         <div className="footer-location">
                             <h5>Garland Office</h5>
-                            <p><a href="tel:214-430-3461">📞 214-430-3461</a></p>
+                            <p><a href="tel:214-430-3461"><IconPhone size={14} /> 214-430-3461</a></p>
                             <p><a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Dallas,+TX+75042" target="_blank" rel="noopener noreferrer">
-                                📍 102 N Shiloh Rd, Suite 104, Garland, TX
+                                <IconMapPin size={14} /> 102 N Shiloh Rd, Suite 104, Garland, TX
                             </a></p>
                         </div>
                     </div>
@@ -128,19 +129,19 @@ export default function Footer({ settings }) {
 
             <div className="footer-trust">
                 <div className="footer-trust-badge">
-                    <span className="footer-trust-badge-icon">🛡️</span>
+                    <span className="footer-trust-badge-icon"><IconShield size={18} /></span>
                     Licensed & Insured
                 </div>
                 <div className="footer-trust-badge">
-                    <span className="footer-trust-badge-icon">⏰</span>
+                    <span className="footer-trust-badge-icon"><IconClock size={18} /></span>
                     24/7 Emergency Service
                 </div>
                 <div className="footer-trust-badge">
-                    <span className="footer-trust-badge-icon">✅</span>
+                    <span className="footer-trust-badge-icon"><IconCheck size={18} /></span>
                     Satisfaction Guaranteed
                 </div>
                 <div className="footer-trust-badge">
-                    <span className="footer-trust-badge-icon">💰</span>
+                    <span className="footer-trust-badge-icon"><IconDollar size={18} /></span>
                     Upfront Pricing
                 </div>
             </div>

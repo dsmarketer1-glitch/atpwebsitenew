@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { IconX, IconCheck } from '@/components/Icons';
 
 export default function BookingPopup({ isOpen, onClose }) {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -35,14 +36,14 @@ export default function BookingPopup({ isOpen, onClose }) {
     return (
         <div className={`modal-overlay ${isOpen ? 'active' : ''}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close" onClick={onClose}>✕</button>
+                <button className="modal-close" onClick={onClose} aria-label="Close"><IconX size={18} /></button>
 
-                <h2>Book a Service</h2>
-                <p>Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
+                <h2>Let&apos;s Get You Taken Care Of</h2>
+                <p>Tell us what&apos;s going on and we&apos;ll be in touch fast — usually within the hour. No pressure, no obligation.</p>
 
                 {status === 'success' ? (
                     <div className="form-success">
-                        ✅ Thank you! Your request has been submitted. We&apos;ll contact you shortly.
+                        <IconCheck size={18} /> Thank you! Your request has been submitted. We&apos;ll contact you shortly.
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>
@@ -80,12 +81,12 @@ export default function BookingPopup({ isOpen, onClose }) {
                                 required placeholder="Describe your plumbing issue..."
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }}
+                        <button type="submit" className="btn btn-red btn-lg" style={{ width: '100%' }}
                             disabled={status === 'loading'}>
-                            {status === 'loading' ? 'Submitting...' : 'Submit Request'}
+                            {status === 'loading' ? 'Sending...' : 'Get My Free Quote'}
                         </button>
                         {status === 'error' && (
-                            <p style={{ color: '#c61726', marginTop: '12px', textAlign: 'center', fontSize: '14px' }}>
+                            <p style={{ color: '#D0242C', marginTop: '12px', textAlign: 'center', fontSize: '14px' }}>
                                 Something went wrong. Please call us at 214-307-4264.
                             </p>
                         )}

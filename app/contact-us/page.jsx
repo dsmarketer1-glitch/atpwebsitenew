@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { IconMapPin, IconPhone, IconClock, IconCheck } from '@/components/Icons';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', service_type: '', message: '' });
@@ -43,10 +44,10 @@ export default function ContactPage() {
                         {/* Contact Form */}
                         <div className="fade-in-left">
                             <span className="section-label">Get In Touch</span>
-                            <h2 style={{ marginBottom: '24px' }}>Send Us a Message</h2>
+                            <h2 style={{ marginBottom: '24px' }}>We&apos;re Here for You — Reach Out</h2>
                             {status === 'success' ? (
                                 <div className="form-success">
-                                    ✅ Thank you! Your message has been sent. We&apos;ll contact you shortly.
+                                    <IconCheck size={18} /> Thank you! Your message has been sent. We&apos;ll contact you shortly.
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit}>
@@ -82,11 +83,11 @@ export default function ContactPage() {
                                         <label htmlFor="contact-message">Message *</label>
                                         <textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us about your plumbing issue..." rows={5} />
                                     </div>
-                                    <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }} disabled={status === 'loading'}>
-                                        {status === 'loading' ? 'Sending...' : 'Send Message'}
+                                    <button type="submit" className="btn btn-red btn-lg" style={{ width: '100%' }} disabled={status === 'loading'}>
+                                        {status === 'loading' ? 'Sending...' : 'Get a Free Quote'}
                                     </button>
                                     {status === 'error' && (
-                                        <p style={{ color: '#c61726', marginTop: '12px', textAlign: 'center', fontSize: '14px' }}>
+                                        <p style={{ color: '#D0242C', marginTop: '12px', textAlign: 'center', fontSize: '14px' }}>
                                             Something went wrong. Please call us at 214-307-4264.
                                         </p>
                                     )}
@@ -100,13 +101,13 @@ export default function ContactPage() {
                             <h2 style={{ marginBottom: '24px' }}>Contact Information</h2>
 
                             <div className="contact-info-card">
-                                <h3>📍 Woodlands Location</h3>
+                                <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><IconMapPin size={18} /> Woodlands Location</h3>
                                 <div className="contact-info-item">
-                                    <span className="contact-info-icon">📞</span>
+                                    <span className="contact-info-icon"><IconPhone size={18} /></span>
                                     <a href="tel:713-561-3276">713-561-3276</a>
                                 </div>
                                 <div className="contact-info-item">
-                                    <span className="contact-info-icon">📍</span>
+                                    <span className="contact-info-icon"><IconMapPin size={18} /></span>
                                     <a href="https://www.google.com/maps/place/25420+Kuykendahl+Rd+Suite+B200-236,+The+Woodlands,+TX+77375" target="_blank" rel="noopener noreferrer">
                                         25420 Kuykendahl Rd, Suite B200-236, The Woodlands, TX, 77375
                                     </a>
@@ -120,13 +121,13 @@ export default function ContactPage() {
                             </div>
 
                             <div className="contact-info-card">
-                                <h3>📍 Irving Location</h3>
+                                <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><IconMapPin size={18} /> Irving Location</h3>
                                 <div className="contact-info-item">
-                                    <span className="contact-info-icon">📞</span>
+                                    <span className="contact-info-icon"><IconPhone size={18} /></span>
                                     <a href="tel:214-307-4264">214-307-4264</a>
                                 </div>
                                 <div className="contact-info-item">
-                                    <span className="contact-info-icon">📍</span>
+                                    <span className="contact-info-icon"><IconMapPin size={18} /></span>
                                     <a href="https://www.google.com/maps/place/320+Decker+Dr+Ste+102-08,+Irving,+TX+75062" target="_blank" rel="noopener noreferrer">
                                         320 Decker Dr, Suite 102-08, Irving, TX, 75062
                                     </a>
@@ -140,13 +141,13 @@ export default function ContactPage() {
                             </div>
 
                             <div className="contact-info-card">
-                                <h3>📍 Dallas Location</h3>
+                                <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><IconMapPin size={18} /> Dallas Location</h3>
                                 <div className="contact-info-item">
-                                    <span className="contact-info-icon">📞</span>
+                                    <span className="contact-info-icon"><IconPhone size={18} /></span>
                                     <a href="tel:214-430-3461">214-430-3461</a>
                                 </div>
                                 <div className="contact-info-item">
-                                    <span className="contact-info-icon">📍</span>
+                                    <span className="contact-info-icon"><IconMapPin size={18} /></span>
                                     <a href="https://www.google.com/maps/place/102+N+Shiloh+Rd+Suite+%23104,+Dallas,+TX+75042" target="_blank" rel="noopener noreferrer">
                                         102 N Shiloh Rd, Suite 104, Dallas, TX, 75042
                                     </a>
@@ -160,7 +161,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="contact-info-card">
-                                <h3>🕐 Hours &amp; Availability</h3>
+                                <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><IconClock size={18} /> Hours &amp; Availability</h3>
                                 <p style={{ fontSize: '15px', marginBottom: '8px' }}><strong>We are available 24/7</strong></p>
                                 <p style={{ fontSize: '14px', color: '#666' }}>Emergency service available any time, day or night.</p>
                                 <p style={{ fontSize: '14px', color: '#666', marginTop: '8px' }}>License #: 37912</p>

@@ -4,9 +4,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingPopup from '@/components/BookingPopup';
 import ScrollAnimations from '@/components/ScrollAnimations';
-import VisualEditingComponent from '@/components/VisualEditing';
+import { IconPhone, IconArrowUp } from '@/components/Icons';
 
-export default function ClientLayout({ children, settings, preview }) {
+export default function ClientLayout({ children, settings }) {
     const [bookingOpen, setBookingOpen] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -25,7 +25,6 @@ export default function ClientLayout({ children, settings, preview }) {
             <Footer settings={settings} />
             <BookingPopup isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
             <ScrollAnimations />
-            {preview && <VisualEditingComponent />}
 
             {/* Scroll to Top */}
             <button
@@ -33,13 +32,13 @@ export default function ClientLayout({ children, settings, preview }) {
                 onClick={scrollToTop}
                 aria-label="Scroll to top"
             >
-                ↑
+                <IconArrowUp size={20} />
             </button>
 
             {/* Mobile Floating CTA */}
             <div className="floating-cta">
                 <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm" style={{ flex: 1, textAlign: 'center' }}>
-                    📞 {settings?.phoneNumber || '214-307-4264'}
+                    <IconPhone size={16} /> {settings?.phoneNumber || '214-307-4264'}
                 </a>
             </div>
         </>

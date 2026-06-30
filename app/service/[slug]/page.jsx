@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { services, getServiceBySlug as getLocalServiceBySlug, getAllServiceSlugs } from '@/data/services';
-import { sanityFetch } from '@/sanity/lib/fetch';
-import { serviceBySlugQuery } from '@/sanity/lib/queries';
-import { urlForImage } from '@/sanity/lib/image';
+import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
+import { IconCalendar, IconPhone, IconWrench, IconStar } from '@/components/Icons';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTABanner from '@/components/CTABanner';
 
@@ -14,14 +12,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const sanityService = await sanityFetch({ 
-        query: serviceBySlugQuery, 
-        params: { slug } 
-    });
-    
-    const service = sanityService || getLocalServiceBySlug(slug);
+    const service = getServiceBySlug(slug);
     if (!service) return {};
-    
+
     return {
         title: service.metaTitle,
         description: service.metaDescription,
@@ -30,13 +23,8 @@ export async function generateMetadata({ params }) {
 
 export default async function ServicePage({ params }) {
     const { slug } = await params;
-    
-    const sanityService = await sanityFetch({ 
-        query: serviceBySlugQuery, 
-        params: { slug } 
-    });
-    
-    const service = sanityService || getLocalServiceBySlug(slug);
+
+    const service = getServiceBySlug(slug);
     if (!service) notFound();
 
     return (
@@ -53,8 +41,8 @@ export default async function ServicePage({ params }) {
             {/* Quick CTA Row */}
             <section style={{ background: 'var(--light-gray)', padding: '18px 0' }}>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
-                    <Link href="/contact-us" className="btn btn-primary btn-sm">📅 Book This Service</Link>
-                    <a href="tel:214-307-4264" className="btn btn-red btn-sm">📞 Call 214-307-4264</a>
+                    <Link href="/contact-us" className="btn btn-red btn-sm"><IconCalendar size={16} /> Book This Service</Link>
+                    <a href="tel:214-307-4264" className="btn btn-outline btn-sm"><IconPhone size={16} /> Call 214-307-4264</a>
                 </div>
             </section>
 
@@ -81,18 +69,18 @@ export default async function ServicePage({ params }) {
                             )}
 
                             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
-                                <Link href="/contact-us" className="btn btn-primary btn-lg">Book Now</Link>
+                                <Link href="/contact-us" className="btn btn-red btn-lg">Book Today</Link>
                                 <a href="tel:214-307-4264" className="btn btn-outline btn-lg">Call 214-307-4264</a>
                             </div>
                         </div>
 
                         <div className="fade-in-right">
                             <div className="content-image" style={{ marginBottom: '30px' }}>
-                                <Image 
-                                    src={service.image?.asset ? urlForImage(service.image).url() : (service.image || getLocalServiceBySlug(slug)?.image)} 
-                                    alt={service.imageAlt || service.title} 
-                                    width={600} 
-                                    height={400} 
+                                <Image
+                                    src={service.image}
+                                    alt={service.imageAlt || service.title}
+                                    width={600}
+                                    height={400}
                                 />
                             </div>
 
@@ -104,7 +92,7 @@ export default async function ServicePage({ params }) {
                                         href={`/service/${s.slug}`}
                                         className={`service-sidebar-item ${s.slug === slug ? 'active' : ''}`}
                                     >
-                                        🔧 {s.title}
+                                        <IconWrench size={15} /> {s.title}
                                     </Link>
                                 ))}
                             </div>
@@ -122,7 +110,7 @@ export default async function ServicePage({ params }) {
                     </div>
                     <div className="testimonials-grid fade-in">
                         <div className="testimonial-card">
-                            <div className="testimonial-stars">★★★★★</div>
+                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
                             <p className="testimonial-text">
                                 &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed it at a very fair price. Highly recommend!&rdquo;
                             </p>
@@ -135,7 +123,7 @@ export default async function ServicePage({ params }) {
                             </div>
                         </div>
                         <div className="testimonial-card">
-                            <div className="testimonial-stars">★★★★★</div>
+                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
                             <p className="testimonial-text">
                                 &ldquo;We had a terrible sewage backup on a Sunday night and these guys came right away. Professional, clean, and honest pricing. Will definitely use again!&rdquo;
                             </p>
