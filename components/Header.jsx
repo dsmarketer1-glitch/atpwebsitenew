@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { IconClock, IconBadge, IconMapPin, IconPhone, IconChevronDown, IconX, IconCalendar } from '@/components/Icons';
+import { IconClock, IconBadge, IconMapPin, IconPhone, IconPhoneFill, IconChevronDown, IconX, IconCalendar } from '@/components/Icons';
 
 const plumbingServices = [
   { name: 'Drain Cleaning', slug: 'drain-cleaning' },
@@ -72,6 +72,16 @@ export default function Header({ onBookNow, settings }) {
           </Link>
 
           <nav className="header-nav">
+            {/* Mobile-only row actions: Book Online + phone icon */}
+            <div className="mobile-header-actions">
+              <button type="button" className="btn btn-primary btn-sm" onClick={onBookNow}>
+                <IconCalendar size={16} /> Book Online
+              </button>
+              <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="mobile-phone-icon" aria-label="Call us">
+                <IconPhoneFill size={22} />
+              </a>
+            </div>
+
             <button
               className={`mobile-toggle ${mobileOpen ? 'active hidden' : ''}`}
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -154,16 +164,6 @@ export default function Header({ onBookNow, settings }) {
               </a>
             </div>
           </nav>
-        </div>
-
-        {/* Mobile sticky action row (Book Online + Call Now) */}
-        <div className="mobile-action-bar">
-          <button type="button" className="btn btn-primary" onClick={onBookNow}>
-            <IconCalendar size={18} /> Book Online
-          </button>
-          <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red">
-            <IconPhone size={18} /> Call Now
-          </a>
         </div>
       </header>
     </>

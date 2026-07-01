@@ -429,14 +429,19 @@ ul {
   height: var(--header-height);
 }
 
+.header-logo {
+  flex-shrink: 0;
+}
+
 .header-logo img {
   height: 48px;
   width: auto;
+  max-width: none;
   transition: all var(--transition-fast);
 }
 @media (max-width: 768px) {
   .header-logo img {
-    height: 40px;
+    height: 50px;
   }
 }
 
@@ -3217,29 +3222,70 @@ ul {
   color: var(--white);
 }
 
-/* ---- Mobile sticky action row (Book Online + Call Now) ---- */
-.mobile-action-bar {
+/* ---- Mobile header row actions (Book Online + phone icon) ---- */
+.mobile-header-actions {
   display: none;
 }
 
+.mobile-phone-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-red);
+  width: 40px;
+  height: 40px;
+}
+
 @media (max-width: 768px) {
+  .header-inner {
+    padding: 0 16px;
+    gap: 6px;
+  }
+
   .header-actions {
     display: none !important;
   }
 
-  .mobile-action-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 10px 16px 12px;
-    background: var(--white);
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  .header-nav {
+    gap: 4px;
+    flex-shrink: 0;
   }
 
-  .mobile-action-bar .btn {
-    width: 100%;
-    padding: 12px 6px;
-    font-size: 14px;
+  .mobile-header-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .mobile-header-actions .btn-sm {
+    padding: 7px 11px;
+    font-size: 12px;
+    gap: 5px;
     box-shadow: none;
+  }
+
+  .mobile-phone-icon {
+    width: 28px;
+    height: 40px;
+  }
+
+  .mobile-toggle {
+    flex-shrink: 0;
+    padding: 8px 4px 8px 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-logo img {
+    height: 42px;
+  }
+
+  .mobile-header-actions .btn-sm {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+
+  .mobile-phone-icon {
+    width: 24px;
   }
 }
