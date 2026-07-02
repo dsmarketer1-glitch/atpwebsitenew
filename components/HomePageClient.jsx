@@ -49,7 +49,7 @@ export default function HomePageClient() {
                         <span className="hero-eyebrow">24/7 Emergency Plumbing</span>
                         <h1>The People<br />Who Show Up<span className="tm">™</span></h1>
                         <p className="hero-subtitle">
-                            Fast, reliable plumbing services for homes in Dallas–Fort Worth and The Woodlands.
+                            Fast, reliable plumbing services for homes across Dallas–Fort Worth.
                         </p>
                         <ul className="hero-checklist">
                             {['Drain Cleaning', 'Drain Repair', 'Leak Detection', 'Emergency Plumbing', 'Water Damage Restoration'].map((item) => (

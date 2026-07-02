@@ -2178,7 +2178,7 @@ ul {
 }
 
 .content-text ul li::before {
-  content: 'âœ“';
+  content: '\2713';
   color: var(--primary-blue);
   font-weight: 900;
   flex-shrink: 0;
