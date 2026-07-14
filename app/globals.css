@@ -462,9 +462,9 @@ ul {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 10px 16px;
+  padding: 8px 11px;
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-dark);
   border-radius: var(--radius-md);
@@ -535,7 +535,11 @@ ul {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+}
+
+.header-actions .btn-sm {
+  padding: 8px 13px;
 }
 
 /* ---- Buttons (3D Enhanced) ---- */
@@ -3287,5 +3291,148 @@ ul {
 
   .mobile-phone-icon {
     width: 24px;
+  }
+}
+
+/* ---- Tablet / small laptop (769–1200px): use the compact mobile header ---- */
+/* Keeps the wide desktop header (Book Online + Call Now with number) only on
+   screens ≥1201px where it fits. Phone view (≤768px) is untouched. */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .top-bar {
+    display: none;
+  }
+
+  .header-nav > ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow-y: auto;
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-nav > ul.mobile-open {
+    right: 0;
+  }
+
+  .mobile-menu-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    width: 100%;
+  }
+
+  .close-menu {
+    background: var(--off-white);
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item > a {
+    padding: 12px 16px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--radius-md);
+    color: var(--text-dark);
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    display: none;
+    width: auto !important;
+    max-width: 100% !important;
+    background: rgba(15, 23, 42, 0.03);
+    border-left: 3px solid var(--primary-blue);
+    margin: 10px 10px 15px 20px !important;
+    padding: 8px 0 !important;
+    border-radius: var(--radius-md);
+    box-shadow: none !important;
+    overflow: visible !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .nav-item.open .dropdown-menu {
+    display: block !important;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 20px !important;
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    color: var(--text-dark) !important;
+    text-align: left !important;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    z-index: 2001;
+  }
+
+  .mobile-toggle.hidden {
+    display: none !important;
+  }
+
+  .mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header-actions {
+    display: none !important;
+  }
+
+  .mobile-header-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-header-actions .btn-sm {
+    padding: 9px 16px;
+    font-size: 14px;
+    box-shadow: none;
+  }
+
+  .header-logo img {
+    height: 46px;
   }
 }

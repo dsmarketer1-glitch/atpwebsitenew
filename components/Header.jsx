@@ -58,9 +58,6 @@ export default function Header({ onBookNow, settings }) {
             <span className="top-bar-divider" />
             <span><IconMapPin size={14} /> Serving Dallas–Fort Worth Metroplex</span>
           </div>
-          <div className="top-bar-right">
-            <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`}><IconPhone size={14} /> {settings?.phoneNumber || '214-307-4264'}</a>
-          </div>
         </div>
       </div>
 
@@ -159,8 +156,11 @@ export default function Header({ onBookNow, settings }) {
             </ul>
 
             <div className="header-actions">
+              <button type="button" className="btn btn-primary btn-sm" onClick={onBookNow}>
+                <IconCalendar size={16} /> Book Online
+              </button>
               <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm">
-                Call Now
+                <IconPhoneFill size={15} /> Call Now: {settings?.phoneNumber || '214-307-4264'}
               </a>
             </div>
           </nav>
