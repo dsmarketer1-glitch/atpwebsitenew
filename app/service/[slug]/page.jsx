@@ -140,6 +140,15 @@ export default async function ServicePage({ params }) {
             </section>
 
             <FAQAccordion faqs={service.faqs} />
+
+            {/* Still-have-questions CTA below the FAQ */}
+            <section className="section" style={{ padding: '50px 0' }}>
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <h3 style={{ marginBottom: '18px' }}>Still have questions? Call us</h3>
+                    <a href="tel:214-307-4264" className="btn btn-red btn-lg"><IconPhone size={18} /> Call 214-307-4264</a>
+                </div>
+            </section>
+
             <CTABanner />
         </>
     );

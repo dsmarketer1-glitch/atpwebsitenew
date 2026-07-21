@@ -149,12 +149,27 @@ export default function ContactPage() {
 
                             <div className="contact-info-card">
                                 <h3>Follow Us</h3>
-                                <div style={{ display: 'flex', gap: '12px', marginTop: '8px', flexWrap: 'wrap' }}>
-                                    <a href="https://www.facebook.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Facebook</a>
-                                    <a href="https://www.instagram.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Instagram</a>
-                                    <a href="https://www.youtube.com/@AnyTimePlumbingDrainCleaning" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">YouTube</a>
-                                    <a href="https://maps.app.goo.gl/uKXDcWogZcB1Gdc27" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">GMB - Garland</a>
-                                    <a href="https://maps.app.goo.gl/XRxiS2yr7gf7kqo59" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">GMB - Irving</a>
+                                <div style={{ display: 'flex', gap: '10px', marginTop: '8px', flexWrap: 'wrap' }}>
+                                    <a href="https://www.facebook.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 18px', borderRadius: '100px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', background: '#1877F2', color: '#fff' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+                                        Facebook
+                                    </a>
+                                    <a href="https://www.instagram.com/anytimeplumbing365/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 18px', borderRadius: '100px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', background: 'linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4)', color: '#fff' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" /></svg>
+                                        Instagram
+                                    </a>
+                                    <a href="https://www.youtube.com/@AnyTimePlumbingDrainCleaning" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 18px', borderRadius: '100px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', background: '#FF0000', color: '#fff' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+                                        YouTube
+                                    </a>
+                                    <a href="https://maps.app.goo.gl/uKXDcWogZcB1Gdc27" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 18px', borderRadius: '100px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', background: '#fff', color: '#3c4043', border: '1px solid #dadce0', boxShadow: 'var(--shadow-sm)' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 01-2.4 3.64v3h3.86c2.26-2.09 3.56-5.17 3.56-8.88z" /><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0012 24z" /><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29A11.99 11.99 0 000 12c0 1.94.46 3.77 1.29 5.38l3.98-3.09z" /><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z" /></svg>
+                                        Google Reviews – Garland
+                                    </a>
+                                    <a href="https://maps.app.goo.gl/XRxiS2yr7gf7kqo59" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 18px', borderRadius: '100px', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', background: '#fff', color: '#3c4043', border: '1px solid #dadce0', boxShadow: 'var(--shadow-sm)' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 01-2.4 3.64v3h3.86c2.26-2.09 3.56-5.17 3.56-8.88z" /><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0012 24z" /><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29A11.99 11.99 0 000 12c0 1.94.46 3.77 1.29 5.38l3.98-3.09z" /><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z" /></svg>
+                                        Google Reviews – Irving
+                                    </a>
                                 </div>
                             </div>
                         </div>
