@@ -7,10 +7,12 @@ export default function Footer({ settings }) {
         <footer className="site-footer">
             <div className="footer-grid">
                 <div className="footer-brand">
-                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={170} height={57} />
+                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={57} />
                     <p>
-                        Expert plumbing, leak detection, sewer repair, and property restoration services
-                        for homeowners across the Dallas–Fort Worth Metroplex. Fast, reliable, 24/7.
+                        Anytime Plumbing 365 provides reliable residential plumbing and 24/7 emergency
+                        service for homeowners throughout Dallas–Fort Worth. We specialize
+                        in drain cleaning, drain repair, leak detection, plumbing repairs, and water damage
+                        restoration—fast, professional service when you need it most.
                     </p>
                     <div className="footer-social-desktop">
                         <a href={settings?.socialLinks?.facebook || "https://www.facebook.com/anytimeplumbing365/"} target="_blank" rel="noopener noreferrer" aria-label="Facebook">

@@ -196,7 +196,7 @@ export default function HomePageClient() {
                     <div className="services-grid reveal-stagger">
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="/images/service/actual/drain-pipe-repair.png" alt="Drain cleaning and repair" width={400} height={250} />
+                                <Image src="/images/service/actual/drain-pipe-repair-home.png" alt="Drain pipe repair" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/drain-pipe-repair">Drain Pipe Repair</Link></h3>
@@ -206,7 +206,7 @@ export default function HomePageClient() {
                         </div>
                         <div className="service-card interactive">
                             <div className="service-card-image">
-                                <Image src="/images/service/actual/emergency-plumbing.png" alt="Emergency Plumbing Response" width={400} height={250} />
+                                <Image src="/images/service/actual/emergency-plumber-home.png" alt="Emergency plumbing response" width={400} height={250} />
                             </div>
                             <div className="service-card-body">
                                 <h3><Link href="/service/emergency-plumber">Emergency Plumber</Link></h3>
@@ -297,7 +297,6 @@ export default function HomePageClient() {
                                 &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed our broken water heater at a very fair price. The technician was courteous, professional, and explained everything clearly. I highly recommend them to anyone in the Dallas area.&rdquo;
                             </p>
                             <div className="testimonial-author">
-                                <Image src="https://placehold.co/800x600/png" alt="Akia Jackson" width={50} height={50} className="testimonial-avatar" />
                                 <div>
                                     <p className="testimonial-name">Akia Jackson</p>
                                     <p className="testimonial-source">Google Review</p>
@@ -310,7 +309,6 @@ export default function HomePageClient() {
                                 &ldquo;We had a terrible sewage backup on a Sunday night and these guys came right away. They were professional, clean, and got everything taken care of fast. The pricing was honest and there were no surprises. We will definitely use Anytime Plumbing 365 again!&rdquo;
                             </p>
                             <div className="testimonial-author">
-                                <Image src="https://placehold.co/800x600/png" alt="Gina Rigney" width={50} height={50} className="testimonial-avatar" />
                                 <div>
                                     <p className="testimonial-name">Gina Rigney</p>
                                     <p className="testimonial-source">Facebook Review</p>
