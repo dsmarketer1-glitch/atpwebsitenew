@@ -12,7 +12,11 @@ export default function BlogPage() {
         <>
             <section className="page-hero">
                 <div className="container">
+                    <span className="section-label" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderColor: 'rgba(255,255,255,0.3)', marginBottom: '14px', position: 'relative', zIndex: 2 }}>Plumbing Tips &amp; Insights</span>
                     <h1>Blog</h1>
+                    <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '600px', margin: '12px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
+                        Expert advice for Dallas–Fort Worth homeowners.
+                    </p>
                     <p className="breadcrumb"><Link href="/">Home</Link> / Blog</p>
                 </div>
             </section>
