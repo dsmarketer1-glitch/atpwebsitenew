@@ -46,6 +46,15 @@ export default function Header({ onBookNow, settings }) {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
+  // On desktop (hover-capable), auto-close the dropdown when the pointer
+  // leaves the nav item — whether it was opened by hover or by click.
+  // On touch devices (no hover) this is skipped so tap-to-toggle still works.
+  const closeOnLeave = () => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches) {
+      setOpenDropdown(null);
+    }
+  };
+
   return (
     <>
       {/* Top Utility Bar */}
@@ -103,7 +112,7 @@ export default function Header({ onBookNow, settings }) {
                 <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
               </li>
 
-              <li className={`nav-item ${openDropdown === 'plumbing' ? 'open' : ''}`}>
+              <li className={`nav-item ${openDropdown === 'plumbing' ? 'open' : ''}`} onMouseLeave={closeOnLeave}>
                 <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('plumbing'); }}>
                   Plumbing <span className="nav-arrow"><IconChevronDown size={13} /></span>
                 </a>
@@ -116,7 +125,7 @@ export default function Header({ onBookNow, settings }) {
                 </div>
               </li>
 
-              <li className={`nav-item ${openDropdown === 'restoration' ? 'open' : ''}`}>
+              <li className={`nav-item ${openDropdown === 'restoration' ? 'open' : ''}`} onMouseLeave={closeOnLeave}>
                 <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('restoration'); }}>
                   Restoration <span className="nav-arrow"><IconChevronDown size={13} /></span>
                 </a>
@@ -129,7 +138,7 @@ export default function Header({ onBookNow, settings }) {
                 </div>
               </li>
 
-              <li className={`nav-item ${openDropdown === 'about' ? 'open' : ''}`}>
+              <li className={`nav-item ${openDropdown === 'about' ? 'open' : ''}`} onMouseLeave={closeOnLeave}>
                 <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('about'); }}>
                   About <span className="nav-arrow"><IconChevronDown size={13} /></span>
                 </a>
@@ -144,10 +153,6 @@ export default function Header({ onBookNow, settings }) {
 
               <li className="nav-item">
                 <Link href="/financing" onClick={() => setMobileOpen(false)}>Financing</Link>
-              </li>
-
-              <li className="nav-item">
-                <Link href="/specials" onClick={() => setMobileOpen(false)}>Specials</Link>
               </li>
 
               <li className="nav-item">
