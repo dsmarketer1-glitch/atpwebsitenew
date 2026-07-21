@@ -69,17 +69,15 @@ export default function AboutPage() {
                     <div className="content-two-col">
                         <div className="content-text fade-in-left">
                             <span className="section-label">Quality</span>
-                            <h2>We Fix It Right — and Make It Last</h2>
-                            <p>A quick patch isn&apos;t what your family needs. We do the job properly the first time, back it with real warranties, and build for durability, safety, and peace of mind.</p>
-                            <p>That care isn&apos;t just good business — it&apos;s how we&apos;d want our own homes treated. You deserve to feel confident in the systems your day depends on.</p>
+                            <h2>Long-Lasting Solutions</h2>
+                            <p>We focus on work that stands up over time, supported by warranties and driven by a mindset that values durability, safety, and reliability.</p>
                         </div>
                         <div className="content-text fade-in-right">
                             <span className="section-label">Dependable</span>
-                            <h2>Showing Up For Families. 365 Days A Year.</h2>
-                            <p>Trust is earned, not claimed. We&apos;ve earned ours across thousands of visits where neighbors saw us treat their problem like our own.</p>
-                            <p>Reliability means being here when it matters most — ready for emergency calls, holidays included, and holding our standards high even on the toughest jobs. When you need us, the light is on.</p>
+                            <h2>Trust &amp; Reliability</h2>
+                            <p>Trust is earned through thousands of service visits where homeowners saw firsthand how we treat their concerns as our own.</p>
                             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '20px' }}>
-                                <Link href="/contact-us" className="btn btn-red btn-lg">Book Today</Link>
+                                <Link href="/contact-us" className="btn btn-red btn-lg">Book Now</Link>
                                 <a href="tel:214-307-4264" className="btn btn-outline btn-lg">Call 214-307-4264</a>
                             </div>
                         </div>

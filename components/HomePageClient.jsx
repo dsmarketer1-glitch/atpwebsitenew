@@ -325,10 +325,10 @@ export default function HomePageClient() {
                     <div className="section-header fade-in">
                         <span className="section-label" style={{ background: 'rgba(255,255,255,0.12)', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>Coverage</span>
                         <h2>Areas We Serve</h2>
-                        <p>We proudly serve homeowners across the Dallas-Fort Worth Metroplex.</p>
+                        <p style={{ color: '#fff' }}>We proudly serve homeowners across the Dallas-Fort Worth Metroplex.</p>
                     </div>
                     <div className="areas-grid fade-in">
-                        {['Dallas', 'Irving', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy'].map((area) => (
+                        {['Dallas', 'Irving', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy', 'Garland'].map((area) => (
                             <Link href="/area" key={area} className="area-tag"><IconMapPin size={15} /> {area}, TX</Link>
                         ))}
                     </div>
