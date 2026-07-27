@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
-import AnimatedCounter from '@/components/AnimatedCounter';
 import { IconCheck, IconPhone, IconClock, IconUsers, IconSparkle, IconAward, IconShield, IconMapPin, IconStar, IconArrowRight } from '@/components/Icons';
 
 export default function HomePageClient() {
@@ -77,40 +76,6 @@ export default function HomePageClient() {
                     </svg>
                 </div>
             </section>
-
-            {/* ===== TRUST STRIP ===== */}
-            <div className="trust-strip">
-                <div className="trust-strip-inner reveal-stagger">
-                    <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap blue">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12,6 12,12 16,14" /></svg>
-                        </div>
-                        <div className="trust-stat-number"><AnimatedCounter end={24} suffix="/7" /></div>
-                        <div className="trust-stat-label">Always Available</div>
-                    </div>
-                    <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap blue">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                        </div>
-                        <div className="trust-stat-number"><AnimatedCounter end={5} suffix=".0" decimals={1} /></div>
-                        <div className="trust-stat-label">Star Rating</div>
-                    </div>
-                    <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap blue">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-                        </div>
-                        <div className="trust-stat-number"><AnimatedCounter end={100} suffix="%" /></div>
-                        <div className="trust-stat-label">Satisfaction</div>
-                    </div>
-                    <div className="trust-stat">
-                        <div className="trust-stat-icon-wrap blue">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
-                        </div>
-                        <div className="trust-stat-number"><AnimatedCounter end={23} suffix="+" /></div>
-                        <div className="trust-stat-label">Services Offered</div>
-                    </div>
-                </div>
-            </div>
 
             {/* ===== HOW IT WORKS ===== */}
             <section className="section">
