@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { IconShield, IconClock, IconCheck, IconDollar, IconPhone, IconMapPin } from '@/components/Icons';
+import { cities } from '@/data/locations';
 
 export default function Footer({ settings }) {
     return (
@@ -131,6 +132,22 @@ export default function Footer({ settings }) {
                 <div className="footer-trust-badge">
                     <span className="footer-trust-badge-icon"><IconDollar size={18} /></span>
                     Upfront Pricing
+                </div>
+            </div>
+
+            <div className="footer-communities">
+                <h4>Communities We Serve</h4>
+                <div className="footer-communities-grid">
+                    {cities.filter((c) => c.communities.length > 0).map((c) => (
+                        <div className="footer-communities-group" key={c.slug}>
+                            <Link href={`/${c.slug}`} className="footer-communities-city">{c.name}</Link>
+                            <div className="footer-communities-links">
+                                {c.communities.map((cm) => (
+                                    <Link key={cm.slug} href={`/${c.slug}/${cm.slug}`}>{cm.name}</Link>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
 

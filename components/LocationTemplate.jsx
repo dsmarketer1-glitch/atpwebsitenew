@@ -23,7 +23,7 @@ const whyCards = [
  * @param {{name:string, href:string}[]} nearby  Nearby-area links.
  * @param {string} nearbyHeading  Heading for the nearby section.
  */
-export default function LocationTemplate({ name, headingLocation, regionPhrase, breadcrumb, nearby = [], nearbyHeading = 'We Also Serve Nearby' }) {
+export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearby = [], nearbyHeading = 'We Also Serve Nearby' }) {
     const featured = services.slice(0, 6);
     const faqs = [
         { question: `Do you offer emergency plumbing in ${name}?`, answer: `Yes — we're available 24/7, 365 days a year for ${name} homeowners. Call 214-307-4264 and we'll be on our way.` },
@@ -38,8 +38,11 @@ export default function LocationTemplate({ name, headingLocation, regionPhrase, 
             <section className="page-hero">
                 <div className="container">
                     <span className="section-label" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderColor: 'rgba(255,255,255,0.3)', marginBottom: '14px', position: 'relative', zIndex: 2 }}>Local Plumbing Experts</span>
-                    <h1>Plumber in {headingLocation}</h1>
-                    <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '620px', margin: '12px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
+                    <h1>The People Who Show Up<span style={{ fontSize: '0.45em', verticalAlign: 'top', fontWeight: 700 }}>™</span> in {name}</h1>
+                    <p style={{ color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.05rem, 2vw, 1.35rem)', margin: '10px auto 0', maxWidth: '720px', position: 'relative', zIndex: 2 }}>
+                        Plumber in {name}, TX and Nearby Cities &amp; Communities
+                    </p>
+                    <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '620px', margin: '14px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
                         Fast, friendly, and available 24/7 — honest plumbing and drain service for {name} homeowners, with same-day help and no surprises.
                     </p>
                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '22px', position: 'relative', zIndex: 2 }}>

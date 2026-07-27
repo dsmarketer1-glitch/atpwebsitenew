@@ -3436,3 +3436,56 @@ ul {
     height: 46px;
   }
 }
+
+/* ---- Footer: communities we serve ---- */
+.footer-communities {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-communities > h4 {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+}
+
+.footer-communities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.footer-communities-city {
+  display: inline-block;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-communities-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.footer-communities-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+.footer-communities-links a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .footer-communities-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

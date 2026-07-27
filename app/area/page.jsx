@@ -35,9 +35,9 @@ export default function ServiceAreasPage() {
             <section className="page-hero">
                 <div className="container">
                     <span className="section-label" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderColor: 'rgba(255,255,255,0.3)', marginBottom: '14px', position: 'relative', zIndex: 2 }}>Coverage</span>
-                    <h1>Service Areas</h1>
-                    <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '600px', margin: '12px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
-                        Serving the entire Dallas–Fort Worth Metroplex — 24/7.
+                    <h1>The People Who Show Up<span style={{ fontSize: '0.45em', verticalAlign: 'top', fontWeight: 700 }}>™</span></h1>
+                    <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '640px', margin: '12px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
+                        Proudly serving multiple cities and communities across the Dallas–Fort Worth Metroplex — 24/7.
                     </p>
                     <p className="breadcrumb"><Link href="/">Home</Link> / Service Areas</p>
                 </div>
