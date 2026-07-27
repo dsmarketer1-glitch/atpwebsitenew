@@ -294,7 +294,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="areas-grid fade-in">
                         {['Dallas', 'Irving', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy', 'Garland'].map((area) => (
-                            <Link href="/area" key={area} className="area-tag"><IconMapPin size={15} /> {area}, TX</Link>
+                            <Link href={`/${area.toLowerCase().replace(/\s+/g, '-')}`} key={area} className="area-tag"><IconMapPin size={15} /> {area}, TX</Link>
                         ))}
                     </div>
                 </div>

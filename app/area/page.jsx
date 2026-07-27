@@ -53,18 +53,19 @@ export default function ServiceAreasPage() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }} className="fade-in">
                         {areas.map((area) => (
-                            <div key={area.name} style={{
+                            <Link key={area.name} href={`/${area.name.replace(/,\s*TX$/i, '').toLowerCase().replace(/\s+/g, '-')}`} style={{
+                                display: 'block',
                                 padding: '20px 24px',
                                 background: 'var(--white)',
                                 borderRadius: 'var(--radius-lg)',
                                 boxShadow: 'var(--shadow-3d)',
                                 border: '1px solid rgba(0,0,0,0.04)',
                                 transition: 'all 0.3s ease',
-                                cursor: 'default',
+                                textDecoration: 'none',
                             }}>
                                 <strong style={{ fontSize: '15px', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '8px' }}><IconMapPin size={16} /> {area.name}</strong>
                                 <p style={{ fontSize: '13px', color: 'var(--text-light)', marginTop: '4px', lineHeight: '1.5' }}>{area.description}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
 
