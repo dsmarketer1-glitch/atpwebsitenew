@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { IconX, IconCheck } from '@/components/Icons';
 
 export default function BookingPopup({ isOpen, onClose }) {
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', smsConsent: false });
     const [status, setStatus] = useState('idle'); // idle | loading | success | error
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, type, value, checked } = e.target;
+        setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
     };
 
     const handleSubmit = async (e) => {
@@ -21,7 +22,7 @@ export default function BookingPopup({ isOpen, onClose }) {
             });
             if (res.ok) {
                 setStatus('success');
-                setFormData({ name: '', email: '', phone: '', message: '' });
+                setFormData({ name: '', email: '', phone: '', message: '', smsConsent: false });
                 setTimeout(() => { setStatus('idle'); onClose(); }, 3000);
             } else {
                 setStatus('error');
@@ -81,6 +82,15 @@ export default function BookingPopup({ isOpen, onClose }) {
                                 required placeholder="Describe your plumbing issue..."
                             />
                         </div>
+                        <label className="sms-consent">
+                            <input
+                                type="checkbox" name="smsConsent"
+                                checked={formData.smsConsent} onChange={handleChange}
+                            />
+                            <span>
+                                I agree to receive text messages from Anytime Plumbing 365 at the phone number provided. Message frequency varies. Message &amp; data rates may apply. Reply STOP to opt out or HELP for help. See our <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="/terms-of-service" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>. (Optional — you can still submit without checking this.)
+                            </span>
+                        </label>
                         <button type="submit" className="btn btn-red btn-lg" style={{ width: '100%' }}
                             disabled={status === 'loading'}>
                             {status === 'loading' ? 'Sending...' : 'Get My Free Quote'}

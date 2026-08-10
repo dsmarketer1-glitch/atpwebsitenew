@@ -3489,3 +3489,34 @@ ul {
     gap: 18px;
   }
 }
+
+/* ---- SMS consent checkbox (Twilio/A2P compliance) ---- */
+.sms-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0 20px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-light);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.sms-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--primary-blue);
+  cursor: pointer;
+}
+
+.sms-consent a {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: underline;
+}

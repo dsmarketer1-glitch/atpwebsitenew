@@ -36,6 +36,18 @@ export default function TermsPage() {
                 <h2>Liability</h2>
                 <p>Anytime Plumbing 365 carries comprehensive liability insurance. Our liability is limited to the scope of services provided. We are not responsible for pre-existing conditions or damage not directly caused by our work.</p>
 
+                <h2>SMS / Text Messaging Terms</h2>
+                <p>By providing your phone number and checking the SMS consent box on any of our forms, you agree to receive text messages from Anytime Plumbing 365 at the number provided. These may include appointment scheduling and confirmations, dispatch and service updates, quotes, follow-ups, and customer care messages.</p>
+                <ul>
+                    <li><strong>Message frequency:</strong> varies based on your interactions and service needs.</li>
+                    <li><strong>Cost:</strong> Message and data rates may apply, depending on your mobile carrier and plan.</li>
+                    <li><strong>Opt-out:</strong> Reply <strong>STOP</strong> at any time to stop receiving text messages. You will receive a confirmation and no further messages unless you opt in again.</li>
+                    <li><strong>Help:</strong> Reply <strong>HELP</strong> for assistance, or call us at <a href="tel:214-307-4264">214-307-4264</a>.</li>
+                    <li><strong>Carriers:</strong> Mobile carriers are not liable for delayed or undelivered messages.</li>
+                    <li><strong>Consent:</strong> Providing consent to receive text messages is optional and is not required to purchase or receive any goods or services from us.</li>
+                </ul>
+                <p>For details on how we handle your information, see our <Link href="/privacy-policy">Privacy Policy</Link>.</p>
+
                 <h2>Website Use</h2>
                 <p>The content on this website is for informational purposes only and does not constitute professional plumbing advice. Always consult a licensed plumber for specific concerns.</p>
 

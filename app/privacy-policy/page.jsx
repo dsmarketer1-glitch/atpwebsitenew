@@ -43,6 +43,12 @@ export default function PrivacyPolicyPage() {
                 <h2>Information Sharing</h2>
                 <p>We do not sell, trade, or rent your personal information to third parties. We may share information with trusted service providers who assist in operating our business, provided they agree to keep your information confidential.</p>
 
+                <h2>SMS / Text Messaging &amp; Phone Communications</h2>
+                <p>When you provide your phone number and opt in through one of our forms, you consent to receive SMS text messages and phone calls from Anytime Plumbing 365 at the number provided. These communications relate to your service requests, appointment scheduling and confirmations, dispatch and service updates, quotes, follow-ups, and customer care.</p>
+                <p><strong>Message frequency varies. Message and data rates may apply.</strong> You can opt out of text messages at any time by replying <strong>STOP</strong>. For help, reply <strong>HELP</strong> or contact us at <a href="tel:214-307-4264">214-307-4264</a>.</p>
+                <p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> Text messaging opt-in data and consent are never shared with any third parties. Information may be shared only with service providers (such as our messaging platform) strictly to help us deliver the messages you requested, and never for their own marketing.</p>
+                <p>SMS consent is optional and is not a condition of purchasing or receiving any of our products or services. See our <Link href="/terms-of-service">Terms &amp; Conditions</Link> for full text messaging terms.</p>
+
                 <h2>Data Security</h2>
                 <p>We implement appropriate security measures to protect your personal information. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
 
