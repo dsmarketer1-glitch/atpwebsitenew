@@ -3520,3 +3520,66 @@ ul {
   font-weight: 600;
   text-decoration: underline;
 }
+
+/* ---- SMS consent block (two checkboxes) + opt-in example ---- */
+.sms-consent-block {
+  margin: 16px 0 20px;
+}
+
+.sms-consent-block .sms-consent {
+  margin: 0 0 12px;
+}
+
+.sms-consent-note {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-light);
+  margin: 4px 0 0;
+}
+
+.sms-consent-note a {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.sms-optin-example {
+  max-width: 480px;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin: 16px 0 8px;
+  background: var(--white);
+}
+
+.sms-optin-example h4 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.sms-optin-business {
+  font-size: 13px !important;
+  color: var(--text-light) !important;
+  margin-bottom: 16px !important;
+}
+
+.sms-optin-field {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.sms-optin-field input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border: 2px solid var(--medium-gray);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 15px;
+  background: var(--off-white);
+}

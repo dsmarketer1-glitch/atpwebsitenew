@@ -4,20 +4,20 @@ import { sendLeadEmail, submittedAt } from '@/lib/email';
 export async function POST(request) {
     try {
         const body = await request.json();
-        const { name, email, phone, message, smsConsent } = body;
+        const { name, email, phone, message, smsTransactional, smsMarketing } = body;
 
         // Validate required fields
         if (!name || !email || !phone || !message) {
             return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
         }
 
-        const consent = smsConsent ? 'Yes — opted in to SMS/text messages' : 'No';
+        const consent = `Transactional (reminders/updates): ${smsTransactional ? 'Yes' : 'No'} | Marketing (offers/promos): ${smsMarketing ? 'Yes' : 'No'}`;
 
         await sendLeadEmail(process.env.EMAILJS_TEMPLATE_BOOKING, {
             name,
             email,
             phone,
-            message: `${message}\n\n— SMS consent: ${consent}`,
+            message: `${message}\n\n— SMS consent — ${consent}`,
             sms_consent: consent,
             submitted_at: submittedAt(),
         });
