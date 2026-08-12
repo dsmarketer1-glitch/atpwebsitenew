@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
+import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 import BookingPopup from '@/components/BookingPopup';
 import ScrollAnimations from '@/components/ScrollAnimations';
@@ -20,6 +21,7 @@ export default function ClientLayout({ children, settings }) {
 
     return (
         <>
+            <AnnouncementBar />
             <Header onBookNow={() => setBookingOpen(true)} settings={settings} />
             <main>{children}</main>
             <Footer settings={settings} />

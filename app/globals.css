@@ -3583,3 +3583,36 @@ ul {
   font-size: 15px;
   background: var(--off-white);
 }
+
+/* ---- Announcement bar ---- */
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-red);
+  color: var(--white);
+  text-align: center;
+  padding: 9px 16px;
+  text-decoration: none;
+  position: relative;
+  z-index: 1002;
+}
+
+.announcement-bar-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  animation: announce-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes announce-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.8; }
+}
+
+@media (max-width: 768px) {
+  .announcement-bar { padding: 8px 12px; }
+  .announcement-bar-text { font-size: 12.5px; }
+}
