@@ -1,4 +1,5 @@
 import './globals.css';
+import Script from 'next/script';
 import ClientLayout from '@/components/ClientLayout';
 import CustomCursor from '@/components/CustomCursor';
 import { siteSettings } from '@/data/settings';
@@ -32,6 +33,12 @@ export default function RootLayout({ children }) {
       <body>
         <CustomCursor />
         <ClientLayout settings={siteSettings}>{children}</ClientLayout>
+        {/* Avoca SimpleScheduler widget (manual mode — opened from the header Book Online button) */}
+        <Script
+          src="https://app.avoca.ai/simple-scheduler/widget.js?apiKey=sk_5d1d886b063276a351288f092473ab10eeed99c694b98c2a0ca47d8db80470f1"
+          data-mode="manual"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

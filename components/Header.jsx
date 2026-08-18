@@ -80,7 +80,7 @@ export default function Header({ onBookNow, settings }) {
           <nav className="header-nav">
             {/* Mobile-only row actions: Book Online + phone icon */}
             <div className="mobile-header-actions">
-              <button type="button" className="btn btn-primary btn-sm" onClick={onBookNow}>
+              <button type="button" className="btn btn-primary btn-sm" onClick={() => window.SimpleScheduler && window.SimpleScheduler.open()}>
                 <IconCalendar size={16} /> Book Online
               </button>
               <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="mobile-phone-icon" aria-label="Call us">
@@ -161,7 +161,7 @@ export default function Header({ onBookNow, settings }) {
             </ul>
 
             <div className="header-actions">
-              <button type="button" className="btn btn-primary btn-sm" onClick={onBookNow}>
+              <button type="button" className="btn btn-primary btn-sm" onClick={() => window.SimpleScheduler && window.SimpleScheduler.open()}>
                 <IconCalendar size={16} /> Book Online
               </button>
               <a href={`tel:${settings?.phoneNumber || '214-307-4264'}`} className="btn btn-red btn-sm">
