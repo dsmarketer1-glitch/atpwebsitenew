@@ -39,6 +39,20 @@ export default function RootLayout({ children }) {
           data-mode="manual"
           strategy="afterInteractive"
         />
+
+        {/* Avoca Chat Widget — config must be set before the widget script loads */}
+        <Script id="avoca-chat-widget-config" strategy="beforeInteractive">
+          {`
+            window.ChatWidgetKey = '3225';
+            window.ChatWidgetColor = '#003a70';
+            window.ChatWidgetMessage = 'Have a service request or question?';
+            window.ChatWidgetTitle = 'Hey there! How can we help you today?';
+            window.ChatWidgetHideMessage = false;
+            window.ChatWidgetAutoOpen = true;
+            window.ChatWidgetAutoTrigger = false;
+          `}
+        </Script>
+        <Script src="https://app.avoca.ai/chat-widget.js" strategy="afterInteractive" />
       </body>
     </html>
   );
