@@ -196,7 +196,7 @@ export const services = [
         heroTitle: 'Sewer Line Inspection in Dallas, TX',
         metaTitle: 'Sewer Line Inspection in Dallas, TX',
         metaDescription: 'Professional sewer line inspection in Dallas, TX using video camera technology.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/sewer-line-inspection.png',
         imageAlt: 'Actual video footage and equipment from a high-definition sewer line inspection',
         shortDescription: 'Advanced video camera sewer line inspections for accurate diagnosis.',
         content: [
@@ -248,7 +248,7 @@ export const services = [
         heroTitle: 'Sewer Line Replacement in Dallas, TX',
         metaTitle: 'Sewer Line Replacement in Dallas, TX',
         metaDescription: 'Complete sewer line replacement in Dallas, TX with modern materials and professional installation.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/sewer-line-replacement.png',
         imageAlt: 'Full sewer line replacement project restoring critical outbound drainage',
         shortDescription: 'Full sewer line replacement when repair is no longer a viable option.',
         content: [
@@ -354,7 +354,7 @@ export const services = [
         heroTitle: 'Water Heater Replacement & Installation in Dallas, TX',
         metaTitle: 'Water Heater Replacement & Installation in Dallas, TX',
         metaDescription: 'Professional water heater replacement and installation in Dallas, TX. Tank and tankless options available.',
-        image: 'https://placehold.co/800x600/png',
+        image: '/images/service/actual/water-heater-replacement-installation.png',
         imageAlt: 'Actual installation of a new water line during a multi-day plumbing project',
         shortDescription: 'Professional water heater replacement and new installation with tank and tankless options.',
         content: [

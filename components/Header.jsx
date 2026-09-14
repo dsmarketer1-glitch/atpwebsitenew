@@ -113,9 +113,13 @@ export default function Header({ onBookNow, settings }) {
               </li>
 
               <li className={`nav-item ${openDropdown === 'plumbing' ? 'open' : ''}`} onMouseLeave={closeOnLeave}>
-                <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('plumbing'); }}>
-                  Plumbing <span className="nav-arrow"><IconChevronDown size={13} /></span>
-                </a>
+                {/* Parent label links to /services; the caret toggles the submenu. */}
+                <Link href="/services" onClick={() => setMobileOpen(false)}>
+                  Plumbing
+                  <span className="nav-arrow" onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleDropdown('plumbing'); }}>
+                    <IconChevronDown size={13} />
+                  </span>
+                </Link>
                 <div className="dropdown-menu">
                   {plumbingServices.map((s) => (
                     <Link key={s.slug} href={`/service/${s.slug}`} onClick={() => setMobileOpen(false)}>
@@ -126,9 +130,13 @@ export default function Header({ onBookNow, settings }) {
               </li>
 
               <li className={`nav-item ${openDropdown === 'restoration' ? 'open' : ''}`} onMouseLeave={closeOnLeave}>
-                <a href="#" onClick={(e) => { e.preventDefault(); toggleDropdown('restoration'); }}>
-                  Restoration <span className="nav-arrow"><IconChevronDown size={13} /></span>
-                </a>
+                {/* Parent label links to /services; the caret toggles the submenu. */}
+                <Link href="/services" onClick={() => setMobileOpen(false)}>
+                  Restoration
+                  <span className="nav-arrow" onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleDropdown('restoration'); }}>
+                    <IconChevronDown size={13} />
+                  </span>
+                </Link>
                 <div className="dropdown-menu">
                   {restorationServices.map((s) => (
                     <Link key={s.slug} href={`/service/${s.slug}`} onClick={() => setMobileOpen(false)}>
