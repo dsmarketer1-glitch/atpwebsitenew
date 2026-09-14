@@ -5,6 +5,10 @@ import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services'
 import { IconCalendar, IconPhone, IconWrench, IconStar } from '@/components/Icons';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTABanner from '@/components/CTABanner';
+import PinsSection from '@/components/PinsSection';
+
+// ISR: regenerate hourly so newly submitted pins appear without a manual rebuild.
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
     return getAllServiceSlugs().map((slug) => ({ slug }));
@@ -140,6 +144,9 @@ export default async function ServicePage({ params }) {
             </section>
 
             <FAQAccordion faqs={service.faqs} />
+
+            {/* Recently completed jobs for this service (ISR-refreshed) */}
+            <PinsSection type="service" slug={slug} areaName={service.title} />
 
             {/* Still-have-questions CTA below the FAQ */}
             <section className="section" style={{ padding: '50px 0' }}>

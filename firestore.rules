@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// Jobsite Pins security model (PINS_FEATURE_ARCHITECTURE §13):
+//   - Deny ALL direct client reads and writes to Firestore.
+//   - Every write goes through /api/pins using the Firebase Admin SDK.
+//   - Server-rendered page reads also use the Admin SDK.
+// The Admin SDK bypasses these rules entirely (trusted server context), so
+// locking clients out completely here does not affect the app's own reads/writes.
+// The client-side Firebase SDK is used ONLY for tech login (Auth), never
+// to touch Firestore.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

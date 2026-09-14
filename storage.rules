@@ -1,0 +1,20 @@
+rules_version = '2';
+
+// Jobsite Pins Storage security model (PINS_FEATURE_ARCHITECTURE §13):
+//   - Reads are PUBLIC: pin photos must be visible on the live site.
+//   - Writes are denied to all clients; uploads happen only via the Admin SDK
+//     on the server (/api/pins), which bypasses these rules.
+// Photo mime-type and size limits are enforced server-side in the API route,
+// not here — client checks are a UX nicety, not the security control.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /pins/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    // Everything else: locked down.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import { getCommunity, getAllCityCommunityParams } from '@/data/locations';
 import LocationTemplate from '@/components/LocationTemplate';
 
+// ISR: regenerate hourly so newly submitted pins appear without a manual rebuild.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
     return getAllCityCommunityParams();
 }
@@ -46,6 +49,8 @@ export default async function CommunityPage({ params }) {
             breadcrumb={breadcrumb}
             nearby={nearby}
             nearbyHeading={`More Areas We Serve in ${cityObj.name}`}
+            citySlug={cityObj.slug}
+            communitySlug={comm.slug}
         />
     );
 }

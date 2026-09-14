@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import { cities, getCityBySlug, getAllCitySlugs } from '@/data/locations';
 import LocationTemplate from '@/components/LocationTemplate';
 
+// ISR: regenerate hourly so newly submitted pins appear without a manual rebuild.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
     return getAllCitySlugs().map((city) => ({ city }));
 }
@@ -50,6 +53,7 @@ export default async function CityPage({ params }) {
             breadcrumb={breadcrumb}
             nearby={nearby}
             nearbyHeading={nearbyHeading}
+            citySlug={loc.slug}
         />
     );
 }
