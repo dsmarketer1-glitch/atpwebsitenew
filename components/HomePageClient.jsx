@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
-import { IconCheck, IconPhone, IconClock, IconUsers, IconSparkle, IconAward, IconShield, IconMapPin, IconStar, IconArrowRight } from '@/components/Icons';
+import ReviewWidget from '@/components/ReviewWidget';
+import { IconCheck, IconPhone, IconClock, IconUsers, IconSparkle, IconAward, IconShield, IconMapPin, IconArrowRight } from '@/components/Icons';
 
 export default function HomePageClient() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -255,31 +256,8 @@ export default function HomePageClient() {
                         <span className="section-label">Reviews</span>
                         <h2>What Your Neighbors Are Saying</h2>
                     </div>
-                    <div className="testimonials-grid fade-in">
-                        <div className="testimonial-card">
-                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
-                            <p className="testimonial-text">
-                                &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed our broken water heater at a very fair price. The technician was courteous, professional, and explained everything clearly. I highly recommend them to anyone in the Dallas area.&rdquo;
-                            </p>
-                            <div className="testimonial-author">
-                                <div>
-                                    <p className="testimonial-name">Akia Jackson</p>
-                                    <p className="testimonial-source">Google Review</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="testimonial-card">
-                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
-                            <p className="testimonial-text">
-                                &ldquo;We had a terrible sewage backup on a Sunday night and these guys came right away. They were professional, clean, and got everything taken care of fast. The pricing was honest and there were no surprises. We will definitely use Anytime Plumbing 365 again!&rdquo;
-                            </p>
-                            <div className="testimonial-author">
-                                <div>
-                                    <p className="testimonial-name">Gina Rigney</p>
-                                    <p className="testimonial-source">Facebook Review</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="fade-in">
+                        <ReviewWidget />
                     </div>
                 </div>
             </section>

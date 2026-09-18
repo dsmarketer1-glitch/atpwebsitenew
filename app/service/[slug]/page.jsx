@@ -2,7 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
-import { IconCalendar, IconPhone, IconWrench, IconStar } from '@/components/Icons';
+import { IconCalendar, IconPhone, IconWrench } from '@/components/Icons';
+import ReviewWidget from '@/components/ReviewWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTABanner from '@/components/CTABanner';
 import PinsSection from '@/components/PinsSection';
@@ -112,33 +113,8 @@ export default async function ServicePage({ params }) {
                         <span className="section-label">Reviews</span>
                         <h2>What Your Neighbors Say</h2>
                     </div>
-                    <div className="testimonials-grid fade-in">
-                        <div className="testimonial-card">
-                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
-                            <p className="testimonial-text">
-                                &ldquo;Anytime Plumbing 365 was incredible! They came out the same day I called, diagnosed the problem quickly, and fixed it at a very fair price. Highly recommend!&rdquo;
-                            </p>
-                            <div className="testimonial-author">
-                                <Image src="https://placehold.co/800x600/png" alt="Akia Jackson" width={50} height={50} className="testimonial-avatar" />
-                                <div>
-                                    <p className="testimonial-name">Akia Jackson</p>
-                                    <p className="testimonial-source">Google Review</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="testimonial-card">
-                            <div className="testimonial-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
-                            <p className="testimonial-text">
-                                &ldquo;We had a terrible sewage backup on a Sunday night and these guys came right away. Professional, clean, and honest pricing. Will definitely use again!&rdquo;
-                            </p>
-                            <div className="testimonial-author">
-                                <Image src="https://placehold.co/800x600/png" alt="Gina Rigney" width={50} height={50} className="testimonial-avatar" />
-                                <div>
-                                    <p className="testimonial-name">Gina Rigney</p>
-                                    <p className="testimonial-source">Facebook Review</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="fade-in">
+                        <ReviewWidget />
                     </div>
                 </div>
             </section>
