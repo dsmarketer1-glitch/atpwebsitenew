@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { IconMapPin, IconPhone, IconClock, IconCheck } from '@/components/Icons';
 import SmsConsent from '@/components/SmsConsent';
+import ReviewWidget from '@/components/ReviewWidget';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', service_type: '', message: '', smsTransactional: false, smsMarketing: false });
@@ -182,6 +183,19 @@ export default function ContactPage() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== REVIEWS ===== */}
+            <section className="section section-gray">
+                <div className="container">
+                    <div className="section-header fade-in">
+                        <span className="section-label">Reviews</span>
+                        <h2>What Your Neighbors Are Saying</h2>
+                    </div>
+                    <div className="fade-in">
+                        <ReviewWidget />
                     </div>
                 </div>
             </section>
