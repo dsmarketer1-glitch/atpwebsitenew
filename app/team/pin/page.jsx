@@ -18,6 +18,8 @@ export default function TeamPinPage() {
 
     const [authReady, setAuthReady] = useState(false);
     const [user, setUser] = useState(null);
+    // Bumped after a successful submission so the manager list refreshes.
+    const [reloadKey, setReloadKey] = useState(0);
 
     // Login form state
     const [email, setEmail] = useState('');
@@ -136,12 +138,13 @@ export default function TeamPinPage() {
                 </button>
             </div>
             <h1 style={heading}>New Jobsite Pin</h1>
-            <PinForm getToken={() => user.getIdToken()} />
+            <PinForm getToken={() => user.getIdToken()} onSubmitted={() => setReloadKey((k) => k + 1)} />
+            <PinManager getToken={() => user.getIdToken()} reloadKey={reloadKey} />
         </Shell>
     );
 }
 
-function PinForm({ getToken }) {
+function PinForm({ getToken, onSubmitted }) {
     const [serviceSlug, setServiceSlug] = useState('');
     const [citySlug, setCitySlug] = useState('');
     const [serviceDescription, setServiceDescription] = useState('');
@@ -198,6 +201,7 @@ function PinForm({ getToken }) {
                 setCustomerEmail('');
                 setPhotoFile(null);
                 e.target.reset();
+                if (typeof onSubmitted === 'function') onSubmitted();
             }
         } catch (err) {
             setMessage({ type: 'error', text: err.message || 'Submission failed. Please try again.' });
@@ -274,6 +278,106 @@ function PinForm({ getToken }) {
     );
 }
 
+// Lists existing pins and lets the team delete them. Reloads when reloadKey
+// changes (i.e. after a new submission) and after each delete.
+function PinManager({ getToken, reloadKey }) {
+    const [pins, setPins] = useState(null); // null = loading
+    const [error, setError] = useState('');
+    const [deletingId, setDeletingId] = useState(null);
+
+    const load = useCallback(async () => {
+        setError('');
+        try {
+            const token = await getToken();
+            const res = await fetch('/api/pins', { headers: { Authorization: `Bearer ${token}` } });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) {
+                setError(data.error || 'Could not load pins.');
+                setPins([]);
+            } else {
+                setPins(data.pins || []);
+            }
+        } catch (err) {
+            setError(err.message || 'Could not load pins.');
+            setPins([]);
+        }
+    }, [getToken]);
+
+    useEffect(() => {
+        load();
+    }, [load, reloadKey]);
+
+    const handleDelete = async (id) => {
+        if (typeof window !== 'undefined' && !window.confirm('Delete this pin? This cannot be undone.')) {
+            return;
+        }
+        setDeletingId(id);
+        setError('');
+        try {
+            const token = await getToken();
+            const res = await fetch(`/api/pins?id=${encodeURIComponent(id)}`, {
+                method: 'DELETE',
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) {
+                setError(data.error || 'Could not delete the pin.');
+            } else {
+                setPins((prev) => (prev || []).filter((p) => p.id !== id));
+            }
+        } catch (err) {
+            setError(err.message || 'Could not delete the pin.');
+        } finally {
+            setDeletingId(null);
+        }
+    };
+
+    return (
+        <div style={{ marginTop: '34px', borderTop: '1px solid var(--border-color, #e5e7eb)', paddingTop: '22px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                <h2 style={{ margin: 0, fontSize: '20px' }}>Existing Pins</h2>
+                <button type="button" onClick={load} className="btn btn-outline btn-sm">Refresh</button>
+            </div>
+
+            {error && <p style={errorText}>{error}</p>}
+
+            {pins === null ? (
+                <p style={{ color: 'var(--text-light)', fontSize: '14px' }}>Loading…</p>
+            ) : pins.length === 0 ? (
+                <p style={{ color: 'var(--text-light)', fontSize: '14px' }}>No pins yet.</p>
+            ) : (
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {pins.map((p) => (
+                        <li key={p.id} style={pinRow}>
+                            {p.photoUrl && (
+                                // eslint-disable-next-line @next/next/no-img-element
+                                <img src={p.photoUrl} alt="" style={pinThumb} />
+                            )}
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                                <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-dark)', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                    {p.description || '(no description)'}
+                                </p>
+                                <p style={{ margin: '4px 0 0', fontSize: '12px', color: 'var(--text-light)' }}>
+                                    {[p.serviceSlug, p.address].filter(Boolean).join(' · ')}
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => handleDelete(p.id)}
+                                disabled={deletingId === p.id}
+                                className="btn btn-sm"
+                                style={{ background: 'var(--accent-red, #d0242c)', color: '#fff', flexShrink: 0 }}
+                            >
+                                {deletingId === p.id ? 'Deleting…' : 'Delete'}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+}
+
 function Shell({ children, wide = false }) {
     return (
         <section className="section" style={{ minHeight: '70vh' }}>
@@ -317,3 +421,12 @@ const input = {
 const notice = { textAlign: 'center', color: 'var(--text-light)', lineHeight: 1.6 };
 const errorText = { color: 'var(--accent-red, #d0242c)', fontSize: '14px', margin: '4px 0 12px' };
 const successText = { color: 'var(--primary-blue, #5593ce)', fontSize: '14px', margin: '4px 0 12px', fontWeight: 600 };
+const pinRow = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    padding: '10px',
+    border: '1px solid var(--border-color, #e5e7eb)',
+    borderRadius: '10px',
+};
+const pinThumb = { width: '56px', height: '56px', objectFit: 'cover', borderRadius: '8px', flexShrink: 0 };

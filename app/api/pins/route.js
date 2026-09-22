@@ -23,6 +23,29 @@ function bad(error, status = 400) {
     return NextResponse.json({ error }, { status });
 }
 
+// Shared auth: verifies the Bearer ID token. Returns { decoded } on success or
+// { response } with the appropriate error to return.
+async function authenticate(request) {
+    const authHeader = request.headers.get('authorization') || '';
+    const idToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
+    if (!idToken) {
+        return { response: bad('Missing authentication token.', 401) };
+    }
+    try {
+        const decoded = await verifyIdTokenRest(idToken);
+        return { decoded };
+    } catch (err) {
+        console.warn('Token verify failed:', err.message);
+        return { response: bad('Invalid or expired authentication token.', 401) };
+    }
+}
+
+// Derives the Storage object path from a pin's public download URL.
+function storagePathFromUrl(photoUrl) {
+    const m = /\/o\/([^?]+)\?/.exec(photoUrl || '');
+    return m ? decodeURIComponent(m[1]) : null;
+}
+
 // POST — create a pin. The ONLY write path into Firestore/Storage.
 // Fields: photo, serviceSlug, citySlug, serviceDescription, lat, lng, address,
 // customerName (optional), customerEmail (optional). Location is chosen on a map
@@ -34,21 +57,9 @@ export async function POST(request) {
     }
 
     // --- 1. Verify the Firebase ID token -------------------------------------
-    const authHeader = request.headers.get('authorization') || '';
-    const idToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-    if (!idToken) {
-        return bad('Missing authentication token.', 401);
-    }
-
-    // Verify the ID token via Google's REST endpoint (no firebase-admin/auth,
-    // so no jose/ESM dependency — works on any host Node version).
-    let decoded;
-    try {
-        decoded = await verifyIdTokenRest(idToken);
-    } catch (err) {
-        console.warn('Token verify failed:', err.message);
-        return bad('Invalid or expired authentication token.', 401);
-    }
+    const auth = await authenticate(request);
+    if (auth.response) return auth.response;
+    const decoded = auth.decoded;
 
     // --- Parse the multipart body --------------------------------------------
     let form;
@@ -176,5 +187,84 @@ export async function POST(request) {
     } catch (err) {
         console.error('Pin creation failed:', err);
         return bad('Something went wrong creating the pin. Please try again.', 500);
+    }
+}
+
+// GET — list all pins for the team management view (authenticated). Returns a
+// light shape for each pin, newest first.
+export async function GET(request) {
+    if (!isFirebaseAdminConfigured()) {
+        return bad('Pins backend is not configured yet. Please try again later.', 503);
+    }
+    const auth = await authenticate(request);
+    if (auth.response) return auth.response;
+
+    try {
+        const db = await getAdminDb();
+        const snap = await db.collection('pins').get();
+        const pins = snap.docs
+            .map((d) => {
+                const x = d.data();
+                return {
+                    id: d.id,
+                    serviceSlug: x.serviceSlug || null,
+                    citySlug: x.citySlug || null,
+                    address: x.address || null,
+                    description: x.aiDescription || x.serviceDescription || '',
+                    photoUrl: x.photoUrl || null,
+                    customerName: x.customerName || null,
+                    createdAt:
+                        x.createdAt && typeof x.createdAt.toDate === 'function'
+                            ? x.createdAt.toDate().toISOString()
+                            : null,
+                };
+            })
+            .sort((a, b) => (b.createdAt ? Date.parse(b.createdAt) : 0) - (a.createdAt ? Date.parse(a.createdAt) : 0));
+        return NextResponse.json({ pins });
+    } catch (err) {
+        console.error('Pin list failed:', err);
+        return bad('Could not load pins. Please try again.', 500);
+    }
+}
+
+// DELETE — remove a pin (authenticated). Deletes the Firestore doc and the
+// photo in Storage. Pass the id as a query param: DELETE /api/pins?id=<id>.
+export async function DELETE(request) {
+    if (!isFirebaseAdminConfigured()) {
+        return bad('Pins backend is not configured yet. Please try again later.', 503);
+    }
+    const auth = await authenticate(request);
+    if (auth.response) return auth.response;
+
+    const { searchParams } = new URL(request.url);
+    const id = (searchParams.get('id') || '').trim();
+    if (!id) {
+        return bad('Missing pin id.', 400);
+    }
+
+    try {
+        const db = await getAdminDb();
+        const ref = db.collection('pins').doc(id);
+        const snap = await ref.get();
+        if (!snap.exists) {
+            return bad('Pin not found.', 404);
+        }
+
+        // Best-effort delete of the photo object; never block the doc delete on it.
+        const path = storagePathFromUrl(snap.data().photoUrl);
+        if (path) {
+            try {
+                const bucket = await getAdminBucket();
+                await bucket.file(path).delete();
+            } catch (err) {
+                console.warn('Pin photo delete failed:', err.message);
+            }
+        }
+
+        await ref.delete();
+        return NextResponse.json({ success: true });
+    } catch (err) {
+        console.error('Pin delete failed:', err);
+        return bad('Could not delete the pin. Please try again.', 500);
     }
 }
