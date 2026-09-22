@@ -40,12 +40,24 @@ export async function POST(request) {
         return bad('Missing authentication token.', 401);
     }
 
+    // Initialize Admin first so a credentials problem is reported clearly and
+    // is not mistaken for a bad token.
+    let adminAuth;
+    try {
+        adminAuth = await getAdminAuth();
+    } catch (err) {
+        console.error('Firebase Admin init failed:', err.message);
+        return bad(
+            `Server auth misconfigured (Firebase credentials): ${err.message}`,
+            500
+        );
+    }
+
     let decoded;
     try {
-        const adminAuth = await getAdminAuth();
         decoded = await adminAuth.verifyIdToken(idToken);
     } catch (err) {
-        console.warn('Pin auth failed:', err.message);
+        console.warn('Token verify failed:', err.message);
         return bad('Invalid or expired authentication token.', 401);
     }
 
