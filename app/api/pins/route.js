@@ -2,9 +2,9 @@ import { NextResponse } from 'next/server';
 import { randomUUID } from 'crypto';
 import {
     getAdminDb,
-    getAdminAuth,
     getAdminBucket,
     getFieldValue,
+    verifyIdTokenRest,
     isFirebaseAdminConfigured,
 } from '@/lib/firebase-admin';
 import { getServiceBySlug } from '@/data/services';
@@ -40,22 +40,11 @@ export async function POST(request) {
         return bad('Missing authentication token.', 401);
     }
 
-    // Initialize Admin first so a credentials problem is reported clearly and
-    // is not mistaken for a bad token.
-    let adminAuth;
-    try {
-        adminAuth = await getAdminAuth();
-    } catch (err) {
-        console.error('Firebase Admin init failed:', err.message);
-        return bad(
-            `Server auth misconfigured (Firebase credentials): ${err.message}`,
-            500
-        );
-    }
-
+    // Verify the ID token via Google's REST endpoint (no firebase-admin/auth,
+    // so no jose/ESM dependency — works on any host Node version).
     let decoded;
     try {
-        decoded = await adminAuth.verifyIdToken(idToken);
+        decoded = await verifyIdTokenRest(idToken);
     } catch (err) {
         console.warn('Token verify failed:', err.message);
         return bad('Invalid or expired authentication token.', 401);
