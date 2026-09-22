@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 import { randomUUID } from 'crypto';
-import { FieldValue } from 'firebase-admin/firestore';
 import {
     getAdminDb,
     getAdminAuth,
     getAdminBucket,
+    getFieldValue,
     isFirebaseAdminConfigured,
 } from '@/lib/firebase-admin';
 import { getServiceBySlug } from '@/data/services';
@@ -42,7 +42,8 @@ export async function POST(request) {
 
     let decoded;
     try {
-        decoded = await getAdminAuth().verifyIdToken(idToken);
+        const adminAuth = await getAdminAuth();
+        decoded = await adminAuth.verifyIdToken(idToken);
     } catch (err) {
         console.warn('Pin auth failed:', err.message);
         return bad('Invalid or expired authentication token.', 401);
@@ -106,7 +107,7 @@ export async function POST(request) {
         // --- 4. Upload the photo to Storage ----------------------------------
         const now = new Date();
         const objectPath = `pins/${now.getUTCFullYear()}/${String(now.getUTCMonth() + 1).padStart(2, '0')}/${randomUUID()}.${ext}`;
-        const bucket = getAdminBucket();
+        const bucket = await getAdminBucket();
         const file = bucket.file(objectPath);
         // Firebase download token → a public URL that works even under uniform
         // bucket-level access (per-object ACL makePublic() is rejected on such
@@ -141,7 +142,8 @@ export async function POST(request) {
         });
 
         // --- 8. Write the document to Firestore ------------------------------
-        const db = getAdminDb();
+        const db = await getAdminDb();
+        const FieldValue = await getFieldValue();
         const docRef = db.collection('pins').doc();
         const pinDoc = {
             serviceSlug,
