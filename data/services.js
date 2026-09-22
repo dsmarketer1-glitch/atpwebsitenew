@@ -408,7 +408,7 @@ export const services = [
         heroTitle: 'Sewage Cleanup in Dallas, TX',
         metaTitle: 'Sewage Cleanup Services in Dallas, TX',
         metaDescription: 'Professional sewage cleanup in Dallas, TX. Fast response to protect your health and property.',
-        image: '/images/service/actual/sewage-cleanup.jpg',
+        image: '/images/service/actual/sewage-cleanup-new.jpeg',
         imageAlt: 'Professional sewage cleanup and hazardous water removal from a residential basement',
         shortDescription: 'Fast, thorough sewage cleanup to protect your health and restore your property.',
         content: [
