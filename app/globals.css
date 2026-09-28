@@ -405,7 +405,11 @@ ul {
 .site-header {
   position: sticky;
   top: 40px;
-  z-index: 1000;
+  /* Above the announcement bar (z 1003): the mobile slide-in menu lives inside
+     this header's stacking context, so the header must outrank the bar or the
+     bar paints over the menu's logo. The two never overlap vertically, so this
+     does not affect the normal stacked layout. */
+  z-index: 1010;
   background: var(--white);
   transition: all var(--transition-base);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
