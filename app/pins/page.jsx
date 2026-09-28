@@ -8,7 +8,7 @@ import { IconPhone } from '@/components/Icons';
 export const revalidate = 3600;
 
 export const metadata = {
-    title: 'Recent Jobs & Jobsite Pins | Anytime Plumbing 365',
+    title: 'Our Projects | Anytime Plumbing 365',
     alternates: { canonical: '/pins' },
     description:
         'See real plumbing jobs recently completed by Anytime Plumbing 365 across the Dallas–Fort Worth area — photos, descriptions, and job locations on the map.',
@@ -21,12 +21,12 @@ export default async function PinsPage() {
         <>
             <section className="page-hero">
                 <div className="container">
-                    <h1>Our Recent Jobs</h1>
+                    <h1>Our Projects</h1>
                     <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '640px', margin: '12px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
                         Real plumbing jobs our team recently completed across Dallas–Fort Worth — each one photographed and mapped on site.
                     </p>
                     <p className="breadcrumb">
-                        <Link href="/">Home</Link> / Pins
+                        <Link href="/">Home</Link> / Projects
                     </p>
                 </div>
             </section>

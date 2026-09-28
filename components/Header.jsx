@@ -160,6 +160,10 @@ export default function Header({ onBookNow, settings }) {
               </li>
 
               <li className="nav-item">
+                <Link href="/pins" onClick={() => setMobileOpen(false)}>Projects</Link>
+              </li>
+
+              <li className="nav-item">
                 <Link href="/financing" onClick={() => setMobileOpen(false)}>Financing</Link>
               </li>
 
