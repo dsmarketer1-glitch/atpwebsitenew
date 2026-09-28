@@ -3,6 +3,7 @@ import SmsConsent from '@/components/SmsConsent';
 
 export const metadata = {
     title: 'Privacy Policy | Anytime Plumbing 365',
+    alternates: { canonical: '/privacy-policy' },
     description: 'Read the privacy policy for Anytime Plumbing 365.',
 };
 

@@ -9,6 +9,7 @@ export const revalidate = 3600;
 
 export const metadata = {
     title: 'Recent Jobs & Jobsite Pins | Anytime Plumbing 365',
+    alternates: { canonical: '/pins' },
     description:
         'See real plumbing jobs recently completed by Anytime Plumbing 365 across the Dallas–Fort Worth area — photos, descriptions, and job locations on the map.',
 };

@@ -2809,6 +2809,19 @@ ul {
     padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
 
+  /* Keep floating controls clear of the full-width call bar at the bottom, and
+     clear of each other, at narrow widths (360/390px). The call bar is ~65px
+     tall; stack the chat launcher just above it and the scroll-to-top above the
+     chat so none of them cover the call / booking / form controls. */
+  .scroll-to-top {
+    bottom: calc(140px + env(safe-area-inset-bottom));
+    right: 16px;
+  }
+
+  #chat-widget {
+    bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+  }
+
   body {
     padding-bottom: 80px;
   }
@@ -3438,56 +3451,40 @@ ul {
 }
 
 /* ---- Footer: communities we serve ---- */
-.footer-communities {
+.footer-cities {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 32px 24px 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-communities > h4 {
+.footer-cities > h4 {
   color: var(--white);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-.footer-communities-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.footer-communities-city {
-  display: inline-block;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.footer-communities-links {
+.footer-cities-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 16px;
+  gap: 8px 18px;
 }
 
-.footer-communities-links a {
+.footer-cities-list a {
   color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
 }
 
-.footer-communities-links a:hover {
+.footer-cities-list a:hover {
   color: var(--white);
 }
 
-@media (max-width: 768px) {
-  .footer-communities-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
+.footer-cities-more {
+  color: var(--white) !important;
+  font-weight: 700;
 }
 
 /* ---- SMS consent checkbox (Twilio/A2P compliance) ---- */

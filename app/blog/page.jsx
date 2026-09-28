@@ -4,6 +4,7 @@ import { blogPosts } from '@/data/blog-posts';
 
 export const metadata = {
     title: 'Plumbing Tips & Advice | Anytime Plumbing 365',
+    alternates: { canonical: '/blog' },
     description: 'Friendly, plain-English plumbing tips from your Dallas neighbors at Anytime Plumbing 365 — practical advice to help you care for your home.',
 };
 

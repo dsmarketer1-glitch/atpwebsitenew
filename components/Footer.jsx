@@ -136,19 +136,13 @@ export default function Footer({ settings }) {
                 </div>
             </div>
 
-            <div className="footer-communities">
-                <h4>Communities We Serve</h4>
-                <div className="footer-communities-grid">
-                    {cities.filter((c) => c.communities.length > 0).map((c) => (
-                        <div className="footer-communities-group" key={c.slug}>
-                            <Link href={`/${c.slug}`} className="footer-communities-city">{c.name}</Link>
-                            <div className="footer-communities-links">
-                                {c.communities.map((cm) => (
-                                    <Link key={cm.slug} href={`/${c.slug}/${cm.slug}`}>{cm.name}</Link>
-                                ))}
-                            </div>
-                        </div>
+            <div className="footer-cities">
+                <h4>Cities We Serve</h4>
+                <div className="footer-cities-list">
+                    {cities.map((c) => (
+                        <Link key={c.slug} href={`/${c.slug}`}>{c.name}</Link>
                     ))}
+                    <Link href="/area" className="footer-cities-more">+ More Across DFW</Link>
                 </div>
             </div>
 

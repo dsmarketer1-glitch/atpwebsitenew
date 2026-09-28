@@ -6,6 +6,7 @@ import { IconArrowRight } from '@/components/Icons';
 
 export const metadata = {
     title: 'Our Plumbing & Restoration Services | Anytime Plumbing 365',
+    alternates: { canonical: '/services' },
     description:
         'Explore the full range of residential plumbing and water damage restoration services from Anytime Plumbing 365 across the Dallas–Fort Worth area.',
 };

@@ -4,6 +4,7 @@ import { services } from '@/data/services';
 import CTABanner from '@/components/CTABanner';
 import FAQAccordion from '@/components/FAQAccordion';
 import PinsSection from '@/components/PinsSection';
+import JsonLd from '@/components/JsonLd';
 import { IconPhone, IconClock, IconCheck, IconUsers, IconSparkle, IconAward, IconShield, IconMapPin, IconArrowRight } from '@/components/Icons';
 
 const whyCards = [
@@ -26,7 +27,7 @@ const whyCards = [
  * @param {string} citySlug       City slug used to fetch jobsite pins for this area.
  * @param {string|null} communitySlug  Community slug (community pages only), narrows the pins query.
  */
-export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearby = [], nearbyHeading = 'We Also Serve Nearby', citySlug, communitySlug = null }) {
+export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearby = [], nearbyHeading = 'We Also Serve Nearby', citySlug, communitySlug = null, jsonLd = [] }) {
     const featured = services.slice(0, 6);
     const faqs = [
         { question: `Do you offer emergency plumbing in ${name}?`, answer: `Yes — we're available 24/7, 365 days a year for ${name} homeowners. Call 214-307-4264 and we'll be on our way.` },
@@ -37,6 +38,10 @@ export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearb
 
     return (
         <>
+            {jsonLd.map((d, i) => (
+                <JsonLd key={i} data={d} />
+            ))}
+
             {/* ===== HERO ===== */}
             <section className="page-hero">
                 <div className="container">

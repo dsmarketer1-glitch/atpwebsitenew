@@ -4,6 +4,7 @@ import CTABanner from '@/components/CTABanner';
 
 export const metadata = {
     title: 'About Us | Anytime Plumbing 365',
+    alternates: { canonical: '/about-us' },
     description: 'We are the people who show up — honest, friendly Dallas plumbers serving families 365 days a year. Meet the team making your day brighter. Call 214-307-4264.',
 };
 

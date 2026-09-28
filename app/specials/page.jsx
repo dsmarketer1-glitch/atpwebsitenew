@@ -5,6 +5,7 @@ import { IconPhone } from '@/components/Icons';
 
 export const metadata = {
     title: 'Plumbing Specials & Discounts | Anytime Plumbing 365',
+    alternates: { canonical: '/specials' },
     description: 'Save on honest, friendly plumbing in Dallas, TX. See our current specials and call 214-307-4264 to claim yours — no hidden fees, no surprises.',
 };
 

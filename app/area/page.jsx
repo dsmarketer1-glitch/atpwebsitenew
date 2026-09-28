@@ -1,33 +1,26 @@
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
 import { IconMapPin } from '@/components/Icons';
+import { cities } from '@/data/locations';
 
 export const metadata = {
     title: 'Plumbing in Dallas–Fort Worth, TX | Anytime Plumbing 365',
+    alternates: { canonical: '/area' },
     description: 'We show up across the Dallas–Fort Worth Metroplex, 365 days a year. Find your city and call 214-307-4264 — honest help that makes your day brighter.',
 };
 
-const areas = [
-    { name: 'Dallas, TX', description: 'Our home base. Full plumbing and restoration services.' },
-    { name: 'Irving, TX', description: 'Our second office location with full service coverage.' },
-    { name: 'Richardson, TX', description: 'Complete plumbing solutions for Richardson residents.' },
-    { name: 'Mesquite, TX', description: 'Reliable plumbing service in Mesquite.' },
-    { name: 'Plano, TX', description: 'Expert plumbing for Plano homeowners.' },
-    { name: 'Grand Prairie, TX', description: 'Fast, dependable service in Grand Prairie.' },
-    { name: 'Arlington, TX', description: 'Full plumbing services for Arlington homes.' },
-    { name: 'Rowlett, TX', description: 'Serving Rowlett with professional plumbing.' },
-    { name: 'Sachse, TX', description: 'Dependable plumbing solutions in Sachse.' },
-    { name: 'Wylie, TX', description: 'Expert plumbing repair and maintenance in Wylie.' },
-    { name: 'Murphy, TX', description: 'Fast, reliable plumbing in Murphy.' },
-    { name: 'Sunnyvale, TX', description: 'Professional plumbing for Sunnyvale homes.' },
-    { name: 'Balch Springs, TX', description: 'Serving Balch Springs with expert care.' },
-    { name: 'Rockwall, TX', description: 'Complete plumbing services for Rockwall.' },
-    { name: 'Carrollton, TX', description: 'Reliable service for Carrollton homeowners.' },
-    { name: 'Farmers Branch, TX', description: 'Expert plumbing in Farmers Branch.' },
-    { name: 'Addison, TX', description: 'Fast service for Addison area residents.' },
-    { name: 'Duncanville, TX', description: 'Trusted plumbing in Duncanville.' },
-    { name: 'DeSoto, TX', description: 'Professional plumbing for DeSoto homes.' },
-];
+// Short blurb per city; office cities get a note, everything else a generic line.
+const OFFICE_BLURBS = {
+    irving: 'Home to our Irving office — full plumbing & restoration coverage.',
+    garland: 'Home to our Garland office — full plumbing & restoration coverage.',
+    dallas: 'Serving Dallas homeowners with fast, honest plumbing & drain service.',
+};
+
+const areas = cities.map((c) => ({
+    slug: c.slug,
+    name: `${c.name}, TX`,
+    description: OFFICE_BLURBS[c.slug] || `Fast, honest plumbing & drain service for ${c.name} homeowners.`,
+}));
 
 export default function ServiceAreasPage() {
     return (
@@ -37,7 +30,7 @@ export default function ServiceAreasPage() {
                     <span className="section-label" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderColor: 'rgba(255,255,255,0.3)', marginBottom: '14px', position: 'relative', zIndex: 2 }}>Coverage</span>
                     <h1>The People Who Show Up<span style={{ fontSize: '0.45em', verticalAlign: 'top', fontWeight: 700 }}>™</span></h1>
                     <p style={{ color: 'rgba(255,255,255,0.92)', maxWidth: '640px', margin: '12px auto 0', fontSize: '17px', position: 'relative', zIndex: 2 }}>
-                        Proudly serving multiple cities and communities across the Dallas–Fort Worth Metroplex — 24/7.
+                        Proudly serving cities across the Dallas–Fort Worth Metroplex — 24/7.
                     </p>
                     <p className="breadcrumb"><Link href="/">Home</Link> / Service Areas</p>
                 </div>
@@ -48,12 +41,12 @@ export default function ServiceAreasPage() {
                     <div className="section-header fade-in">
                         <span className="section-label">Good Neighbors. Great Service.</span>
                         <h2>Your Neighborhood, Our Home</h2>
-                        <p>From Dallas to Wylie, we treat every street like our own. Honest, friendly plumbing and restoration — wherever you are in the Metroplex.</p>
+                        <p>From Dallas to Fort Worth, we treat every street like our own. Honest, friendly plumbing and restoration — wherever you are in the Metroplex.</p>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }} className="fade-in">
                         {areas.map((area) => (
-                            <Link key={area.name} href={`/${area.name.replace(/,\s*TX$/i, '').toLowerCase().replace(/\s+/g, '-')}`} style={{
+                            <Link key={area.slug} href={`/${area.slug}`} style={{
                                 display: 'block',
                                 padding: '20px 24px',
                                 background: 'var(--white)',

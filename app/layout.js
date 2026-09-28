@@ -2,9 +2,13 @@ import './globals.css';
 import Script from 'next/script';
 import ClientLayout from '@/components/ClientLayout';
 import CustomCursor from '@/components/CustomCursor';
+import JsonLd from '@/components/JsonLd';
 import { siteSettings } from '@/data/settings';
+import { cities } from '@/data/locations';
+import { organizationGraph } from '@/lib/structured-data';
 
 export const metadata = {
+  metadataBase: new URL('https://www.anytimeplumbing365.com'),
   title: 'Plumbing in Dallas, TX | Anytime Plumbing 365',
   description: 'Making your day brighter. We show up, tell the truth, and fix it right — honest plumbing & restoration across Dallas, TX. Call 214-307-4264.',
   keywords: 'plumbing, Dallas TX, drain cleaning, emergency plumber, water heater repair, sewer line repair, water damage restoration',
@@ -31,6 +35,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        {/* Site-wide business identity (Organization + Irving/Garland branches) */}
+        <JsonLd data={organizationGraph(cities.map((c) => c.name))} />
         <CustomCursor />
         <ClientLayout settings={siteSettings}>{children}</ClientLayout>
         {/* Avoca SimpleScheduler widget (manual mode — opened from the header Book Online button) */}
@@ -48,7 +54,7 @@ export default function RootLayout({ children }) {
             window.ChatWidgetMessage = 'Have a service request or question?';
             window.ChatWidgetTitle = 'Hey there! How can we help you today?';
             window.ChatWidgetHideMessage = false;
-            window.ChatWidgetAutoOpen = true;
+            window.ChatWidgetAutoOpen = false;
             window.ChatWidgetAutoTrigger = false;
           `}
         </Script>

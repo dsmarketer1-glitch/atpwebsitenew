@@ -7,6 +7,8 @@ import ReviewWidget from '@/components/ReviewWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTABanner from '@/components/CTABanner';
 import PinsSection from '@/components/PinsSection';
+import JsonLd from '@/components/JsonLd';
+import { serviceJsonLd, breadcrumbJsonLd } from '@/lib/structured-data';
 
 // ISR: regenerate hourly so newly submitted pins appear without a manual rebuild.
 export const revalidate = 3600;
@@ -23,6 +25,7 @@ export async function generateMetadata({ params }) {
     return {
         title: service.metaTitle,
         description: service.metaDescription,
+        alternates: { canonical: `/service/${slug}` },
     };
 }
 
@@ -32,8 +35,21 @@ export default async function ServicePage({ params }) {
     const service = getServiceBySlug(slug);
     if (!service) notFound();
 
+    const breadcrumb = breadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Services', path: '/services' },
+        { name: service.title, path: `/service/${slug}` },
+    ]);
+    const serviceSchema = serviceJsonLd({
+        title: service.title,
+        description: service.metaDescription,
+        slug,
+    });
+
     return (
         <>
+            <JsonLd data={serviceSchema} />
+            <JsonLd data={breadcrumb} />
             <section className="page-hero">
                 <div className="container">
                     <h1>{service.heroTitle}</h1>

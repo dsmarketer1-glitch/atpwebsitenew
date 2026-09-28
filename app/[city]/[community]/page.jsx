@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
     return {
         title: `Plumber in ${found.community.name}, ${found.city.name} TX | Anytime Plumbing 365`,
         description: `Need a plumber in ${found.community.name}? Anytime Plumbing 365 offers fast, honest, 24/7 plumbing & drain service across ${found.community.name} in ${found.city.name}, TX. Call 214-307-4264.`,
+        alternates: { canonical: `/${found.city.slug}/${found.community.slug}` },
     };
 }
 

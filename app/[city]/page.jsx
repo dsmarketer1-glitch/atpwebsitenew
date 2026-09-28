@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { cities, getCityBySlug, getAllCitySlugs } from '@/data/locations';
 import LocationTemplate from '@/components/LocationTemplate';
+import { areaServiceJsonLd, breadcrumbJsonLd } from '@/lib/structured-data';
 
 // ISR: regenerate hourly so newly submitted pins appear without a manual rebuild.
 export const revalidate = 3600;
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }) {
     return {
         title: `Plumber in ${loc.name}, TX | Anytime Plumbing 365`,
         description: `Need a plumber in ${loc.name}, TX? Anytime Plumbing 365 offers fast, honest, 24/7 plumbing & drain service for ${loc.name} homeowners. Call 214-307-4264.`,
+        alternates: { canonical: `/${loc.slug}` },
     };
 }
 
@@ -54,6 +56,14 @@ export default async function CityPage({ params }) {
             nearby={nearby}
             nearbyHeading={nearbyHeading}
             citySlug={loc.slug}
+            jsonLd={[
+                breadcrumbJsonLd([
+                    { name: 'Home', path: '/' },
+                    { name: 'Service Areas', path: '/area' },
+                    { name: `${loc.name}, TX`, path: `/${loc.slug}` },
+                ]),
+                areaServiceJsonLd({ areaName: loc.name, path: `/${loc.slug}` }),
+            ]}
         />
     );
 }

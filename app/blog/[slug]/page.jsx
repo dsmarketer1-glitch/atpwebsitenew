@@ -15,6 +15,7 @@ export async function generateMetadata({ params }) {
     return {
         title: `${post.title} | Anytime Plumbing 365`,
         description: post.metaDescription,
+        alternates: { canonical: `/blog/${slug}` },
     };
 }
 

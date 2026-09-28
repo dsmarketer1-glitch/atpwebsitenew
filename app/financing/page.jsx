@@ -4,6 +4,7 @@ import { IconCheck, IconCreditCard, IconChart, IconShield } from '@/components/I
 
 export const metadata = {
     title: 'Plumbing Financing in Dallas, TX | Anytime Plumbing 365',
+    alternates: { canonical: '/financing' },
     description: 'Flexible financing makes plumbing repairs easier on your budget. Simple application, clear terms, no surprises. Call 214-307-4264 to learn more.',
 };
 
