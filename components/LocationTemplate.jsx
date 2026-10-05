@@ -16,6 +16,13 @@ const whyCards = [
     { Icon: IconShield, title: 'Satisfaction, Guaranteed', desc: 'We stand behind our work and make it right if it is not.' },
 ];
 
+// Render inline **bold** markdown as <strong> without a markdown library.
+function renderBold(text) {
+    return String(text)
+        .split(/\*\*(.+?)\*\*/g)
+        .map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
 /**
  * Shared location page template.
  * @param {string} name           Short area name used in body copy (e.g. "Oak Cliff", "Richardson").
@@ -27,8 +34,25 @@ const whyCards = [
  * @param {string} citySlug       City slug used to fetch jobsite pins for this area.
  * @param {string|null} communitySlug  Community slug (community pages only), narrows the pins query.
  */
-export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearby = [], nearbyHeading = 'We Also Serve Nearby', citySlug, communitySlug = null, jsonLd = [] }) {
+export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearby = [], nearbyHeading = 'We Also Serve Nearby', citySlug, communitySlug = null, jsonLd = [], headline, intro, serviceList }) {
     const featured = services.slice(0, 6);
+
+    // City-specific intro content when provided, else a generic fallback.
+    const introHeading = headline || `Trusted Plumbing & Drain Service in ${name}`;
+    const introParagraphs = intro && intro.length
+        ? intro
+        : [
+            `When something goes wrong with your plumbing in ${name}, you need someone who shows up on time and gets it right. At Anytime Plumbing 365, we treat every ${name} home like our own — with upfront pricing, clean workmanship, and a friendly face at the door.`,
+            `From drain cleaning and leak detection to water heaters and emergency repairs, our licensed plumbers handle it all across ${name} and ${regionPhrase} — 365 days a year.`,
+        ];
+    const introServices = serviceList && serviceList.length
+        ? serviceList
+        : [
+            `Same-day & 24/7 emergency service in ${name}`,
+            'Licensed, insured & background-checked technicians',
+            'Upfront, honest pricing — no surprises',
+            'Workmanship you can count on',
+        ];
     const faqs = [
         { question: `Do you offer emergency plumbing in ${name}?`, answer: `Yes — we're available 24/7, 365 days a year for ${name} homeowners. Call 214-307-4264 and we'll be on our way.` },
         { question: `How fast can you get to my home in ${name}?`, answer: `In most cases we offer same-day service in ${name}, and we aim to arrive within about an hour for emergencies.` },
@@ -67,14 +91,14 @@ export default function LocationTemplate({ name, regionPhrase, breadcrumb, nearb
                     <div className="content-two-col">
                         <div className="content-text fade-in-left">
                             <span className="section-label">Your Neighborhood Plumber</span>
-                            <h2>Trusted Plumbing &amp; Drain Service in {name}</h2>
-                            <p>When something goes wrong with your plumbing in {name}, you need someone who shows up on time and gets it right. At Anytime Plumbing 365, we treat every {name} home like our own — with upfront pricing, clean workmanship, and a friendly face at the door.</p>
-                            <p>From drain cleaning and leak detection to water heaters and emergency repairs, our licensed plumbers handle it all across {name} and {regionPhrase} — 365 days a year.</p>
+                            <h2>{introHeading}</h2>
+                            {introParagraphs.map((p, i) => (
+                                <p key={i}>{renderBold(p)}</p>
+                            ))}
                             <ul>
-                                <li>Same-day &amp; 24/7 emergency service in {name}</li>
-                                <li>Licensed, insured &amp; background-checked technicians</li>
-                                <li>Upfront, honest pricing — no surprises</li>
-                                <li>Workmanship you can count on</li>
+                                {introServices.map((s, i) => (
+                                    <li key={i}>{renderBold(s)}</li>
+                                ))}
                             </ul>
                             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
                                 <Link href="/contact-us" className="btn btn-red btn-lg">Book Today</Link>

@@ -56,6 +56,9 @@ export default async function CityPage({ params }) {
             nearby={nearby}
             nearbyHeading={nearbyHeading}
             citySlug={loc.slug}
+            headline={loc.headline}
+            intro={loc.paragraphs}
+            serviceList={loc.serviceList}
             jsonLd={[
                 breadcrumbJsonLd([
                     { name: 'Home', path: '/' },
