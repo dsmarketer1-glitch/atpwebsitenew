@@ -12,9 +12,6 @@ export const metadata = {
   title: 'Plumbing in Dallas, TX | Anytime Plumbing 365',
   description: 'Making your day brighter. We show up, tell the truth, and fix it right — honest plumbing & restoration across Dallas, TX. Call 214-307-4264.',
   keywords: 'plumbing, Dallas TX, drain cleaning, emergency plumber, water heater repair, sewer line repair, water damage restoration',
-  icons: {
-    icon: '/images/logo.png',
-  },
   openGraph: {
     title: 'Anytime Plumbing 365 | The People Who Show Up™',
     description: 'Honest, friendly plumbing & restoration in Dallas, TX — available 365 days a year. Making your day brighter.',
