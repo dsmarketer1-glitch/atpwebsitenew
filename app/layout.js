@@ -43,19 +43,14 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        {/* Avoca Chat Widget — config must be set before the widget script loads */}
-        <Script id="avoca-chat-widget-config" strategy="beforeInteractive">
-          {`
-            window.ChatWidgetKey = '3225';
-            window.ChatWidgetColor = '#003a70';
-            window.ChatWidgetMessage = 'Have a service request or question?';
-            window.ChatWidgetTitle = 'Hey there! How can we help you today?';
-            window.ChatWidgetHideMessage = false;
-            window.ChatWidgetAutoOpen = false;
-            window.ChatWidgetAutoTrigger = false;
-          `}
-        </Script>
-        <Script src="https://app.avoca.ai/chat-widget.js" strategy="afterInteractive" />
+        {/* GoHighLevel / LeadConnector chat widget */}
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6ac9162c5ca136cc0b611e6d"
+          data-source="WEB_USER"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
