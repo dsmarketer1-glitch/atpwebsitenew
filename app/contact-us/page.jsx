@@ -1,11 +1,13 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { IconMapPin, IconPhone, IconClock, IconCheck } from '@/components/Icons';
 import SmsConsent from '@/components/SmsConsent';
 import ReviewWidget from '@/components/ReviewWidget';
 
 export default function ContactPage() {
+    const router = useRouter();
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', service_type: '', message: '', smsTransactional: false, smsMarketing: false });
     const [status, setStatus] = useState('idle');
 
@@ -24,8 +26,8 @@ export default function ContactPage() {
                 body: JSON.stringify(formData),
             });
             if (res.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', phone: '', service_type: '', message: '', smsTransactional: false, smsMarketing: false });
+                // Redirect to the dedicated thank-you page (trackable conversion URL).
+                router.push('/thank-you');
             } else {
                 setStatus('error');
             }

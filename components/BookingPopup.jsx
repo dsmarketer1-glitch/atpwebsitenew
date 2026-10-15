@@ -1,9 +1,11 @@
 'use client';
 import { useState } from 'react';
-import { IconX, IconCheck } from '@/components/Icons';
+import { useRouter } from 'next/navigation';
+import { IconX } from '@/components/Icons';
 import SmsConsent from '@/components/SmsConsent';
 
 export default function BookingPopup({ isOpen, onClose }) {
+    const router = useRouter();
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', smsTransactional: false, smsMarketing: false });
     const [status, setStatus] = useState('idle'); // idle | loading | success | error
 
@@ -22,9 +24,11 @@ export default function BookingPopup({ isOpen, onClose }) {
                 body: JSON.stringify(formData),
             });
             if (res.ok) {
-                setStatus('success');
+                // Close the popup and redirect to the trackable thank-you page.
                 setFormData({ name: '', email: '', phone: '', message: '', smsTransactional: false, smsMarketing: false });
-                setTimeout(() => { setStatus('idle'); onClose(); }, 3000);
+                setStatus('idle');
+                onClose();
+                router.push('/thank-you');
             } else {
                 setStatus('error');
             }
@@ -43,12 +47,7 @@ export default function BookingPopup({ isOpen, onClose }) {
                 <h2>Let&apos;s Get You Taken Care Of</h2>
                 <p>Tell us what&apos;s going on and we&apos;ll be in touch fast — usually within the hour. No pressure, no obligation.</p>
 
-                {status === 'success' ? (
-                    <div className="form-success">
-                        <IconCheck size={18} /> Thank you! Your request has been submitted. We&apos;ll contact you shortly.
-                    </div>
-                ) : (
-                    <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="booking-name">Full Name *</label>
@@ -94,7 +93,6 @@ export default function BookingPopup({ isOpen, onClose }) {
                             </p>
                         )}
                     </form>
-                )}
             </div>
         </div>
     );
