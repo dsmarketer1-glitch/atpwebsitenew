@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
 import ReviewWidget from '@/components/ReviewWidget';
+import { cities } from '@/data/locations';
 import { IconCheck, IconPhone, IconClock, IconUsers, IconSparkle, IconAward, IconShield, IconMapPin, IconArrowRight } from '@/components/Icons';
 
 export default function HomePageClient() {
@@ -271,8 +272,8 @@ export default function HomePageClient() {
                         <p style={{ color: '#fff' }}>We proudly serve homeowners across the Dallas-Fort Worth Metroplex.</p>
                     </div>
                     <div className="areas-grid fade-in">
-                        {['Dallas', 'Irving', 'Richardson', 'Mesquite', 'Plano', 'Grand Prairie', 'Arlington', 'Rowlett', 'Sachse', 'Wylie', 'Murphy', 'Garland'].map((area) => (
-                            <Link href={`/${area.toLowerCase().replace(/\s+/g, '-')}`} key={area} className="area-tag"><IconMapPin size={15} /> {area}, TX</Link>
+                        {cities.map((city) => (
+                            <Link href={`/${city.slug}`} key={city.slug} className="area-tag"><IconMapPin size={15} /> {city.name}, TX</Link>
                         ))}
                     </div>
                 </div>

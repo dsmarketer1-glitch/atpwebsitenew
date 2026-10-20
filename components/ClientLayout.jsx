@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Header from '@/components/Header';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
@@ -8,6 +9,10 @@ import ScrollAnimations from '@/components/ScrollAnimations';
 import { IconPhone, IconArrowUp } from '@/components/Icons';
 
 export default function ClientLayout({ children, settings }) {
+    const pathname = usePathname();
+    // Landing pages (/lp/*) are standalone funnels — no site nav/footer/chrome.
+    const isLanding = pathname && pathname.startsWith('/lp/');
+
     const [bookingOpen, setBookingOpen] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -18,6 +23,11 @@ export default function ClientLayout({ children, settings }) {
     }, []);
 
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Standalone landing funnel: render only the page, no site chrome.
+    if (isLanding) {
+        return <>{children}</>;
+    }
 
     return (
         <>

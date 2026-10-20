@@ -108,10 +108,6 @@ export default function Header({ onBookNow, settings }) {
                 <button className="close-menu" onClick={() => setMobileOpen(false)} aria-label="Close menu"><IconX size={20} /></button>
               </li>
 
-              <li className="nav-item">
-                <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
-              </li>
-
               <li className={`nav-item ${openDropdown === 'plumbing' ? 'open' : ''}`} onMouseLeave={closeOnLeave}>
                 {/* Parent label links to /services; the caret toggles the submenu. */}
                 <Link href="/services" onClick={() => setMobileOpen(false)}>

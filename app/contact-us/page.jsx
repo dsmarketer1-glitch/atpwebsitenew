@@ -8,7 +8,7 @@ import ReviewWidget from '@/components/ReviewWidget';
 
 export default function ContactPage() {
     const router = useRouter();
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service_type: '', message: '', smsTransactional: false, smsMarketing: false });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', address: '', zip: '', service_type: '', message: '', smsTransactional: false, smsMarketing: false });
     const [status, setStatus] = useState('idle');
 
     const handleChange = (e) => {
@@ -64,17 +64,25 @@ export default function ContactPage() {
                                 <form onSubmit={handleSubmit}>
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <label htmlFor="contact-name">Full Name *</label>
-                                            <input type="text" id="contact-name" name="name" value={formData.name} onChange={handleChange} required placeholder="Your full name" />
+                                            <label htmlFor="contact-name">Full Name</label>
+                                            <input type="text" id="contact-name" name="name" value={formData.name} onChange={handleChange} placeholder="Your full name" />
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="contact-phone">Phone *</label>
-                                            <input type="tel" id="contact-phone" name="phone" value={formData.phone} onChange={handleChange} required placeholder="(xxx) xxx-xxxx" />
+                                            <label htmlFor="contact-phone">Phone</label>
+                                            <input type="tel" id="contact-phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="(xxx) xxx-xxxx" />
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="contact-email">Email *</label>
-                                        <input type="email" id="contact-email" name="email" value={formData.email} onChange={handleChange} required placeholder="your@email.com" />
+                                        <label htmlFor="contact-email">Email</label>
+                                        <input type="email" id="contact-email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="contact-address">Full Address</label>
+                                        <input type="text" id="contact-address" name="address" value={formData.address} onChange={handleChange} placeholder="Street address, city, state" autoComplete="street-address" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="contact-zip">ZIP Code</label>
+                                        <input type="text" id="contact-zip" name="zip" value={formData.zip} onChange={handleChange} placeholder="ZIP code" inputMode="numeric" autoComplete="postal-code" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="contact-service">Service Needed</label>
@@ -91,8 +99,8 @@ export default function ContactPage() {
                                         </select>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="contact-message">Message *</label>
-                                        <textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us about your plumbing issue..." rows={5} />
+                                        <label htmlFor="contact-message">Message</label>
+                                        <textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your plumbing issue..." rows={5} />
                                     </div>
                                     <SmsConsent transactional={formData.smsTransactional} marketing={formData.smsMarketing} onChange={handleChange} />
                                     <button type="submit" className="btn btn-red btn-lg" style={{ width: '100%' }} disabled={status === 'loading'}>

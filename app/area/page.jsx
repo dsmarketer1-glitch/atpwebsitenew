@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import CTABanner from '@/components/CTABanner';
+import JsonLd from '@/components/JsonLd';
 import { IconMapPin } from '@/components/Icons';
 import { cities } from '@/data/locations';
+import { breadcrumbJsonLd, areaServiceJsonLd } from '@/lib/structured-data';
 
 export const metadata = {
     title: 'Plumbing in Dallas–Fort Worth, TX | Anytime Plumbing 365',
@@ -25,6 +27,11 @@ const areas = cities.map((c) => ({
 export default function ServiceAreasPage() {
     return (
         <>
+            <JsonLd data={breadcrumbJsonLd([
+                { name: 'Home', path: '/' },
+                { name: 'Service Areas', path: '/area' },
+            ])} />
+            <JsonLd data={areaServiceJsonLd({ areaName: 'Dallas–Fort Worth Metroplex', path: '/area' })} />
             <section className="page-hero">
                 <div className="container">
                     <span className="section-label" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderColor: 'rgba(255,255,255,0.3)', marginBottom: '14px', position: 'relative', zIndex: 2 }}>Coverage</span>

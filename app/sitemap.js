@@ -1,6 +1,7 @@
 import { getAllServiceSlugs } from '@/data/services';
 import { getAllCitySlugs, getAllCityCommunityParams } from '@/data/locations';
 import { blogPosts } from '@/data/blog-posts';
+import { getAllLandingSlugs } from '@/data/landing-pages';
 
 // Next.js sitemap metadata route -> served at /sitemap.xml.
 // Lists only intended-indexable, canonical HTTP-200 URLs (absolute, HTTPS www).
@@ -66,5 +67,13 @@ export default function sitemap() {
         };
     });
 
-    return [...staticPaths, ...servicePaths, ...cityPaths, ...communityPaths, ...blogPaths];
+    // Keyword landing pages.
+    const landingPaths = getAllLandingSlugs().map((slug) => ({
+        url: `${BASE_URL}/lp/${slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    }));
+
+    return [...staticPaths, ...servicePaths, ...cityPaths, ...communityPaths, ...blogPaths, ...landingPaths];
 }
