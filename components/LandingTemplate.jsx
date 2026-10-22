@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import FAQAccordion from '@/components/FAQAccordion';
 import LandingForm from '@/components/LandingForm';
+import ReviewWidget from '@/components/ReviewWidget';
 import {
     IconPhone, IconPhoneFill, IconClock, IconShield, IconCheck, IconStar,
     IconAward, IconDollar, IconSparkle, IconUsers, IconArrowRight, IconBadge, IconCreditCard,
@@ -193,14 +194,8 @@ export default function LandingTemplate({ page }) {
                         <span className="lp-label">Reviews</span>
                         <h2>What Your Neighbors Say</h2>
                     </div>
-                    <div className="lp-testimonials">
-                        {page.testimonials.map((t, i) => (
-                            <figure className="lp-testimonial" key={i}>
-                                <div className="lp-stars">{[...Array(5)].map((_, s) => <IconStar key={s} size={16} />)}</div>
-                                <blockquote>“{t.quote}”</blockquote>
-                                <figcaption><strong>{t.name}</strong><span>{t.source}</span></figcaption>
-                            </figure>
-                        ))}
+                    <div className="lp-reviews">
+                        <ReviewWidget />
                     </div>
                 </div>
             </section>
@@ -212,9 +207,9 @@ export default function LandingTemplate({ page }) {
                     <div>
                         <h2>Our Promise to You</h2>
                         <ul className="lp-guarantee-list">
-                            <li><IconCheck size={18} /> <strong>100% satisfaction guarantee</strong> — we make it right if you’re not happy.</li>
-                            <li><IconDollar size={18} /> <strong>Upfront pricing</strong> — you approve the price before any work starts.</li>
-                            <li><IconCreditCard size={18} /> <strong>Flexible financing</strong> — ask about 0% interest options.</li>
+                            <li><IconCheck size={18} /><span><strong>100% satisfaction guarantee</strong> — we make it right if you’re not happy.</span></li>
+                            <li><IconDollar size={18} /><span><strong>Upfront pricing</strong> — you approve the price before any work starts.</span></li>
+                            <li><IconCreditCard size={18} /><span><strong>Flexible financing</strong> — ask about 0% interest options.</span></li>
                         </ul>
                     </div>
                 </div>

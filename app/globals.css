@@ -3867,6 +3867,8 @@ ul {
   .lp-stats-inner { grid-template-columns: repeat(2,1fr); gap: 24px 12px; }
   .lp-check-two { grid-template-columns: 1fr; }
   .lp-final-form { order: -1; }
+  /* Center the why-us cards on mobile */
+  .lp-why-card { text-align: center; }
 }
 @media (max-width: 768px) {
   .lp-section { padding: 46px 0; }
