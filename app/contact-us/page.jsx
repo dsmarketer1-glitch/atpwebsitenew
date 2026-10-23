@@ -161,6 +161,26 @@ export default function ContactPage() {
                             </div>
 
                             <div className="contact-info-card">
+                                <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><IconMapPin size={18} /> Dallas Location</h3>
+                                <div className="contact-info-item">
+                                    <span className="contact-info-icon"><IconPhone size={18} /></span>
+                                    <a href="tel:214-519-8992">214-519-8992</a>
+                                </div>
+                                <div className="contact-info-item">
+                                    <span className="contact-info-icon"><IconMapPin size={18} /></span>
+                                    <a href="https://www.google.com/maps/place/13747+Montfort+Dr+Suite+350-305,+Dallas,+TX+75240" target="_blank" rel="noopener noreferrer">
+                                        13747 Montfort Dr, Suite 350-305, Dallas, TX 75240
+                                    </a>
+                                </div>
+                                <div className="map-embed">
+                                    <iframe
+                                        src="https://www.google.com/maps?q=13747%20Montfort%20Dr%20Suite%20350-305%2C%20Dallas%2C%20TX%2075240&output=embed"
+                                        allowFullScreen loading="lazy" title="Dallas Location Map"
+                                    ></iframe>
+                                </div>
+                            </div>
+
+                            <div className="contact-info-card">
                                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><IconClock size={18} /> Hours &amp; Availability</h3>
                                 <p style={{ fontSize: '15px', marginBottom: '8px' }}><strong>We are available 24/7</strong></p>
                                 <p style={{ fontSize: '14px', color: '#666' }}>Emergency service available any time, day or night.</p>

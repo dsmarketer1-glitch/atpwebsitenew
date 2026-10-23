@@ -84,6 +84,13 @@ export default function Footer({ settings }) {
                                 <IconMapPin size={14} /> 102 N Shiloh Rd, Suite 104, Garland, TX
                             </a></p>
                         </div>
+                        <div className="footer-location">
+                            <h5>Dallas Office</h5>
+                            <p><a href="tel:214-519-8992"><IconPhone size={14} /> 214-519-8992</a></p>
+                            <p><a href="https://www.google.com/maps/place/13747+Montfort+Dr+Suite+350-305,+Dallas,+TX+75240" target="_blank" rel="noopener noreferrer">
+                                <IconMapPin size={14} /> 13747 Montfort Dr, Suite 350-305, Dallas, TX 75240
+                            </a></p>
+                        </div>
                     </div>
                 </div>
 
