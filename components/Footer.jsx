@@ -85,10 +85,17 @@ export default function Footer({ settings }) {
                             </a></p>
                         </div>
                         <div className="footer-location">
-                            <h5>Dallas Office</h5>
+                            <h5>North Dallas Office</h5>
                             <p><a href="tel:214-519-8992"><IconPhone size={14} /> 214-519-8992</a></p>
                             <p><a href="https://www.google.com/maps/place/13747+Montfort+Dr+Suite+350-305,+Dallas,+TX+75240" target="_blank" rel="noopener noreferrer">
                                 <IconMapPin size={14} /> 13747 Montfort Dr, Suite 350-305, Dallas, TX 75240
+                            </a></p>
+                        </div>
+                        <div className="footer-location">
+                            <h5>West Dallas Office</h5>
+                            <p><a href="tel:214-519-8992"><IconPhone size={14} /> 214-519-8992</a></p>
+                            <p><a href="https://www.google.com/maps/place/2578+Southwell+Rd,+Dallas,+TX+75229" target="_blank" rel="noopener noreferrer">
+                                <IconMapPin size={14} /> 2578 Southwell Rd, Dallas, TX 75229
                             </a></p>
                         </div>
                     </div>
