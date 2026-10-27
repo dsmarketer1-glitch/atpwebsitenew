@@ -55,7 +55,7 @@ export default function LandingTemplate({ page }) {
             {/* ===== Minimal header: logo + call (no nav) ===== */}
             <header className="lp-header">
                 <div className="lp-header-inner">
-                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={168} height={54} priority className="lp-logo" />
+                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={168} height={62} priority className="lp-logo" />
                     <a href={TEL} className="lp-header-call"><IconPhoneFill size={16} /> <span>{PHONE}</span></a>
                 </div>
             </header>
@@ -245,7 +245,7 @@ export default function LandingTemplate({ page }) {
             {/* ===== MINIMAL FOOTER ===== */}
             <footer className="lp-footer">
                 <div className="lp-container lp-footer-inner">
-                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={150} height={48} />
+                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={150} height={55} />
                     <div className="lp-footer-mid">
                         <a href={TEL} className="lp-footer-phone"><IconPhoneFill size={16} /> {PHONE}</a>
                         <span>Licensed &amp; Insured · #37912 · Serving Dallas–Fort Worth · Available 24/7</span>

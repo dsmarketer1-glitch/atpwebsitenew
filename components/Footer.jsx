@@ -8,7 +8,7 @@ export default function Footer({ settings }) {
         <footer className="site-footer">
             <div className="footer-grid">
                 <div className="footer-brand">
-                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={57} />
+                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={65} />
                     <p>
                         Anytime Plumbing 365 provides reliable residential plumbing and 24/7 emergency
                         service for homeowners throughout Dallas–Fort Worth. We specialize

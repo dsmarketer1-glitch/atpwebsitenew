@@ -74,7 +74,7 @@ export default function Header({ onBookNow, settings }) {
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
           <Link href="/" className="header-logo">
-            <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={57} priority />
+            <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={65} priority />
           </Link>
 
           <nav className="header-nav">
@@ -104,7 +104,7 @@ export default function Header({ onBookNow, settings }) {
 
             <ul className={mobileOpen ? 'mobile-open' : ''}>
               <li className="mobile-menu-header">
-                <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={145} height={47} />
+                <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={145} height={54} />
                 <button className="close-menu" onClick={() => setMobileOpen(false)} aria-label="Close menu"><IconX size={20} /></button>
               </li>
 
