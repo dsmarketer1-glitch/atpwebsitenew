@@ -8,7 +8,7 @@ export default function Footer({ settings }) {
         <footer className="site-footer">
             <div className="footer-grid">
                 <div className="footer-brand">
-                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={65} />
+                    <Image src="/images/logo.png" alt="Anytime Plumbing 365" width={176} height={67} />
                     <p>
                         Anytime Plumbing 365 provides reliable residential plumbing and 24/7 emergency
                         service for homeowners throughout Dallas–Fort Worth. We specialize
@@ -89,13 +89,6 @@ export default function Footer({ settings }) {
                             <p><a href="tel:214-519-8992"><IconPhone size={14} /> 214-519-8992</a></p>
                             <p><a href="https://www.google.com/maps/place/13747+Montfort+Dr+Suite+350-305,+Dallas,+TX+75240" target="_blank" rel="noopener noreferrer">
                                 <IconMapPin size={14} /> 13747 Montfort Dr, Suite 350-305, Dallas, TX 75240
-                            </a></p>
-                        </div>
-                        <div className="footer-location">
-                            <h5>West Dallas Office</h5>
-                            <p><a href="tel:214-519-8992"><IconPhone size={14} /> 214-519-8992</a></p>
-                            <p><a href="https://www.google.com/maps/place/2578+Southwell+Rd,+Dallas,+TX+75229" target="_blank" rel="noopener noreferrer">
-                                <IconMapPin size={14} /> 2578 Southwell Rd, Dallas, TX 75229
                             </a></p>
                         </div>
                     </div>
