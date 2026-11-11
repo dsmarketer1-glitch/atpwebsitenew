@@ -70,6 +70,12 @@ export default function Footer({ settings }) {
 
                     <div className="footer-col contact-col-mobile">
                         <h4>Contact</h4>
+                        <p className="footer-email">
+                            <a href="mailto:Service@anytimeplumbing365.com">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: 'middle', marginRight: '6px' }}><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 5L2 7" /></svg>
+                                Service@anytimeplumbing365.com
+                            </a>
+                        </p>
                         <div className="footer-location">
                             <h5>Irving Office</h5>
                             <p><a href="tel:214-307-4264"><IconPhone size={14} /> 214-307-4264</a></p>

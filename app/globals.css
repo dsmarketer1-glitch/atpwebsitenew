@@ -1882,6 +1882,22 @@ ul {
   margin-bottom: 18px;
 }
 
+.footer-email {
+  margin-bottom: 18px;
+  font-size: 13.5px;
+}
+
+.footer-email a {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  word-break: break-word;
+}
+
+.footer-email a:hover {
+  color: var(--white);
+}
+
 .footer-location h5 {
   color: var(--white);
   font-size: 14px;
