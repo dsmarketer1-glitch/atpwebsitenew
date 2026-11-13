@@ -64,7 +64,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           strategy="afterInteractive"
         />
 
-        {/* GoHighLevel / LeadConnector chat widget */}
+        {/* GoHighLevel / LeadConnector chat widget — kept loaded but hidden via
+            CSS (see .lc_text-widget / chat-widget rules in globals.css) */}
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
@@ -72,6 +73,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           data-source="WEB_USER"
           strategy="afterInteractive"
         />
+
+        {/* Avoca Chat Widget — config must be set before the widget script loads */}
+        <Script id="avoca-chat-widget-config" strategy="beforeInteractive">
+          {`
+            window.ChatWidgetKey = '3225';
+            window.ChatWidgetColor = '#003a70';
+            window.ChatWidgetMessage = 'Have a service request or question?';
+            window.ChatWidgetTitle = 'Hey there! How can we help you today?';
+            window.ChatWidgetHideMessage = false;
+            window.ChatWidgetAutoOpen = false;
+            window.ChatWidgetAutoTrigger = false;
+          `}
+        </Script>
+        <Script src="https://app.avoca.ai/chat-widget.js" strategy="afterInteractive" />
       </body>
     </html>
   );

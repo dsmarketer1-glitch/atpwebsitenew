@@ -1898,6 +1898,13 @@ ul {
   color: var(--white);
 }
 
+/* Hide the GoHighLevel/LeadConnector chat widget (kept loaded, but Avoca is the
+   visible chat). Targets GHL's <chat-widget> custom element only — Avoca's
+   widget is a div#chat-widget and is not affected by this tag selector. */
+chat-widget {
+  display: none !important;
+}
+
 .footer-location h5 {
   color: var(--white);
   font-size: 14px;
